@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/open-sans-v17-latin_cyrillic-regular.woff") format("woff"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-regular.ttf") format("truetype"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-regular.svg#OpenSans") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'OpenSans-Sb';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/open-sans-v17-latin_cyrillic-700.woff") format("woff"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-700.ttf") format("truetype"), url("../fonts/OpenSans/open-sans-v17-latin_cyrillic-700.svg#OpenSans") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'ChampagneLimousines';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ChampagneLimousines/ChampagneLimousines.eot"), url("../fonts/ChampagneLimousines/ChampagneLimousines.eot?#iefix") format("embedded-opentype"), url("../fonts/ChampagneLimousines/ChampagneLimousines.woff2") format("woff2"), url("../fonts/ChampagneLimousines/ChampagneLimousines.woff") format("woff"), url("../fonts/ChampagneLimousines/ChampagneLimousines.ttf") format("truetype"), url("../fonts/ChampagneLimousines/ChampagneLimousines.svg#OpenSans") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'FreestyleScript';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/FreestyleScript/FreestyleScript.eot"), url("../fonts/FreestyleScript/FreestyleScript.eot?#iefix") format("embedded-opentype"), url("../fonts/FreestyleScript/FreestyleScript.woff2") format("woff2"), url("../fonts/FreestyleScript/FreestyleScript.woff") format("woff"), url("../fonts/FreestyleScript/FreestyleScript.ttf") format("truetype"), url("../fonts/FreestyleScript/FreestyleScript.svg#OpenSans") format("svg");
+  /* Legacy iOS */ }
