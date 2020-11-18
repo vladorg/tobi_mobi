@@ -1,0 +1,296 @@
+@import "../var.sass"
+
+
+
+.header
+
+	&__tool
+		+flex(0,0,flex-start,center)
+		padding: 5px 40px 12px 15px
+	&__langs
+		margin-right: 189px
+		ul
+			+flex(0,0,flex-start,center)
+			li
+				position: relative
+				padding-right: 8px
+				margin-right: 8px
+				+before
+					content: ''
+					position: absolute
+					top: 50%
+					right: 0
+					width: 1px
+					height: 16px
+					margin-top: -8px
+					background: #c8c8c8
+				a
+					+text(12,600,24,$text_color)
+				&:last-child
+					padding-right: 0
+					margin-right: 0
+					+before
+						display: none
+			li.header__langActive
+				a
+					color: #919192
+	&__soc
+		ul
+			+flex(0,0,flex-start,center)
+			li
+				margin-right: 24px
+				&:last-child
+					margin-right: 0
+	&__nav
+		margin-left: auto
+		ul
+			+flex(0,0,space-between,center)
+			li
+				margin-right: 23px
+				&:last-child
+					margin-right: 0
+				a
+					+text(12,600,24,$text_color)
+
+
+	&__inner
+		+flex(0,0,space-between,center)
+	&__logo
+		margin-right: 40px
+		padding-top: 12px
+	&__innerRight
+		+flex(0,0,flex-start,center)	
+		width: 100%
+		padding: 23px 46px 15px 46px
+		position: relative
+		+before
+			transform: skew(-8deg) rotate(-.5deg)
+			background: $prim_color
+			border-radius: 10px
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: -1
+		+after
+			background: $prim_color
+			border-radius: 10px
+			position: absolute
+			height: 100%
+			right: 0
+			bottom: -5px
+			left: 0
+			z-index: -1
+			transform: skew(-6deg)
+	&__search
+		margin-right: 75px
+		form
+			.input 
+				border: none
+				+text(14,500,24,$text_color)
+				padding: 8px 24px
+				width: 512px
+				margin-right: 16px
+			.btn
+				padding: 8px 35px
+				background: #242426
+				color: #fff
+				&:hover
+					background: #000
+
+	&__log
+		margin-right: 110px	
+		a
+			display: block
+			position: relative
+			padding-left: 46px
+			+text(14,700,20,$text_color)
+			+before
+				position: absolute
+				left: 0
+				top: -10px
+
+	&Comp
+		&__link
+			position: relative
+			display: block
+		&__count
+			position: absolute
+			top: -6px
+			right: -8px
+			width: 20px
+			height: 20px
+			border-radius: 50%
+			background: #D9214F
+			+text(10,700,12,#fff)
+			+flex(0,0,center,center)
+		&__list
+
+	&Wish
+		margin-left: auto
+		&__link
+		&__list
+
+	&Cart
+		margin-left: auto
+		+text(14,500,24,$text_color)
+		&__link
+			position: relative
+			padding-left: 48px
+			+flex(column,0,center,flex-start)			
+			+before
+				position: absolute
+				left: 0
+				top: 5px
+			+hover
+				text-decoration: none
+				.headerCart__itemsWrap
+					opacity: 1
+					pointer-events: auto
+					max-height: 1000px
+					+tran(all, .6s)
+		&__count
+			position: absolute
+			top: 0
+			left: 20px
+			width: 20px
+			height: 20px
+			border-radius: 50%
+			background: #D9214F
+			+text(10,700,12,#fff)
+			+flex(0,0,center,center)
+		&__title
+			font-weight: 700
+		&__subtitle
+		&__items			
+			background: #fff
+			border: 2px solid #FFC830
+			box-shadow: 0px 4px 8px rgba(36, 36, 38, 0.25)
+			border-radius: 4px
+			padding: 20px
+			&Wrap
+				opacity: 0
+				pointer-events: none
+				max-height: 0
+				overflow: hidden
+				position: absolute
+				top: 100%
+				left: calc(-200% - 35px)
+				z-index: 1
+				width: 376px
+				padding-top: 22px
+				+tran(all, .2s)
+		&__list
+			max-height: 340px
+			padding-right: 5px
+			overflow: auto
+		&__item
+			padding-bottom: 16px
+			margin-bottom: 16px
+			border-bottom: 1px solid $tc_025
+			+flex(0,wrap,flex-start,center)
+			+text(14,500,24,$text_color)
+		&__thumb
+			width: 100%
+			max-width: 50px
+		&__name
+			width: calc(100% - 66px)
+			margin: 0 0 8px auto	
+			max-height: 48px	
+			overflow: hidden	
+			text-overflow: ellipsis
+		&__name, &__price, &__quantly
+			+text(14,500,24,$text_color)
+		&__price
+			margin-left: 66px
+		&__quantly
+			margin-left: 31px
+		&__total
+			padding: 0 0 24px 0
+			+flex(0,0,space-between,center)
+			&Price
+				margin-left: auto
+				font-size: 16px
+				font-weight: 700
+			&Label
+				+text(14,500,24,$text_color)
+				padding-right: 10px
+		&__cost
+			font-size: 20px
+			font-weight: 800
+			max-width: 60%
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
+		&__btns
+			+flex(column,0,0,center)
+			a
+				display: inline-block
+		&__checkout
+			background: $prim_color
+			padding: 11px 0
+			width: 100%
+			text-align: center
+			border: 2px solid transparent
+			+tran(all, .4s)
+			+hover
+				text-decoration: none
+				border-color: $prim_color
+				background: #fff
+		&__cart
+			margin-top: 16px
+			font-size: 12px
+			font-weight: 600
+			border-bottom: 1px dashed $text_color
+			+tran(all, .4s)
+			+hover
+				border-color: transparent
+				text-decoration: none
+
+.top
+	padding: 36px 0 30px 0
+	+flex(0,0,flex-start,center)
+	&Catalog
+		margin-right: 64px
+		&__btn
+			display: block
+			border: 2px solid #FFC830
+			background: #fff
+			box-sizing: border-box
+			border-radius: 4px
+			width: 240px
+			height: 48px
+			padding: 14px 28px
+			+tran(all, .4s)
+			+flex(0,0,flex-start,center)
+			+text(14,700,20,$text_color)
+			+before
+				display: block
+				width: 24px
+				height: 14px
+				margin-right: 28px
+				background: url('../img/icons/catalog/burger.svg') no-repeat
+			+hover
+				text-decoration: none
+				background: #FFC830
+
+
+		&__title
+		&Menu
+			display: none
+			&__ic
+			&__title
+
+	&Features
+		margin-left: auto
+		width: 100%
+		+flex(0,0,space-between,center)
+		&__item
+			+flex(0,0,flex-start,center)
+		&__thumb
+		&__title
+			padding-left: 24px
+			+text(14,700,20,$text_color)
+			&--short
+				max-width: 55%
