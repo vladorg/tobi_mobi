@@ -130,3 +130,24 @@
   width: 32px;
   height: 32px;
   background: url("../img/sprites/all.png") -254px -5px no-repeat; }
+
+.icon__burger::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 14px;
+  background: url(../img/icons/catalog/burger.svg) no-repeat; }
+
+.icon__search::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons/search.svg) no-repeat; }
+
+.icon__close::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/close.svg) no-repeat; }

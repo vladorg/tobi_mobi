@@ -26,7 +26,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('scripts', function() {
-    return gulp.src(['app/js/common.js', 'app/libs/**/*.js'])
+    return gulp.src(['app/js/main.js', 'app/libs/**/*.js'])
     .pipe(browserSync.reload({ stream: true }))
 });
 
@@ -108,7 +108,7 @@ gulp.task('b', gulp.parallel('clean', 'img', 'buildHtml', 'buildCss', 'buildJs',
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
-	gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
+	gulp.watch(['app/js/main.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
 });
 
 

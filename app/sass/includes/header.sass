@@ -3,12 +3,29 @@
 
 
 .header
-
+	+hover
+		position: relative
+		z-index: 2
+	+xs
+		padding-top: 5px
+		width: 95%
 	&__tool
 		+flex(0,0,flex-start,center)
 		padding: 5px 40px 12px 15px
+		+md
+			justify-content: space-between
+			padding: 5px 0 12px 0
+		+sm
+			flex-wrap: wrap
+			justify-content: center
+		+xs
+			display: none
 	&__langs
 		margin-right: 189px
+		+md
+			margin-right: 0
+		+sm
+			margin-right: 40px
 		ul
 			+flex(0,0,flex-start,center)
 			li
@@ -43,10 +60,17 @@
 					margin-right: 0
 	&__nav
 		margin-left: auto
+		+md
+			margin-left: 0
+		+sm
+			width: 100%
+			margin-top: 10px
 		ul
 			+flex(0,0,space-between,center)
 			li
 				margin-right: 23px
+				+md
+					margin-right: 10px
 				&:last-child
 					margin-right: 0
 				a
@@ -58,6 +82,14 @@
 	&__logo
 		margin-right: 40px
 		padding-top: 12px
+		+xs
+			margin-right: 10px
+			a
+				display: block
+				img
+					width: 94px
+					height: 48px
+					display: block
 	&__innerRight
 		+flex(0,0,flex-start,center)	
 		width: 100%
@@ -83,35 +115,88 @@
 			left: 0
 			z-index: -1
 			transform: skew(-6deg)
+		+break(1600)
+			justify-content: space-between
+		+break(1400)
+			padding: 23px 20px 15px 20px
+		+sm
+			flex-wrap: wrap
+		+xs
+			padding: 0 5px
+			flex-wrap: nowrap
+			+before
+				border-radius: 10px 5px 5px 5px
+				transform: skew(-8deg) rotate(-1.5deg)
+			+after
+				border-radius: 10px 5px 10px 5px
+				transform: skew(-5deg)
+				bottom: -7px
+				left: -1px
 	&__search
 		margin-right: 75px
+		+break(1600)
+			margin-right: auto
+		+sm
+			width: 100%
+			margin-bottom: 15px
+		+xs
+			display: none
 		form
+			+flex(0,0,0,0)					
 			.input 
 				border: none
 				+text(14,500,24,$text_color)
 				padding: 8px 24px
 				width: 512px
 				margin-right: 16px
+				max-width: 100%
+				+break(1600)
+					width: 300px
+				+break(1400)
+					width: auto
+				+md
+					margin-right: 5px
+				+sm
+					width: 100%
 			.btn
 				padding: 8px 35px
 				background: #242426
 				color: #fff
 				&:hover
 					background: #000
+				+md
+					font-size: 13px
+					padding: 0 20px
 
 	&__log
 		margin-right: 110px	
+		+break(1600)
+			margin: 0 15px
+		+md
+			margin: 0 5px
+		+xs
+			display: none
 		a
 			display: block
 			position: relative
 			padding-left: 46px
+			white-space: nowrap
 			+text(14,700,20,$text_color)
 			+before
 				position: absolute
 				left: 0
 				top: -10px
+			+md
+				font-size: 0
 
 	&Comp
+		+break(1600)
+			margin: 0 15px
+		+md
+			margin: 0 10px
+		+xs
+			transform: scale(0.7)
+			margin: 8px 5px 0 5px
 		&__link
 			position: relative
 			display: block
@@ -129,12 +214,27 @@
 
 	&Wish
 		margin-left: auto
+		+break(1600)
+			margin: 0 15px
+		+md
+			margin: 0 10px
+		+xs
+			transform: scale(0.7)
+			margin: 8px 5px 0 5px
 		&__link
 		&__list
 
 	&Cart
 		margin-left: auto
 		+text(14,500,24,$text_color)
+		+break(1600)
+			margin: 0 15px
+		+md
+			margin: 0 10px
+		+xs
+			min-height: 40px
+			transform: scale(0.7)
+			margin: 8px 5px 0 5px
 		&__link
 			position: relative
 			padding-left: 48px
@@ -162,7 +262,15 @@
 			+flex(0,0,center,center)
 		&__title
 			font-weight: 700
+			+md
+				font-size: 12px
+			+xs
+				display: none
 		&__subtitle
+			+md
+				font-size: 12px
+			+xs
+				display: none
 		&__items			
 			background: #fff
 			border: 2px solid #FFC830
@@ -181,6 +289,8 @@
 				width: 376px
 				padding-top: 22px
 				+tran(all, .2s)
+				+xs
+					display: none
 		&__list
 			max-height: 340px
 			padding-right: 5px
@@ -247,12 +357,40 @@
 			+hover
 				border-color: transparent
 				text-decoration: none
+	&__mobMenu
+		display: none
+		background: transparent
+		margin-top: 8px
+		+xs
+			display: block
+
+	&__mobSearch
+		display: none
+		padding: 16px 10px 0 10px
+		+xs
+			display: block
+		form
+			+flex(0,0,space-between, center)
+			.input
+				padding: 11px 16px
+				border-width: 2px
+				width: 100%
+				margin-right: 12px
+			.btn
+				background: $text_color
+				padding: 9px
+				max-height: 41px
 
 .top
 	padding: 36px 0 30px 0
+	position: relative
+	z-index: 1
 	+flex(0,0,flex-start,center)
+	+xs
+		display: none
 	&Catalog
 		margin-right: 64px
+		
 		&__btn
 			display: block
 			border: 2px solid #FFC830
@@ -271,26 +409,140 @@
 				height: 14px
 				margin-right: 28px
 				background: url('../img/icons/catalog/burger.svg') no-repeat
+			+after
+				position: fixed
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background: rgba(0,0,0,.5)
+				opacity: 0
+				z-index: -1
+				pointer-events: none
+				+tran(opacity, .4s)
 			+hover
 				text-decoration: none
 				background: #FFC830
+				border-radius: 4px 4px 0 0
+				.topCatalogMenu
+					display: block
+				+after
+					opacity: 1
+				> span
+					position: relative
+					z-index: 1
 
 
 		&__title
+		&Child
+			opacity: 0
+			pointer-events: none
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			border: 3px solid $prim_color
+			padding: 16px 24px
+			transition: left .4s, opacity .4s
+			width: 100%
+			background: #fff
+			max-width: calc(100% - 376px)
+			overflow: auto
+			min-height: 582px
 		&Menu
+			position: absolute
+			left: 0
+			z-index: 1
+			top: calc(100% - 30px)
+			//overflow: hidden
+			border-radius: 0 10px 10px 10px
 			display: none
+			+hover
+				right: 0
+			> ul
+				border: 3px solid $prim_color
+				border-right: 0
+				border-radius: 0 0 4px 4px
+				width: 376px
+				background: #fff
+				max-height: 582px
+				min-height: 582px
+				overflow: auto
+				border-radius: 0 10px 10px 10px
+				border-right: 3px solid $prim_color
+				+tran(border-radius,.4s)
+				+before
+					position: absolute
+					width: 100%
+					max-width: 367px
+					height: calc(100% - 7px)
+					border-radius: 10px
+					background: #fff
+					z-index: 1
+					border-radius: 10px
+				&.hovered
+					border-radius: 0 0 0 10px
+				li
+					+hover
+						a
+							color: $prim_color	
+						.topCatalogChild
+								opacity: 1
+								pointer-events: auto
+								left: 373px
+					a						
+						max-height: 64px
+						font-size: 14px
+						padding: 16px 28px
+						border-bottom: 1px solid $tc_025
+						position: relative
+						z-index: 1
+						background: #fff
+						//border-right: 3px solid $prim_color
+						+flex(0,0,flex-start,center)
+						+tran(all,.2s)
+						+hover
+							text-decoration: none
+							color: $prim_color
 			&__ic
+				width: 34px
+				text-align: center
 			&__title
+				margin-left: 26px
+			&__arr
+				margin-left: auto
+
 
 	&Features
 		margin-left: auto
 		width: 100%
 		+flex(0,0,space-between,center)
+		+sm
+			flex-wrap: wrap
+			justify-content: center
 		&__item
+			margin-right: 20px
 			+flex(0,0,flex-start,center)
+			+last
+				margin-right: 0
+			+sm
+				margin: 10px
 		&__thumb
+			+md
+				width: 25%
+			img
+				width: 100%
 		&__title
 			padding-left: 24px
 			+text(14,700,20,$text_color)
+			+tran(all, .5s)
+			+break(1600)
+				padding-left: 10px
+			+break(1400)
+				font-size: 13px
+			+md
+				font-size: 11px
 			&--short
 				max-width: 55%
+				+sm
+					max-width: 100%

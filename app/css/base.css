@@ -51,7 +51,7 @@ body {
   color: #242426; }
 
 a {
-  color: #000;
+  color: #242426;
   text-decoration: none;
   font-weight: 500; }
   a:hover {
@@ -92,6 +92,9 @@ h6 {
 .container {
   width: 1600px;
   margin: 0 auto; }
+  @media (max-width: 1600px) {
+    .container {
+      width: 90%; } }
 
 .input {
   background: #FFFFFF;
@@ -127,6 +130,7 @@ h6 {
   font-weight: 700;
   line-height: 24px;
   color: #242426;
+  background: transparent;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -146,9 +150,6 @@ h6 {
 
 .scroll::-webkit-scrollbar-thumb {
   background: #FFC830; }
-
-.scroll::-webkit-scrollbar-track-piece {
-  margin: 15px 0; }
 
 .close {
   background: transparent; }

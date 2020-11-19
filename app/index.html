@@ -262,71 +262,167 @@
 						</div>						
 					</div>
 				</div>
+				<button id="mobile_menu_open" class="header__mobMenu btn icon__burger"></button>
 			</div>
+		</div>
+		<div class="header__mobSearch">
+			<form action="#">
+				<input type="text" placeholder="Шукаю" name="search" class="input">
+				<button class="icon__search btn cursor"></button>
+			</form>
 		</div>
 	</header>
 
 	<section class="top container">
 		<div class="topCatalog">
-			<button class="topCatalog__btn topCatalog__title cursor">Каталог товарів</button>
-			<nav class="topCatalogMenu">
-				<ul>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_2.svg">
-							<span class="topCatalogMenu__title">Автомобільні аксесуари</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_3.svg">
-							<span class="topCatalogMenu__title">Зарядні пристрої</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_4.svg">
-							<span class="topCatalogMenu__title">Навушники та гарнітури</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_5.svg">
-							<span class="topCatalogMenu__title">Портативні колонки</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_6.svg">
-							<span class="topCatalogMenu__title">Карти пам'яті</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_7.svg">
-							<span class="topCatalogMenu__title">Моноподи</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_8-1.svg">
-							<span class="topCatalogMenu__title">Телефони, Смартфони</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_8.svg">
-							<span class="topCatalogMenu__title">Планшети</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="topCatalogMenu__ic" src="img/icons/catalog/ic_9.svg">
-							<span class="topCatalogMenu__title">Гаджети</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+			<div class="topCatalog__btn topCatalog__title cursor">Каталог товарів
+				<nav class="topCatalogMenu">
+					<ul class="scroll">
+						<li class="topCatalogMenu__hasChild">
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_2.svg">
+								</div>							
+								<span class="topCatalogMenu__title">Автомобільні аксесуари</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+							<div class="topCatalogChild">
+								111111111111Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptatibus eaque, vitae expedita quisquam ex dolorem incidunt praesentium repudiandae excepturi sed nam suscipit tempore adipisci odio nisi iure quaerat inventore provident eveniet ullam. Quae ducimus neque vero dolores eius quisquam doloribus corporis nostrum earum, soluta sed perferendis, voluptates dicta deleniti incidunt tempore laboriosam impedit beatae quo magni eligendi reiciendis unde mollitia esse! Dolorum, veniam, odit, aspernatur numquam blanditiis omnis ratione tenetur soluta odio accusamus eius est, exercitationem obcaecati! Magnam, inventore necessitatibus id ratione dolore maxime commodi est numquam quis? Repudiandae amet impedit rerum minima ad accusantium iusto molestias debitis laboriosam!
+							</div>
+						</li>
+						<li class="topCatalogMenu__hasChild">
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_3.svg">
+								</div>
+								<span class="topCatalogMenu__title">Зарядні пристрої</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+							<div class="topCatalogChild">
+								222222222222Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptatibus eaque, vitae expedita quisquam ex dolorem incidunt praesentium repudiandae excepturi sed nam suscipit tempore adipisci odio nisi iure quaerat inventore provident eveniet ullam. Quae ducimus neque vero dolores eius quisquam doloribus corporis nostrum earum, soluta sed perferendis, voluptates dicta deleniti incidunt tempore laboriosam impedit beatae quo magni eligendi reiciendis unde mollitia esse! Dolorum, veniam, odit, aspernatur numquam blanditiis omnis ratione tenetur soluta odio accusamus eius est, exercitationem obcaecati! Magnam, inventore necessitatibus id ratione dolore maxime commodi est numquam quis? Repudiandae amet impedit rerum minima ad accusantium iusto molestias debitis laboriosam!
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_4.svg">
+								</div>
+								<span class="topCatalogMenu__title">Навушники та гарнітури</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_5.svg">
+								</div>
+								<span class="topCatalogMenu__title">Портативні колонки</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_6.svg">
+								</div>
+								<span class="topCatalogMenu__title">Карти пам'яті</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_7.svg">
+								</div>
+								<span class="topCatalogMenu__title">Моноподи</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_8-1.svg">
+								</div>
+								<span class="topCatalogMenu__title">Телефони, Смартфони</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_8.svg">
+								</div>
+								<span class="topCatalogMenu__title">Планшети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr icon__right btn"></button>
+							</a>
+						</li>
+
+					</ul>
+				</nav>
+			</div>
 		</div>					
 
 		<div class="topFeatures">
@@ -381,9 +477,7 @@
 					</li>
 				</ul>
 			</div>
-			<button class="mobMenu__close btn close" id="mobile_menu_close">
-				<img src="img/icons/close.svg" alt="">
-			</button>
+			<button class="mobMenu__close icon__close close btn" id="mobile_menu_close"></button>
 		</div>
 		<div class="mobMenu__inner scroll">
 			<button class="mobMenu__cat btn cursor">Каталог товарів</button>
@@ -486,5 +580,9 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- build:js -->
+	<script src="js/main.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

@@ -44,7 +44,7 @@ body
 	font-size: $fz
 	color: $text_color
 a 
-	color: #000
+	color: $text_color
 	text-decoration: none
 	font-weight: $fw
 	&:hover
@@ -69,6 +69,8 @@ h6
 .container
 	width: $container
 	margin: 0 auto
+	+break(1600)
+		width: 90%
 
 .input
 	background: #FFFFFF
@@ -89,6 +91,7 @@ h6
 
 .btn
 	+text(16,700,24,$text_color)
+	background: transparent
 	border-radius: 4px
 	border: none
 	outline: none
@@ -110,7 +113,6 @@ h6
   &::-webkit-scrollbar-thumb
     background: $prim_color
   &::-webkit-scrollbar-track-piece
-    margin: 15px 0
 
 
 .close
