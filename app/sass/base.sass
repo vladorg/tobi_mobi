@@ -50,6 +50,8 @@ a
 	&:hover
 		text-decoration: underline
 		cursor: url('../img/icons/cursor_hand.svg'), auto
+img
+	max-width: 100%
 
 h1
 	font-family: $ff_accent
@@ -98,6 +100,18 @@ h6
 	+tran(all, .4s)
 	&:hover
 		cursor: pointer
+	&--yellow
+		background: $prim_color
+		padding: 11px 0
+		width: 100%
+		text-align: center
+		border: 2px solid transparent
+		+tran(all, .4s)
+		+hover
+			text-decoration: none
+			border-color: $prim_color
+			background: #fff
+
 
 
 .cursor
@@ -107,15 +121,89 @@ h6
 
 .scroll
   &::-webkit-scrollbar
-    width: 3px
+    width: 2px
     height: 3px
-    background: rgba(0,0,0,0)
+    background: transparent
   &::-webkit-scrollbar-thumb
     background: $prim_color
   &::-webkit-scrollbar-track-piece
+  &--catalog
+  	&::-webkit-scrollbar
+  		width: 3px
+  		background: #c8c8c8
 
 
 .close
 	background: transparent
 	img
 		display: block
+
+
+.modal
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 2
+	background: $ov_color
+	opacity: 0
+	pointer-events: none
+	+flex(0,0,center,center)
+	+tran(opacity, .4s)
+	&--open
+		opacity: 1
+		pointer-events: auto
+	&__win
+		position: relative
+		width: 100%
+		max-width: 1056px
+		background: #fff
+		padding: 32px 24px
+	&__close
+		position: absolute
+		top: 32px
+		right: 24px
+
+.quantly
+	width: 100%
+	max-width: 104px
+	form
+		+flex(0,0,space-between,center)
+	.minus, .plus
+		width: 40px
+		height: 40px
+		padding: 0
+		position: relative
+		+before
+			position: absolute
+			width: 16px
+			height: 2px
+			top: 50%
+			left: 50%
+			margin-top: -1px
+			margin-left: -8px
+	.minus
+		+before
+			background: $tc_025
+	input
+		width: 40px
+		height: 40px
+		border: 1px solid $tc_025
+		box-sizing: border-box
+		border-radius: 4px
+		text-align: center
+		+text(14,500,0,$text_color)
+	.plus
+		+before
+			background: $text_color
+		+after
+			position: absolute
+			width: 16px
+			height: 2px
+			top: 50%
+			left: 50%
+			margin-top: -1px
+			margin-left: -8px
+			background: $text_color
+			transform: rotate(90deg)
