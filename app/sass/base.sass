@@ -43,6 +43,7 @@ body
 	font-weight: $fw
 	font-size: $fz
 	color: $text_color
+	padding-bottom: 500px
 a 
 	color: $text_color
 	text-decoration: none
@@ -66,6 +67,9 @@ h5
 	+text(18,400,24,0)
 h6
 	+text(14,700,20,0)
+
+button
+	font-family: $ff
 
 
 .container
@@ -111,6 +115,17 @@ h6
 			text-decoration: none
 			border-color: $prim_color
 			background: #fff
+	&--buy
+		border: 2px solid $prim_color
+		border-radius: 4px
+		width: 144px
+		height: 48px
+		+flex(0,0,center,center)
+		+before
+			transform: scale(0.7)
+			margin-right: 8px
+		&:hover
+			background: $prim_color
 
 
 
@@ -160,6 +175,9 @@ h6
 		max-width: 1056px
 		background: #fff
 		padding: 32px 24px
+		+xs
+			max-height: 100vh
+			overflow: auto
 	&__close
 		position: absolute
 		top: 32px
@@ -207,3 +225,116 @@ h6
 			margin-left: -8px
 			background: $text_color
 			transform: rotate(90deg)
+
+
+.title
+	+text(24,700,32,$text_color)
+
+
+
+.products
+	&--grid
+		.preview
+			width: 20%
+			max-width: 240px
+
+
+
+
+
+.preview
+	// &--hover
+	+before
+		opacity: 0
+		transition: opacity .6s
+	+hover
+		position: relative
+		z-index: 1
+		+before
+			position: absolute
+			top: -48px
+			right: -48px
+			bottom: -32px
+			left: -48px
+			background: #fff
+			border: 2px solid $prim_color
+			box-sizing: border-box
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)
+			border-radius: 4px
+			z-index: -1
+			opacity: 1
+
+	&__sticker
+		display: none
+		position: absolute
+		top: 27px
+		width: 104px
+		height: 38px
+    border-radius: 10px
+		+before
+			display: block
+			width: 104px
+			height: 38px
+			position: absolute
+			background: #7341D9
+			transform: skew(14deg, -4deg)
+			border-radius: 10px
+	&__thumb
+		width: 232px
+		height: 240px
+		margin-bottom: 16px
+		+flex(0,0,center,center)
+	&__name
+		display: block
+		margin-bottom: 20px
+		height: 72px
+		overflow: hidden
+		text-overflow: ellipsis
+		+text(18,400,24,0)
+	&__rating
+		margin-bottom: 20px
+		+flex(0,0,flex-start,center)
+	&__stars
+		margin-right: 8px
+		+flex(0,0,flex-start,0)
+		i
+			margin-right: 2px
+	&__starFull
+	&__starPiece
+	&__starEmpty
+	&__ratingTotal
+		+text(12,600,0,0)
+	&__price
+		margin-bottom: 20px
+	&__dis
+		margin-bottom: 4px
+		+flex(0,0,flex-start,0)
+	&__perc
+		display: inline-block
+		background: #D9214F
+		border-radius: 2px
+		padding: 0 8px
+		margin-right: 8px
+		+text(16,700,24,#fff)
+	&__spec
+		text-decoration: line-through
+		+text(16,400,24,0)
+	&__total
+		+text(24,700,24,0)
+	&__tools
+		+flex(0,0,flex-start,center)
+	&__btn
+	&__comp
+		transform: scale(0.7)
+		margin-left: auto
+	&__wish
+		transform: scale(0.7)
+	&--new
+		background: $sticker_new
+	&--spec
+		background: $sticker_special
+	&--soon
+		background: $sticker_soon
+	&--top
+		background: $sticker_top
+

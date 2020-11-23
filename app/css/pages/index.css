@@ -1,0 +1,8 @@
+.related {
+  padding: 64px 0 96px 0; }
+  .related__prods {
+    padding-top: 64px; }
+    .related__prods .preview__item {
+      margin-right: 32px; }
+  .related .slick-list {
+    overflow: visible; }

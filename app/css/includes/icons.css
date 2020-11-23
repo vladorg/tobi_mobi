@@ -96,13 +96,6 @@
   height: 18px;
   background: url("../img/sprites/all.png") -5px -5px no-repeat; }
 
-.icon__star::before {
-  content: '';
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: url("../img/sprites/all.png") -25px -5px no-repeat; }
-
 .icon__trash::before {
   content: '';
   display: block;
@@ -151,3 +144,24 @@
   width: 16px;
   height: 16px;
   background: url(../img/icons/close.svg) no-repeat; }
+
+.icon__star-p::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/star_p.svg) no-repeat; }
+
+.icon__star-e::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/star_e.svg) no-repeat; }
+
+.icon__star::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/star.svg) no-repeat; }

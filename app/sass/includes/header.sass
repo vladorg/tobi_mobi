@@ -203,6 +203,15 @@
 		&__link
 			position: relative
 			display: block
+			a
+				display: none
+				+xs
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
 		&__count
 			position: absolute
 			top: -6px
@@ -225,6 +234,17 @@
 			transform: scale(0.7)
 			margin: 8px 5px 0 5px
 		&__link
+			a
+				display: none
+				+xs
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+			+xs
+				position: relative
 		&__list
 
 	&Cart
@@ -248,6 +268,16 @@
 				top: 5px
 			+hover
 				text-decoration: none
+		&__linkMobile
+			display: none
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			min-height: 40px
+			+xs
+				display: block
 		&__count
 			position: absolute
 			top: 0
@@ -393,10 +423,25 @@
 	position: relative
 	z-index: 1
 	+flex(0,0,flex-start,center)
+	+md
+		align-items: flex-start
 	+xs
-		display: none
+		+flex(column,0,0,0)
 	&Catalog
 		margin-right: 64px
+		+xs
+			position: fixed
+			top: 0
+			right: -105%
+			bottom: 0
+			margin: 0
+			width: 100%
+			opacity: 0
+			transition: right 0.6s cubic-bezier(0.14, 0.07, 0.1, 1.19), opacity .3s
+
+		&--open
+			right: 0
+			opacity: 1
 		
 		&__btn
 			display: block
@@ -416,6 +461,10 @@
 				height: 14px
 				margin-right: 28px
 				background: url('../img/icons/catalog/burger.svg') no-repeat
+				+xs
+					position: absolute
+					top: 17px
+					left: 28px
 			+after
 				position: fixed
 				top: 0
@@ -427,6 +476,8 @@
 				z-index: -1
 				pointer-events: none
 				+tran(opacity, .4s)
+				+xs
+					display: none
 			+hover
 				text-decoration: none
 				background: #FFC830
@@ -440,6 +491,21 @@
 				> span
 					position: relative
 					z-index: 1
+			+xs
+				width: 100%
+				height: 100%
+				justify-content: center
+				align-items: flex-start
+				border-radius: 0!important
+				background: $prim_color
+
+		&__close
+			position: absolute
+			top: 17px
+			right: 17px
+			display: none
+			+xs
+				display: block
 
 
 		&__title
@@ -458,20 +524,90 @@
 			max-width: calc(100% - 376px)
 			overflow: auto
 			min-height: 582px
+			+md
+				max-width: calc(100% - 300px)
+			+xs
+				position: static
+				max-width: 100%
+				opacity: 0
+				max-height: 0
+				overflow: hidden
+				padding: 0
+				border: 0
+				min-height: unset
+				pointer-events: auto
+				background: $sup_color
+				+tran(all,.4s)
+			&--open
+				+xs
+					max-height: 10000px
+					opacity: 1!important
 			&__items
 				column-count: 4
+				+break(1400)
+					column-count: 3
+				+md
+					column-count: 2
+				+xs
+					column-count: unset
+					
 			&__item
 				margin-bottom: 18px
 				break-inside: avoid
+				a
+					+xs
+						display: block
+						border-bottom: 1px solid #c8c8c8
+						padding: 24px 64px 24px 22px
+						max-height: 64px
+						white-space: nowrap
+						overflow: hidden
+						text-overflow: ellipsis
+				+xs
+					margin-bottom: 0
+					position: relative
+				.open_child_child
+					display: none
+					background: $sup_color
+				&--hasChild
+					.open_child_child
+						+xs
+							display: flex
+					
 			&__name
 				font-weight: 600
 				border-bottom: 1px dashed $prim_color
 				color: $prim_color
+				+before
+					display: none!important
+				+md
+					font-size: 13px
+				+xs
+					border-bottom: none
+					color: $text_color
+					background: $sup_color
+					+before
+						display: block!important
+					+hover
+						text-decoration: none
 			&__list
+				+xs
+					background: $sup_color
+					max-height: 0
+					opacity: 0
+					overflow: hidden
+					+tran(all,.4s)
+				&--open
+					max-height: 10000px
+					opacity: 1					
 				ul
 					li
-						a
+						a							
 							+text(0,400,24,$text_color)
+							+md
+								font-size: 12px
+							+xs
+								padding-left: 48px
 		&Menu
 			position: absolute
 			left: 0
@@ -487,6 +623,16 @@
 			+tran(all,.5s)
 			+hover
 				right: 0
+			+md
+				top: 84px
+			+xs
+				top: 48px
+				right: 0
+				bottom: 0
+				left: 0
+				max-height: 999px
+				opacity: 1
+				pointer-events: auto
 			> ul
 				border: 3px solid $prim_color
 				border-right: 0
@@ -499,6 +645,13 @@
 				border-radius: 0 10px 10px 10px
 				border-right: 3px solid $prim_color
 				+tran(border-radius,.4s)
+				+md
+					width: 300px
+				+xs
+					width: 100%
+					height: 100%
+					max-height: 100%
+					border-radius: 10px
 				+before
 					position: absolute
 					width: 100%
@@ -508,6 +661,10 @@
 					background: #fff
 					z-index: 1
 					border-radius: 10px
+					+md
+						width: 291px
+					+xs
+						display: none
 				&.hovered
 					border-radius: 0 0 0 10px
 				> li
@@ -518,8 +675,12 @@
 								opacity: 1
 								pointer-events: auto
 								left: 373px
+								+md
+									left: 297px
+								+xs
+									opacity: 0
 					> a						
-							max-height: 64px
+							height: 64px
 							font-size: 14px
 							padding: 16px 28px
 							border-bottom: 1px solid $tc_025
@@ -532,13 +693,81 @@
 							+hover
 								text-decoration: none
 								color: $prim_color
+							+md
+								padding: 16px 10px
+								font-size: 12px
+							+xs
+								padding: 16px 64px 16px 64px
 			&__ic
 				width: 34px
 				text-align: center
+				img
+					display: block
+					+xs
+						filter: drop-shadow(0px 0px 0px black)
+				+sm
+					transform: scale(0.7)
+				+xs
+					transform: none
+					position: absolute
+					left: 22px
 			&__title
 				margin-left: 26px
+				+sm
+					margin-left: 10px
+				+xs
+					white-space: nowrap
+					text-overflow: ellipsis
+					overflow: hidden
+					+text(13,600,24,0)
 			&__arr
 				margin-left: auto
+				+before
+					+tran(all,.2s)
+				&--open
+					+before
+						transform: rotate(90deg)
+				+xs
+					margin-left: auto
+					height: 100%
+					position: absolute
+					right: 0
+					top: 0
+					bottom: 0
+					width: 64px
+					height: 63px
+					text-align: center
+					display: flex
+					justify-content: center
+					align-items: center
+					padding: 0
+					+before
+						filter: drop-shadow(0px 0px 0px black)
+			.open_catalog_child
+				display: none
+				background: #fff
+			&__hasChild
+				.open_catalog_child
+					display: flex
+
+		&Mobile
+			display: none
+			background: transparent
+			position: relative
+			padding: 10px 28px
+			border: 2px solid #FFC830
+			width: 100%
+			height: 100%
+			+text(15,600,24,0)
+			+before
+				display: blockd
+				position: static
+				width: 24px
+				height: 14px
+				margin-right: 28px
+				background: url(../img/icons/catalog/burger.svg) no-repeat
+			+xs
+				+flex(0,0,center,center)
 
 
 	&Features
@@ -548,18 +777,33 @@
 		+sm
 			flex-wrap: wrap
 			justify-content: center
+		+xs
+			flex-wrap: nowrap
+			justify-content: space-around
+			align-items: center
+			padding-top: 21px
 		&__item
 			margin-right: 20px
 			+flex(0,0,flex-start,center)
 			+last
 				margin-right: 0
+			+md
+				margin-right: 5px
 			+sm
 				margin: 10px
+			+xs
+				flex-direction: column
+				text-align: center
+				width: 25%
+				& + & + & + &
+					display: none
 		&__thumb
 			+md
 				width: 25%
-			img
+			+xs
 				width: 100%
+			img
+				width: auto
 		&__title
 			padding-left: 24px
 			+text(14,700,20,$text_color)
@@ -567,10 +811,12 @@
 			+break(1600)
 				padding-left: 10px
 			+break(1400)
-				font-size: 13px
-			+md
 				font-size: 11px
+			+md
+				font-size: 10px
+			+xs
+				padding-left: 0
 			&--short
 				max-width: 55%
-				+sm
+				+md
 					max-width: 100%
