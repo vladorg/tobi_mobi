@@ -1,9 +1,172 @@
+@import "../var.sass"
+
+
+.mainPage
+	overflow: hidden
+
+
+.mainTop
+	+xs
+		+flex(column-reverse,0,0,0)
+
+
+.mainSlider
+	height: 440px
+	overflow: hidden
+	+break(1400)
+		height: 350px
+	+md
+		height: 290px
+	+sm
+		height: 235px
+	+xs
+		height: 160px
+	&__inner
+		.slick-dots
+			+flex(column,0,0,0)
+			top: 50%
+			right: 40px
+			bottom: unset
+			left: unset
+			width: auto
+			transform: translateY(-50%)
+			+xs
+				display: none
+			li
+				margin-bottom: 10px
+				button
+					position: relative
+					&::before
+						color: $prim_color
+						width: 24px
+						height: 24px
+						opacity: 1
+				&.slick-active
+					.progressCircle
+						display: block
+						position: absolute
+						top: 0
+						left: 0
+						&__mask 
+							.fill 
+								clip: rect(0px, 12px, 24px, 0px)
+								background: radial-gradient(transparent 9px, $prim_color 10px)
+					button
+						&::before
+							font-size: 12px
+							color: #fff
+							display: none
+	&__item
+		border-radius: 12px
+		img
+			width: 100%
+			height: 440px
+			object-fit: contain
+			border-radius: 12px
+			+break(1400)
+				height: 350px
+			+md
+				height: 290px
+			+sm
+				height: 235px
+			+xs
+				height: 160px
+
 .related
-	padding: 64px 0 96px 0
+	padding: 64px 0 32px 0
+	width: 1740px
+	margin: 0 auto
+	overflow: hidden
+	+break(1750)
+		width: 100%
+	&__title
+		position: relative
+	&__items
+		margin: 0 32px
 	&__prods
 		padding-top: 64px
+		padding-bottom: 64px
+		margin: 0 auto
 		.preview__item
-			//width: 240px
 			margin-right: 32px
+			+xs
+				margin-right: 12px
+				&.slick-active
+					+tran(margin, .5s)
+					+ div
+						margin: 0 0 0 12px!important
+
 	.slick-list
 		overflow: visible
+	.preview__item
+		opacity: 1		
+		&:not(.slick-active)
+			opacity: 0
+			+tran(opacity,.4s)
+			+break(1750)
+				//opacity: 1
+	.slick-prev, .slick-next
+		position: static
+		width: auto
+		padding: 0 5px
+		+before
+			opacity: 1
+		+hover
+			filter: drop-shadow(0px 0px 0px black)	
+	.slick-prev
+		transform: rotateY(180deg)
+	.slick-next
+		transform: rotate(0deg)
+
+
+.specials
+	background: $sup_color
+	padding: 48px 0 72px 0
+	&__list
+		padding-top: 24px
+		+flex(0,0,space-between,center)
+	&__item
+		a
+			display: block
+			img
+				display: block
+
+.populars
+	padding: 48px 0 80px 0
+	&__title
+		margin-bottom: 40px
+	&__item, &__prods
+		+flex(0,0,space-between,center)
+	&__item
+		&:not(:last-child)
+			padding-bottom: 80px
+		&--reverse
+			flex-direction: row-reverse	
+	.preview
+		width: 100%
+		&:not(:last-child)
+			margin-right: 32px
+
+.brands
+	padding-bottom: 64px
+	&__title
+		margin-bottom: 64px
+	&__items
+		a
+			height: 115px
+			+flex(0,0,center,center)
+			display: flex !important
+			pointer-events: none
+			img
+
+
+.seo
+	border-top: 1px solid $tc_025
+	padding-top: 64px
+	&__inner
+		column-count: 2
+		p
+			break-inside: avoid
+			+text(12,500,20,$text_color)
+			&:not(:first-child)
+				margin: 25px 0

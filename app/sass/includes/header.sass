@@ -775,10 +775,8 @@
 		width: 100%
 		+flex(0,0,space-between,center)
 		+sm
-			flex-wrap: wrap
 			justify-content: center
 		+xs
-			flex-wrap: nowrap
 			justify-content: space-around
 			align-items: center
 			padding-top: 21px
@@ -795,6 +793,7 @@
 				flex-direction: column
 				text-align: center
 				width: 25%
+			+sm
 				& + & + & + &
 					display: none
 		&__thumb

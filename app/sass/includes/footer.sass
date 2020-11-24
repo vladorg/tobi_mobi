@@ -1,0 +1,66 @@
+@import "../var.sass"
+
+
+
+.footer
+	display: none
+	background: linear-gradient(to right, #fff 50%, $sup_color 50%)
+	+xs
+		display: none
+
+	&__inner
+		min-height: 312px
+		+flex(0,0,space-between,0)
+	&__left
+		width: 50%
+		padding-right: 145px
+		+flex(0,0,space-between,0)
+	&__info
+		+flex(column,0,0,0)
+	&__logo
+		display: inline-block
+		width: 150px
+		margin-bottom: 24px
+	&__slogan
+		margin-bottom: 24px
+		+text(18,400,24,0)
+		&--short
+			max-width: 73%
+	&__pay
+	&__copy
+		margin-top: auto
+		+text(12,500,20,0)
+	&__img
+		align-self: flex-end
+	&__right
+		width: 50%
+		padding: 40px 0 18px 64px
+		+flex(column,0,0,0)
+	&__lists
+		+flex(0,0,flex-start,flex-start)
+	&__list
+		ul
+			padding-top: 32px
+			li
+				margin-bottom: 8px
+				max-width: 180px
+				overflow: hidden
+				white-space: nowrap
+				text-overflow: ellipsis
+				a
+					+text(14,500,24,0)
+		&:not(:first-child)
+			margin-left: 75px
+		&--double
+			ul
+				column-count: 2
+				column-gap: 82px
+	&__title
+		+text(14,700,20,0)
+	&__social
+		margin-top: auto
+		+flex(0,0,0,center)
+		span
+			+text(14,700,20,0)
+	&__soc
+		margin-left: 32px

@@ -221,20 +221,70 @@ window.onload = function () {
 
 
 
+	function startMainSlider($ap = false, $as = 0, $ss = 0){
+		$('.mainSlider__inner').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: $ap,
+			autoplaySpeed: $as,
+			speed: $ss,
+			dots: true,
+		});
+		$('.mainSlider__inner').attr('data-anim', $as + $ss);
+		$('.mainSlider .slick-dots li button').html( $('.progressCircle').clone() );
+	}
 
+	startMainSlider(true, 4000, 700);
 
-	$('.mainSlider__inner').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1
-	});
-
+	
+	
 
 	$('.related__prods').slick({
+		infinite: false,
+		slidesToShow: 6,
+		slidesToScroll: 1,
+		variableWidth: true,
+		//autoplay: true,
+		prevArrow: $('.related__left'),
+		nextArrow: $('.related__right'),
+		responsive: [
+		{
+			breakpoint: 1750,
+			settings: {
+				slidesToShow: 5,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 1400,
+			settings: {
+				slidesToShow: 4,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 1100,
+			settings: {
+				slidesToShow: 3,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 2,
+				variableWidth: false,
+			}
+		}
+		]
+	});
+
+	$('.brands__items').slick({
 		infinite: true,
 		slidesToShow: 6,
 		slidesToScroll: 1,
-		variableWidth: true
+		autoplay: true	
 	});
 
 
