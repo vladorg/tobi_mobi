@@ -7,6 +7,7 @@
 
 .mainTop
 	+xs
+		padding-top: 15px
 		+flex(column-reverse,0,0,0)
 
 
@@ -30,8 +31,6 @@
 			left: unset
 			width: auto
 			transform: translateY(-50%)
-			+xs
-				display: none
 			li
 				margin-bottom: 10px
 				button
@@ -79,6 +78,8 @@
 	overflow: hidden
 	+break(1750)
 		width: 100%
+	+xs
+		padding: 40px 0
 	&__title
 		position: relative
 	&__items
@@ -87,6 +88,8 @@
 		padding-top: 64px
 		padding-bottom: 64px
 		margin: 0 auto
+		+xs
+			padding: 24px 0 0 0
 		.preview__item
 			margin-right: 32px
 			+xs
@@ -122,51 +125,175 @@
 .specials
 	background: $sup_color
 	padding: 48px 0 72px 0
+	+xs
+		padding: 24px 0 16px 0
 	&__list
 		padding-top: 24px
 		+flex(0,0,space-between,center)
+		+xs
+			flex-wrap: wrap
+			padding-bottom: 24px
 	&__item
+		+break(1600)
+			&:not(:last-child)
+				margin-right: 20px
+				+xs
+					margin-right: 0
 		a
 			display: block
 			img
 				display: block
+				border-radius: 10px
+				width: 100%
+		&--medium
+			+md
+				display: none
+		&--small
+			+md
+				& + &
+					margin-right: 0
+			+xs
+				width: 48.5%
+		&--big
+			+xs
+				width: 100%
+				margin-bottom: 12px
+	&__title
+		.title__subtitle
+			+xs
+				display: none
+	&__all
+		display: none
+		text-align: center
+		+xs
+			display: block
 
 .populars
 	padding: 48px 0 80px 0
+	+xs
+		padding: 40px 0
 	&__title
 		margin-bottom: 40px
+		+xs
+			margin-bottom: 16px
+	&__img
+		margin-right: 30px
+		+md
+			margin-right: 0
+			width: 100%
+			img
+				width: 100%
 	&__item, &__prods
 		+flex(0,0,space-between,center)
 	&__item
 		&:not(:last-child)
 			padding-bottom: 80px
+			+xs
+				padding-bottom: 40px
 		&--reverse
-			flex-direction: row-reverse	
+			flex-direction: row-reverse
+			.populars__img
+				margin-right: 0
+				margin-left: 30px
+				+md
+					margin-left: 0
+		+md
+			flex-direction: column
 	.preview
 		width: 100%
+		+break(1750)
+			max-width: 240px
+		+break(1600)
+			& + div
+				margin-right: 0!important
+			&:last-child
+				display: none
+		+md
+			&:last-child
+				display: block
+			& + div
+				margin-right: 10px!important
 		&:not(:last-child)
 			margin-right: 32px
+			+md
+				margin-right: 15px
+		&:last-child
+			+md
+				margin-right: 0!important
+			+xs
+				display: none
+	&__prods
+		+md
+			padding-top: 24px
+			width: 100%
 
 .brands
 	padding-bottom: 64px
+	+xs
+		padding-bottom: 72px
 	&__title
 		margin-bottom: 64px
+		+xs
+			margin-bottom: 0
 	&__items
+		max-height: 115px
+		overflow: hidden
 		a
 			height: 115px
 			+flex(0,0,center,center)
 			display: flex !important
 			pointer-events: none
+			+xs
+				padding: 0 20px
 			img
+	&__title
+		.title__subtitle
+			+xs
+				display: none
+	&__all
+		display: none
+		text-align: center
+		+xs
+			display: block
 
 
 .seo
 	border-top: 1px solid $tc_025
 	padding-top: 64px
+	+xs
+		padding-top: 24px
 	&__inner
 		column-count: 2
+		+xs
+			column-count: 1			
+			position: relative
+			+tran(max-height,2s)			
+		&--closed
+			+xs
+				max-height: 160px
+				overflow: hidden
+				+after
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					height: 20px
+					background: rgba(255, 255, 255, .55)
+		&--opened
+			+xs
+				max-height: 2000px
 		p
 			break-inside: avoid
 			+text(12,500,20,$text_color)
 			&:not(:first-child)
 				margin: 25px 0
+				+xs
+					margin: 10px 0
+	&__readAll
+		display: none
+		margin-top: 8px
+		+text(13,600,24,$text_color)
+		+xs
+			display: block
+			+hover
+				text-decoration: none

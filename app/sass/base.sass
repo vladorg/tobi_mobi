@@ -44,6 +44,11 @@ body
 	font-size: $fz
 	color: $text_color
 	overflow-x: hidden
+	&.column
+		min-height: 100vh
+		+flex(column,0,0,0)
+		.footer
+			margin-top: auto
 a 
 	color: $text_color
 	text-decoration: none
@@ -55,12 +60,13 @@ img
 	max-width: 100%
 
 h1
-	font-family: $ff_accent
-	+text(48,700,56,0)
+	+text(32,700,40,0)
 h2
 	+text(32,700,40,0)
 h3
 	+text(24,700,32,0)
+	+xs
+		font-size: 20px
 h4
 	+text(20,700,24,0)
 h5
@@ -71,9 +77,27 @@ h6
 button
 	font-family: $ff
 
-main
-	padding-bottom: 48px
+.main
+	width: 100%
+	&.mainPage
+		padding-bottom: 48px
+	&--left
+		width: calc(100% - 268px)
+		padding-left: 20px
+	&--right
+		width: calc(100% - 376px)
+		padding-right: 168px
+	&--short
+		width: calc(100% - 644px)
+		padding: 0 20px
 
+.sidebar
+	&.left
+		width: 268px
+	&.right
+		width: 376px
+		height: 100vh
+		background: red
 
 .container
 	width: $container
@@ -81,10 +105,79 @@ main
 	+break(1600)
 		width: 90%
 
+
+.inner
+	padding-top: 16px
+	h1
+		margin-bottom: 24px
+
+
+.content
+	min-height: 500px
+	+flex(0,0,space-between,flex-start)
+
+
+
+
+.dropdown
+	width: 240px
+	max-width: 100%
+	position: relative	
+	+text(14,500,24,0)
+	+before
+		position: absolute
+		top: 12px
+		right: 15px
+		transform: rotate(90deg)
+		+tran(all,.2s)
+	&:hover
+		cursor:  url('../img/icons/cursor_hand.svg'), auto
+	&__title
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		border: 1px solid $tc_025
+		border-radius: 4px
+		padding: 8px 30px 8px 16px
+	&__list
+		opacity: 0
+		max-height: 0px
+		overflow: hidden
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		border: 1px solid $tc_025
+		border-top: 0
+		border-radius: 0 0 4px 4px
+		padding: 8px 30px 8px 16px
+		+tran(all,.4s)
+		li
+			margin: 5px 0
+	&--open
+		+before
+			transform: rotate(-90deg)
+		.dropdown__title
+			border-radius: 4px 4px 0 0
+		.dropdown__list
+			opacity: 1
+			max-height: 999px
+
+
+
+
+
 .input
 	background: #FFFFFF
 	border-radius: 4px
 	border: 1px solid rgba(36, 36, 38, 0.25)
+	width: 40px
+	height: 40px
+	border: 1px solid $tc_025
+	box-sizing: border-box
+	border-radius: 4px
+	text-align: center
+	+text(14,500,0,$text_color)
 	&::-webkit-input-placeholder
 		+text(14,500,24,$tc_06)
 		color: $tc_06
@@ -256,22 +349,30 @@ main
 		+flex(0,0,space-between,center)
 	&__subtitle
 		+text(16,700,32,$text_color)
+		+xs
+			font-size: 15px
 
 
 .products
+	.preview
+		width: 20%
+		max-width: 240px
+		min-height: 536px
+		padding-top: 24px
+		position: relative
+		+flex(column,0,0,0)
+		+break(1750)
+			width: auto
+			max-width: unset
+		+xs
+			min-height: 436px
 	&--grid
+		display: grid
+		grid-template-columns: repeat(5, 1fr)
+		grid-gap: 32px
 		.preview
-			width: 20%
-			max-width: 240px
-			min-height: 536px
-			padding-top: 24px
-			position: relative
-			+flex(column,0,0,0)
-			+break(1750)
-				width: auto
-				max-width: unset
-			+xs
-				min-height: 404px
+			width: auto
+			margin-bottom: 56px
 
 
 
@@ -298,6 +399,8 @@ main
 			border-radius: 4px
 			z-index: -1
 			opacity: 1
+			+xs
+				display: none
 
 	&__sticker
 		//display: none
@@ -307,6 +410,9 @@ main
 		padding-top: 4px
 		min-width: 104px
 		min-height: 38px
+		padding: 4px 5px 0 5px
+		background-size: 100%
+		text-align: center
 		+flex(0,0,center,center)
 		+text(14,600,24,#fff)
 	&__thumb
@@ -316,10 +422,11 @@ main
 		+flex(0,0,center,center)
 		img
 			object-fit: contain
+			+xs
+				max-height: 160px
 		+xs
 			width: 100%
-			height: auto
-			max-height: 140px
+			max-height: 160px
 	&__name
 		display: block
 		margin-bottom: 20px
@@ -329,6 +436,7 @@ main
 		+text(18,400,24,0)
 		+xs
 			+text(14,0,20,0)
+			height: 60px
 	&__rating
 		margin-bottom: 20px
 		+flex(0,0,flex-start,center)
@@ -351,7 +459,7 @@ main
 		margin-bottom: 4px
 		+flex(0,0,flex-start,0)
 		+xs
-			display: none
+			//display: none
 	&__perc
 		display: inline-block
 		background: #D9214F
@@ -373,31 +481,51 @@ main
 	&__comp
 		transform: scale(0.7)
 		margin-left: auto
+		+before
+			filter: invert(0.5)
 		+xs
 			position: absolute
-			top: 0
-			right: 0
-			display: none
+			top: calc(160px - 57px)
+			right: -7px
+			width: 42px
+			height: 42px
+			background: rgba(255,255,255,.9)
+			padding: 0
+			display: flex
+			justify-content: center
+			align-items: center
+			+before
+				filter: invert(.3)
 	&__wish
 		transform: scale(0.7)
+		+before
+			filter: invert(0.5)
 		+xs
 			position: absolute
-			top: 0
-			right: 0
-			display: none
+			top: calc(160px - 21px)
+			right: -7px
+			width: 42px
+			height: 42px
+			background: rgba(255,255,255,.9)
+			padding: 0
+			display: flex
+			justify-content: center
+			align-items: center
+			+before
+				filter: invert(.3)
 	&--new
 		.preview__sticker
-			background: url('../img/icons/sticker_new.svg')
+			background-image: url('../img/icons/sticker_new.svg')
 	&--spec
 		.preview__sticker
-			background: url('../img/icons/sticker_spec.svg')
+			background-image: url('../img/icons/sticker_spec.svg')
 	&--soon
 		.preview__sticker
 			color: $text_color
-			background: url('../img/icons/sticker_soon.svg')
+			background-image: url('../img/icons/sticker_soon.svg')
 	&--top
 		.preview__sticker
-			background: url('../img/icons/sticker_top.svg')
+			background-image: url('../img/icons/sticker_top.svg')
 
 
 .progressCircle
@@ -435,3 +563,40 @@ main
     transform: rotate(0deg)  
   100% 
   	transform: rotate(180deg)
+
+
+
+.added
+	+after
+		width: 16px
+		height: 16px
+		background-image: url('../img/icons/added.svg')
+		background-size: contain
+		position: absolute
+		top: 0
+		right: 0
+
+
+.breadcrumbs
+	border-top: 1px solid $tc_025
+	padding-top: 16px
+	ul
+		+flex(0,0,flex-start,center)
+		li
+			margin-right: 16px
+			+flex(row-reverse,0,flex-start,center)
+			+before
+				opacity: .6
+			a
+				margin-right: 16px
+				+text(14,500,24,$tc_06)
+	&__from
+		+after
+			display: block
+			width: 16px
+			height: 14px
+			background-image: url('../img/icons/ic_home.svg')
+			background-size: contain
+			margin-right: 8px
+	&__to
+		pointer-events: none

@@ -30,7 +30,7 @@ window.onload = function () {
 		mob_menu.classList.remove('mobMenu--open');
 	});
 
-	for(let i=0;i<top_menu_items.length;i++) { // смена визуала рамки меню первого уровня по наведеню на подпункты
+	for(var i=0;i<top_menu_items.length;i++) { // смена визуала рамки меню первого уровня по наведеню на подпункты
 		top_menu_items[i].addEventListener('mouseenter', function(){
 			top_menu_list.classList.add('hovered');
 		});
@@ -101,7 +101,7 @@ window.onload = function () {
 		};
 	};
 
-	for(let i=0;i<open_modal_cart.length;i++) {
+	for(var i=0;i<open_modal_cart.length;i++) {
 		open_modal_cart[i].addEventListener('click', function(e){ // отрыть pop up корзины
 			e.preventDefault();
 			cart_items.classList.remove('headerCart__itemsWrap--open');
@@ -109,7 +109,7 @@ window.onload = function () {
 		});
 	}
 
-	for(let i=0;i<close_modal_cart.length;i++) {
+	for(var i=0;i<close_modal_cart.length;i++) {
 		close_modal_cart[i].addEventListener('click', function(e){ // закрыть pop up корзины
 			e.preventDefault();
 			modal_cart.classList.remove('modal--open', 'modalCart--open')
@@ -128,7 +128,7 @@ window.onload = function () {
 	var quantly; // тут будет количество
 	var quantly_step; // тут будет шаг
 
-	for(let i=0;i<minus.length;i++) {
+	for(var i=0;i<minus.length;i++) {
 		minus[i].addEventListener('click', function(e){
 			quantly = parseFloat(this.parentNode.querySelector('input').value);
 			quantly_step = parseFloat(this.parentNode.querySelector('input').getAttribute('data-step'));
@@ -138,7 +138,7 @@ window.onload = function () {
 		});
 	}
 
-	for(let i=0;i<plus.length;i++) {
+	for(var i=0;i<plus.length;i++) {
 		plus[i].addEventListener('click', function(e){
 			quantly = parseFloat(this.parentNode.querySelector('input').value);
 			quantly_step = parseFloat(this.parentNode.querySelector('input').getAttribute('data-step'));
@@ -166,7 +166,7 @@ window.onload = function () {
 	var open_child_child = document.querySelectorAll('.open_child_child');
 
 
-	for(let i=0;i<open_modal_login.length;i++) {
+	for(var i=0;i<open_modal_login.length;i++) {
 		open_modal_login[i].addEventListener('click', function(e){ // отрыть pop up корзины
 			e.preventDefault();
 			cart_items.classList.remove('headerCart__itemsWrap--open');
@@ -174,14 +174,14 @@ window.onload = function () {
 		});
 	}
 
-	for(let i=0;i<close_modal_login.length;i++) {
+	for(var i=0;i<close_modal_login.length;i++) {
 		close_modal_login[i].addEventListener('click', function(e){ // закрыть pop up корзины
 			e.preventDefault();
 			modal_login.classList.remove('modal--open')
 		});
 	}
 
-	for(let i=0;i<open_cat.length;i++) {
+	for(var i=0;i<open_cat.length;i++) {
 		open_cat[i].addEventListener('click', function(e){ // открыть каталог
 			e.preventDefault();
 			header_area.classList.remove('header--active');
@@ -190,26 +190,26 @@ window.onload = function () {
 		});
 	}
 
-	for(let i=0;i<close_cat.length;i++) {
+	for(var i=0;i<close_cat.length;i++) {
 		close_cat[i].addEventListener('click', function(e){ // закрыть каталог
 			e.preventDefault();
 			catalog.classList.remove('topCatalog--open')
 		});
 	}
 
-	for(let i=0;i<open_cat_child.length;i++) {
+	for(var i=0;i<open_cat_child.length;i++) {
 		open_cat_child[i].addEventListener('click', function(e){ // открыть меню 2 уровня
 			e.preventDefault();
-			let parent = this.parentNode.parentNode;
+			var parent = this.parentNode.parentNode;
 			this.classList.toggle('topCatalogMenu__arr--open');
 			parent.querySelector('.topCatalogChild').classList.toggle('topCatalogChild--open');
 		});
 	}
 
-	for(let i=0;i<open_child_child.length;i++) {
+	for(var i=0;i<open_child_child.length;i++) {
 		open_child_child[i].addEventListener('click', function(e){ // открыть меню 3 уровня
 			e.preventDefault();
-			let parent = this.parentNode;
+			var parent = this.parentNode;
 			this.classList.toggle('topCatalogMenu__arr--open');
 			parent.querySelector('.topCatalogChild__list').classList.toggle('topCatalogChild__list--open');
 		});
@@ -221,21 +221,26 @@ window.onload = function () {
 
 
 
-	function startMainSlider($ap = false, $as = 0, $ss = 0){
-		$('.mainSlider__inner').slick({
-			infinite: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			autoplay: $ap,
-			autoplaySpeed: $as,
-			speed: $ss,
-			dots: true,
-		});
-		$('.mainSlider__inner').attr('data-anim', $as + $ss);
-		$('.mainSlider .slick-dots li button').html( $('.progressCircle').clone() );
-	}
 
-	startMainSlider(true, 4000, 700);
+	$('.mainSlider__inner').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		speed: 700,
+		dots: true,
+		responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				dots: false,
+			}
+		}
+		]
+	});
+
+	$('.mainSlider .slick-dots li button').html( $('.progressCircle').clone() );
 
 	
 	
@@ -284,8 +289,62 @@ window.onload = function () {
 		infinite: true,
 		slidesToShow: 6,
 		slidesToScroll: 1,
-		autoplay: true	
+		autoplay: true,
+		responsive: [
+		{
+			breakpoint: 1750,
+			settings: {
+				slidesToShow: 5,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 1400,
+			settings: {
+				slidesToShow: 4,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 1100,
+			settings: {
+				slidesToShow: 3,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 2,
+				variableWidth: false,
+			}
+		}
+		]
 	});
+
+
+
+
+	var open_seo = document.querySelectorAll('.seo__readAll');
+	var open_dropdown = document.querySelectorAll('.dropdown__title');
+
+
+	for(var i=0;i<open_seo.length;i++) {
+		open_seo[i].addEventListener('click', function(e){ // развернуть блок сео текста
+			e.preventDefault();
+			var seo = this.parentNode.querySelector('.seo__inner');
+			seo.classList.toggle('seo__inner--closed');
+			seo.classList.toggle('seo__inner--opened');
+		});
+	}
+
+	for(var i=0;i<open_dropdown.length;i++) {
+		open_dropdown[i].addEventListener('click', function(e){ // развернуть блок сео текста
+			e.preventDefault();
+			var list = this.parentNode;
+			list.classList.toggle('dropdown--open');
+		});
+	}
 
 
 

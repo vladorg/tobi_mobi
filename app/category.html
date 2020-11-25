@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Main</title>
+	<title>Category</title>
 
 	<link href="libs/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="libs/slick/slick.css" rel="stylesheet">
@@ -20,7 +20,6 @@
 	
 </head>
 <body class="column">
-
 	<header class="header container">
 		<div class="header__tool">
 			<div class="header__langs">
@@ -359,459 +358,483 @@
 		</div>
 	</header>
 
+	<section class="top container">
 
+		<button class="topCatalogMobile open_catalog btn">Каталог товарів</button> <!-- кнопка для мобильных -->
 
+		<div class="topCatalog">
+			<div class="topCatalog__btn topCatalog__title cursor">
+				Каталог товарів
+				<button class="close_catalog topCatalog__close icon__close close btn"></button>
+				<nav class="topCatalogMenu">
+					<ul class="scroll scroll--catalog">
+						<li class="topCatalogMenu__hasChild">
+							<a href="/category.html">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_2.svg" alt="">
+								</div>							
+								<span class="topCatalogMenu__title">Автомобільні аксесуари</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+							<div class="topCatalogChild scroll scroll--catalog">
+								<div class="topCatalogChild__items">
 
-	<div class="mainTop">
-		<!-- главное меню и преимущества -->
-		<section class="top container">
+									<div class="topCatalogChild__item">
+										<a href="link2" class="topCatalogChild__name">Телефони, Смартфони</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+									</div>
 
-			<button class="topCatalogMobile open_catalog btn">Каталог товарів</button> <!-- кнопка для мобильных -->
-
-			<div class="topCatalog">
-				<div class="topCatalog__btn topCatalog__title cursor">
-					Каталог товарів
-					<button class="close_catalog topCatalog__close icon__close close btn"></button>
-					<nav class="topCatalogMenu">
-						<ul class="scroll scroll--catalog">
-							<li class="topCatalogMenu__hasChild">
-								<a href="/category.html">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_2.svg" alt="">
-									</div>							
-									<span class="topCatalogMenu__title">Автомобільні аксесуари</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-								<div class="topCatalogChild scroll scroll--catalog">
-									<div class="topCatalogChild__items">
-
-										<div class="topCatalogChild__item">
-											<a href="link2" class="topCatalogChild__name">Телефони, Смартфони</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="link3" class="topCatalogChild__name">Смартфони Apple</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="link4">iPhone 11</a>
+												</li>
+												<li>
+													<a href="#">iPhone 12</a>
+												</li>
+												<li>
+													<a href="#">iPhone X Pro Max</a>
+												</li>
+												<li>
+													<a href="#">iPhone 8</a>
+												</li>
+												<li>
+													<a href="#">iPhone 6s</a>
+												</li>
+												<li>
+													<a href="#">iPhone SE</a>
+												</li>
+											</ul>
 										</div>
+									</div>
 
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="link3" class="topCatalogChild__name">Смартфони Apple</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="link4">iPhone 11</a>
-													</li>
-													<li>
-														<a href="#">iPhone 12</a>
-													</li>
-													<li>
-														<a href="#">iPhone X Pro Max</a>
-													</li>
-													<li>
-														<a href="#">iPhone 8</a>
-													</li>
-													<li>
-														<a href="#">iPhone 6s</a>
-													</li>
-													<li>
-														<a href="#">iPhone SE</a>
-													</li>
-												</ul>
-											</div>
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Samsung A50</a>
+												</li>
+												<li>
+													<a href="#">Samsung A70</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+											</ul>
 										</div>
+									</div>
 
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Samsung A50</a>
-													</li>
-													<li>
-														<a href="#">Samsung A70</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-												</ul>
-											</div>
+									<div class="topCatalogChild__item">
+										<a href="#" class="topCatalogChild__name">Мобильные телефоны</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+									</div>
+								</div>
+
+							</div>
+						</li>
+						<li class="topCatalogMenu__hasChild">
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_3.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Зарядні пристрої</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+							<div class="topCatalogChild scroll scroll--catalog">
+								<div class="topCatalogChild__items">
+
+									<div class="topCatalogChild__item">
+										<a href="#" class="topCatalogChild__name">Телефони, Смартфони</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+									</div>
+
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Apple</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">iPhone 11</a>
+												</li>
+												<li>
+													<a href="#">iPhone 12</a>
+												</li>
+												<li>
+													<a href="#">iPhone X Pro Max</a>
+												</li>
+												<li>
+													<a href="#">iPhone 8</a>
+												</li>
+												<li>
+													<a href="#">iPhone 6s</a>
+												</li>
+												<li>
+													<a href="#">iPhone SE</a>
+												</li>
+											</ul>
 										</div>
+									</div>
 
-										<div class="topCatalogChild__item">
-											<a href="#" class="topCatalogChild__name">Мобильные телефоны</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Samsung A50</a>
+												</li>
+												<li>
+													<a href="#">Samsung A70</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Samsung A50</a>
+												</li>
+												<li>
+													<a href="#">Samsung A70</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Samsung A50</a>
+												</li>
+												<li>
+													<a href="#">Samsung A70</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+												<li>
+													<a href="#">Samsung S20</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Vivo</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Vivo 54</a>
+												</li>
+												<li>
+													<a href="#">Vivo s5</a>
+												</li>
+												<li>
+													<a href="#">Vivo 74</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="topCatalogChild__item">
+										<a href="#" class="topCatalogChild__name">Смартфони Realme</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+									</div>
+
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Xiaomi</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="topCatalogChild__item topCatalogChild__item--hasChild">
+										<a href="#" class="topCatalogChild__name">Смартфони Xiaomi</a>
+										<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
+										<div class="topCatalogChild__list">
+											<ul>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+												<li>
+													<a href="#">Xiaomi Redmi 8</a>
+												</li>
+											</ul>
 										</div>
 									</div>
 
 								</div>
-							</li>
-							<li class="topCatalogMenu__hasChild">
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_3.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Зарядні пристрої</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-								<div class="topCatalogChild scroll scroll--catalog">
-									<div class="topCatalogChild__items">
-
-										<div class="topCatalogChild__item">
-											<a href="#" class="topCatalogChild__name">Телефони, Смартфони</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Apple</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">iPhone 11</a>
-													</li>
-													<li>
-														<a href="#">iPhone 12</a>
-													</li>
-													<li>
-														<a href="#">iPhone X Pro Max</a>
-													</li>
-													<li>
-														<a href="#">iPhone 8</a>
-													</li>
-													<li>
-														<a href="#">iPhone 6s</a>
-													</li>
-													<li>
-														<a href="#">iPhone SE</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Samsung A50</a>
-													</li>
-													<li>
-														<a href="#">Samsung A70</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Samsung A50</a>
-													</li>
-													<li>
-														<a href="#">Samsung A70</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Samsung</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Samsung A50</a>
-													</li>
-													<li>
-														<a href="#">Samsung A70</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-													<li>
-														<a href="#">Samsung S20</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Vivo</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Vivo 54</a>
-													</li>
-													<li>
-														<a href="#">Vivo s5</a>
-													</li>
-													<li>
-														<a href="#">Vivo 74</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="topCatalogChild__item">
-											<a href="#" class="topCatalogChild__name">Смартфони Realme</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Xiaomi</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="topCatalogChild__item topCatalogChild__item--hasChild">
-											<a href="#" class="topCatalogChild__name">Смартфони Xiaomi</a>
-											<button class="topCatalogMenu__arr open_child_child icon__right btn"></button>
-											<div class="topCatalogChild__list">
-												<ul>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-													<li>
-														<a href="#">Xiaomi Redmi 8</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-									</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_4.svg" alt="">
 								</div>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_4.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Навушники та гарнітури</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_5.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Портативні колонки</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_6.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Карти пам'яті</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_7.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Моноподи</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_8-1.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Телефони, Смартфони</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_8.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Планшети</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="topCatalogMenu__ic">
-										<img src="img/icons/catalog/ic_9.svg" alt="">
-									</div>
-									<span class="topCatalogMenu__title">Гаджети</span>
-									<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>	
-
-
-
-
-			<!-- преимущества -->
-			<div class="topFeatures">
-				<div class="topFeatures__item">
-					<div class="topFeatures__thumb">
-						<img src="img/icons/features/ic_1.svg" alt="">
-					</div>
-					<div class="topFeatures__title topFeatures__title--short">Швидка доставка</div>
-				</div>
-				<div class="topFeatures__item">
-					<div class="topFeatures__thumb">
-						<img src="img/icons/features/ic_2.svg" alt="">
-					</div>
-					<div class="topFeatures__title topFeatures__title--short">Кешбек</div>
-				</div>
-				<div class="topFeatures__item">
-					<div class="topFeatures__thumb">
-						<img src="img/icons/features/ic_3.svg" alt="">
-					</div>
-					<div class="topFeatures__title topFeatures__title--short">Дисконтна програма</div>
-				</div>
-				<div class="topFeatures__item">
-					<div class="topFeatures__thumb">
-						<img src="img/icons/features/ic_4.svg" alt="">
-					</div>
-					<div class="topFeatures__title topFeatures__title--short">Неймовірні знижки</div>
-				</div>
-				<div class="topFeatures__item">
-					<div class="topFeatures__thumb">
-						<img src="img/icons/features/ic_5.svg" alt="">
-					</div>
-					<div class="topFeatures__title topFeatures__title--short">Кредити 0% онлайн</div>
-				</div>
+								<span class="topCatalogMenu__title">Навушники та гарнітури</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_5.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Портативні колонки</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_6.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Карти пам'яті</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_7.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Моноподи</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_8-1.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Телефони, Смартфони</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_8.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Планшети</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="topCatalogMenu__ic">
+									<img src="img/icons/catalog/ic_9.svg" alt="">
+								</div>
+								<span class="topCatalogMenu__title">Гаджети</span>
+								<button class="topCatalogMenu__arr open_catalog_child icon__right btn"></button>
+							</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-		</section>
+		</div>	
 
 
 
-		<!-- слайдер на главной -->
-		<section class="mainSlider container">
-			<div class="mainSlider__inner">
-				<div class="mainSlider__item">
-					<a href="#">
-						<img src="img/slider/image8.jpg" alt="">
-					</a>
+
+		<!-- преимущества -->
+		<div class="topFeatures">
+			<div class="topFeatures__item">
+				<div class="topFeatures__thumb">
+					<img src="img/icons/features/ic_1.svg" alt="">
 				</div>
-				<div class="mainSlider__item">
-					<a href="#">
-						<img src="img/slider/image7.jpg" alt="">
-					</a>
-				</div>
-				<div class="mainSlider__item">
-					<a href="#">
-						<img src="img/slider/Image.jpg" alt="">
-					</a>
-				</div>
+				<div class="topFeatures__title topFeatures__title--short">Швидка доставка</div>
 			</div>
+			<div class="topFeatures__item">
+				<div class="topFeatures__thumb">
+					<img src="img/icons/features/ic_2.svg" alt="">
+				</div>
+				<div class="topFeatures__title topFeatures__title--short">Кешбек</div>
+			</div>
+			<div class="topFeatures__item">
+				<div class="topFeatures__thumb">
+					<img src="img/icons/features/ic_3.svg" alt="">
+				</div>
+				<div class="topFeatures__title topFeatures__title--short">Дисконтна програма</div>
+			</div>
+			<div class="topFeatures__item">
+				<div class="topFeatures__thumb">
+					<img src="img/icons/features/ic_4.svg" alt="">
+				</div>
+				<div class="topFeatures__title topFeatures__title--short">Неймовірні знижки</div>
+			</div>
+			<div class="topFeatures__item">
+				<div class="topFeatures__thumb">
+					<img src="img/icons/features/ic_5.svg" alt="">
+				</div>
+				<div class="topFeatures__title topFeatures__title--short">Кредити 0% онлайн</div>
+			</div>
+		</div>
+	</section>
 
-			<div class="progressCircle">
-				<div class="progressCircle__inner">
-					<div class="progressCircle__mask full">
-						<div class="fill"></div>
+
+	<section class="breadcrumbs container">
+		<ul>
+			<li class="breadcrumbs__from icon__right">
+				<a href="#">Головна</a>
+			</li>
+			<li class="breadcrumbs__to">
+				<a href="#">Телефони, Смартфони</a>
+			</li>
+		</ul>
+	</section>
+
+
+
+	<div class="category inner container">
+
+		<h1>Смартфони</h1>
+
+		<div class="content">
+
+			<!-- if left -->
+			<aside class="sidebar left">
+				<div class="filter"></div>
+			</aside>
+
+			<!-- --left - если левый сайдбар
+				--right - если правый сайдбар
+				--short - если оба -->
+			<main class="main main--left">
+				<div class="category__tools">
+					<div class="category__sort">
+						<div class="dropdown icon__right category__sortType">
+							<div class="dropdown__title">За популярністю</div>
+							<ul class="dropdown__list">
+								<li>
+									<a href="">За популярністю</a>
+								</li>
+								<li>
+									<a href="">За популярністю</a>
+								</li>
+								<li>
+									<a href="">За популярністю</a>
+								</li>
+								<li>
+									<a href="">За популярністю</a>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="dropdown icon__right category__sortQua">
+							<div class="dropdown__title">По 10 товарів</div>
+							<ul class="dropdown__list">
+								<li>
+									<a href="">По 10 товарів</a>
+								</li>
+								<li>
+									<a href="">По 10 товарів</a>
+								</li>
+								<li>
+									<a href="">По 10 товарів</a>
+								</li>
+								<li>
+									<a href="">По 10 товарів</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="progressCircle__mask half">
-						<div class="fill"></div>
+					<div class="category__view">
+						<button class="btn icon__burger en_list"></button>
+						<button class="btn icon__grid en_grid"></button>
 					</div>
-					<div class="progressCircle__inside"></div>
+					<div class="category__pag">
+						<a href="" class="category__pagPrev btn icon__right"></a>
+						<input class="input" type="text" data-step="1" name="page" value="1">
+						<span class="category__pages">з 24</span>
+						<a href="" class="category__pagNext btn icon__right"></a>
+					</div>
 				</div>
-			</div>
-		</section>
-	</div>
-
-
-	<main class="main mainPage">
-		
-		<!-- рекомендуемые товары слайдер -->
-		<section class="related">
-			<div class="related__title container title">
-				<h3 class="title__title">Рекомендовані товари</h3>
-				<div class="title__arrows">
-					<button class="related__left icon__right slick-prev"></button>
-					<a href="" class="related__items title__subtitle">27 товарів</a>
-					<button class="related__right icon__right slick-next"></button>
-				</div>
-			</div>
-			<div class="related__prods container products products--grid">
+				<div class="products products--grid">
 
 				<div class="preview__item preview preview--new">
 					<div class="preview__sticker">Новинка</div>
@@ -1023,332 +1046,415 @@
 					</div>
 				</div>
 
-
-
-			</div>
-		</section>
-
-
-
-
-		<!-- превью акций -->
-		<section class="specials">
-			<div class="specials__title container title">
-				<h3 class="title__title">Вибрані акції</h3>
-				<a href="" class="title__subtitle">15 акцій</a>
-			</div>
-			<div class="specials__list container">
-				<div class="specials__item specials__item--big">
-					<a href="">
-						<img src="img/banners/image40.png" alt="">
+				<div class="preview__item preview preview--new">
+					<div class="preview__sticker">Новинка</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-5.png" alt="">
 					</a>
+					<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
+						</div>
+						<div class="preview__ratingTotal">(12)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">36 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
 				</div>
-				<div class="specials__item specials__item--small">
-					<a href="">
-						<img src="img/banners/image41.png" alt="">
+
+				<div class="preview__item preview preview--spec">
+					<div class="preview__sticker">Акція</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-4.png" alt="">
 					</a>
+					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star-p"></i>
+							<i class="preview__starEmpty icon__star-e"></i>
+						</div>
+						<div class="preview__ratingTotal">(153)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">4 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
 				</div>
-				<div class="specials__item specials__item--small">
-					<a href="">
-						<img src="img/banners/image21.jpg" alt="">
+
+				<div class="preview__item preview preview--hover preview--new">
+					<div class="preview__sticker">Новинка</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-3.png" alt="">
 					</a>
+					<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
+						</div>
+						<div class="preview__ratingTotal">(3)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-15%</div>
+							<div class="preview__spec">58 499</div>
+						</div>
+						<div class="preview__total">49 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor added"></button>
+						<button class="preview__wish icon__heart btn cursor added"></button> 
+					</div>
 				</div>
-				<div class="specials__item specials__item--medium">
-					<a href="">
-						<img src="img/banners/image42.png" alt="">
+
+				<div class="preview__item preview preview--soon">
+					<div class="preview__sticker">Скоро</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-2.png" alt="">
 					</a>
+					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star-e"></i>
+							<i class="preview__starFull icon__star-e"></i>
+							<i class="preview__starFull icon__star-e"></i>
+							<i class="preview__starPiece icon__star-e"></i>
+							<i class="preview__starEmpty icon__star-e"></i>
+						</div>
+						<div class="preview__ratingTotal">(0)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">15 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+						<button class="preview__comp icon__compare btn cursor added"></button>
+						<button class="preview__wish icon__heart btn cursor added"></button> 
+					</div>
 				</div>
-			</div>
-			<div class="specials__all container title">
-				<a href="" class="title__subtitle">Всі акції</a>
-			</div>
-		</section>
 
-
-
-
-		<!-- популярные категории -->
-		<section class="populars container">
-			<div class="populars__title title">
-				<h3 class="title__title">Популярні категорії</h3>
-			</div>
-
-			<div class="populars__item">
-				<a href="#" class="populars__img">
-					<img src="img/populars/image1.png" alt="">
-				</a>
-
-				<div class="populars__prods products">					
-					<div class="preview preview--new">
-						<div class="preview__sticker">Новинка</div>
-						<a href="#" class="preview__thumb">
-							<img src="img/products/Image-5.png" alt="">
-						</a>
-						<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
-						<div class="preview__rating">
-							<div class="preview__stars">
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starPiece icon__star"></i>
-								<i class="preview__starEmpty icon__star-p"></i>
-							</div>
-							<div class="preview__ratingTotal">(12)</div>
+				<div class="preview__item preview preview--top">
+					<div class="preview__sticker">Топ продаж</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image2-1.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
 						</div>
-						<div class="preview__price">
-							<div class="preview__total">36 999 грн</div>
-						</div>
-						<div class="preview__tools"> 
-							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-							<button class="preview__comp icon__compare btn cursor added"></button>
-							<button class="preview__wish icon__heart btn cursor added"></button> 
-						</div>
+						<div class="preview__ratingTotal">(45)</div>
 					</div>
-
-					<div class="preview preview--spec">
-						<div class="preview__sticker">Акція</div>
-						<a href="#" class="preview__thumb">
-							<img src="img/products/Image-4.png" alt="">
-						</a>
-						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-						<div class="preview__rating">
-							<div class="preview__stars">
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starPiece icon__star-p"></i>
-								<i class="preview__starEmpty icon__star-e"></i>
-							</div>
-							<div class="preview__ratingTotal">(153)</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-13%</div>
+							<div class="preview__spec">3 820</div>
 						</div>
-						<div class="preview__price">
-							<div class="preview__dis"> <!-- если скидка -->
-								<div class="preview__perc">-11%</div>
-								<div class="preview__spec">5 599</div>
-							</div>
-							<div class="preview__total">4 999 грн</div>
-						</div>
-						<div class="preview__tools"> 
-							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-							<button class="preview__comp icon__compare btn cursor"></button>
-							<button class="preview__wish icon__heart btn cursor"></button> 
-						</div>
+						<div class="preview__total">3 330 грн</div>
 					</div>
-
-					<div class="preview preview--hover preview--soon">
-						<div class="preview__sticker">Скоро</div>
-						<a href="#" class="preview__thumb">
-							<img src="img/products/Image-3.png" alt="">
-						</a>
-						<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
-						<div class="preview__rating">
-							<div class="preview__stars">
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starPiece icon__star"></i>
-								<i class="preview__starEmpty icon__star-p"></i>
-							</div>
-							<div class="preview__ratingTotal">(3)</div>
-						</div>
-						<div class="preview__price">
-							<div class="preview__dis"> <!-- если скидка -->
-								<div class="preview__perc">-15%</div>
-								<div class="preview__spec">58 499</div>
-							</div>
-							<div class="preview__total">49 999 грн</div>
-						</div>
-						<div class="preview__tools"> 
-							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-							<button class="preview__comp icon__compare btn cursor"></button>
-							<button class="preview__wish icon__heart btn cursor"></button> 
-						</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
 					</div>
-
 				</div>
-			</div>
 
-			<div class="populars__item populars__item--reverse">
-				<a href="#" class="populars__img">
-					<img src="img/populars/image2.jpg" alt="" class="populars__img">
-				</a>
-				
-				<div class="populars__prods products">
-					
-					<div class="preview">
-						<a href="#" class="preview__thumb">
-							<img src="img/products/Image-1.png" alt="">
-						</a>
-						<a href="#" class="preview__name">Навушники Edifier W800BT Red</a>
-						<div class="preview__rating">
-							<div class="preview__stars">
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starPiece icon__star"></i>
-								<i class="preview__starEmpty icon__star-p"></i>
-							</div>
-							<div class="preview__ratingTotal">(12)</div>
+				<div class="preview__item preview preview--soon">
+					<div class="preview__sticker">Скоро</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image2.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
 						</div>
-						<div class="preview__price">
-							<div class="preview__dis"> <!-- если скидка -->
-								<div class="preview__perc">-8%</div>
-								<div class="preview__spec">1 195</div>
-							</div>
-							<div class="preview__total">1 095 грн</div>
-						</div>
-						<div class="preview__tools"> 
-							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-							<button class="preview__comp icon__compare btn cursor"></button>
-							<button class="preview__wish icon__heart btn cursor"></button> 
-						</div>
+						<div class="preview__ratingTotal">(42)</div>
 					</div>
-
-					<div class="preview preview--spec">
-						<div class="preview__sticker">Акція</div>
-						<a href="#" class="preview__thumb">
-							<img src="img/products/Image-4.png" alt="">
-						</a>
-						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-						<div class="preview__rating">
-							<div class="preview__stars">
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starPiece icon__star-p"></i>
-								<i class="preview__starEmpty icon__star-e"></i>
-							</div>
-							<div class="preview__ratingTotal">(153)</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
 						</div>
-						<div class="preview__price">
-							<div class="preview__dis"> <!-- если скидка -->
-								<div class="preview__perc">-11%</div>
-								<div class="preview__spec">5 599</div>
-							</div>
-							<div class="preview__total">4 999 грн</div>
-						</div>
-						<div class="preview__tools"> 
-							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-							<button class="preview__comp icon__compare btn cursor"></button>
-							<button class="preview__wish icon__heart btn cursor"></button> 
-						</div>
+						<div class="preview__total">1 110 грн</div>
 					</div>
-
-					<div class="preview preview--hover">
-						<a href="#" class="preview__thumb">
-							<img src="img/products/Image.png" alt="">
-						</a>
-						<a href="#" class="preview__name">Наушники Xiaomi Mi Piston Fresh Bloom Matte Black (HSEJ03JY)</a>
-						<div class="preview__rating">
-							<div class="preview__stars">
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starFull icon__star"></i>
-								<i class="preview__starPiece icon__star"></i>
-								<i class="preview__starEmpty icon__star-p"></i>
-							</div>
-							<div class="preview__ratingTotal">(3)</div>
-						</div>
-						<div class="preview__price">
-							<div class="preview__dis"> <!-- если скидка -->
-								<div class="preview__perc">-5%</div>
-								<div class="preview__spec">199</div>
-							</div>
-							<div class="preview__total">189 грн</div>
-						</div>
-						<div class="preview__tools"> 
-							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-							<button class="preview__comp icon__compare btn cursor"></button>
-							<button class="preview__wish icon__heart btn cursor"></button> 
-						</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
 					</div>
-
 				</div>
+
+				<div class="preview__item preview preview--new">
+					<div class="preview__sticker">Новинка</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image2.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star-p"></i>
+							<i class="preview__starEmpty icon__star-e"></i>
+						</div>
+						<div class="preview__ratingTotal">(42)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">1 110 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
+				</div>
+
+				<div class="preview__item preview preview--new">
+					<div class="preview__sticker">Новинка</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-5.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
+						</div>
+						<div class="preview__ratingTotal">(12)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">36 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
+				</div>
+
+				<div class="preview__item preview preview--spec">
+					<div class="preview__sticker">Акція</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-4.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star-p"></i>
+							<i class="preview__starEmpty icon__star-e"></i>
+						</div>
+						<div class="preview__ratingTotal">(153)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">4 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
+				</div>
+
+				<div class="preview__item preview preview--hover preview--new">
+					<div class="preview__sticker">Новинка</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-3.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
+						</div>
+						<div class="preview__ratingTotal">(3)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-15%</div>
+							<div class="preview__spec">58 499</div>
+						</div>
+						<div class="preview__total">49 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor added"></button>
+						<button class="preview__wish icon__heart btn cursor added"></button> 
+					</div>
+				</div>
+
+				<div class="preview__item preview preview--soon">
+					<div class="preview__sticker">Скоро</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image-2.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star-e"></i>
+							<i class="preview__starFull icon__star-e"></i>
+							<i class="preview__starFull icon__star-e"></i>
+							<i class="preview__starPiece icon__star-e"></i>
+							<i class="preview__starEmpty icon__star-e"></i>
+						</div>
+						<div class="preview__ratingTotal">(0)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">15 999 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+						<button class="preview__comp icon__compare btn cursor added"></button>
+						<button class="preview__wish icon__heart btn cursor added"></button> 
+					</div>
+				</div>
+
+				<div class="preview__item preview preview--top">
+					<div class="preview__sticker">Топ продаж</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image2-1.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
+						</div>
+						<div class="preview__ratingTotal">(45)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-13%</div>
+							<div class="preview__spec">3 820</div>
+						</div>
+						<div class="preview__total">3 330 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
+				</div>
+
+				<div class="preview__item preview preview--soon">
+					<div class="preview__sticker">Скоро</div>
+					<a href="#" class="preview__thumb">
+						<img src="img/products/Image2.png" alt="">
+					</a>
+					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+					<div class="preview__rating">
+						<div class="preview__stars">
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starFull icon__star"></i>
+							<i class="preview__starPiece icon__star"></i>
+							<i class="preview__starEmpty icon__star-p"></i>
+						</div>
+						<div class="preview__ratingTotal">(42)</div>
+					</div>
+					<div class="preview__price">
+						<div class="preview__dis"> <!-- если скидка -->
+							<div class="preview__perc">-11%</div>
+							<div class="preview__spec">5 599</div>
+						</div>
+						<div class="preview__total">1 110 грн</div>
+					</div>
+					<div class="preview__tools"> 
+						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+						<button class="preview__comp icon__compare btn cursor"></button>
+						<button class="preview__wish icon__heart btn cursor"></button> 
+					</div>
+				</div>
+
+
+
 			</div>
+			</main>
 
-		</section>
+			<!-- if right -->
+			<!-- <aside class="sidebar right"></aside> -->
 
+		</div>
+		
 
-
-
-		<!-- бренды карусель -->
-		<section class="brands container">
-			<div class="brands__title title">
-				<h3 class="title__title">Топ бренди</h3>
-				<a href="" class="title__subtitle">Всі бренди</a>
-			</div>
-			<div class="brands__items">
-				<a href="#" class="brands__brand">
-					<img src="img/brands/LG.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Apple.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Xiaomi.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Samsung.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Huawei.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Belkin.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/LG.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Apple.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Xiaomi.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Samsung.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Huawei.png" alt="">
-				</a>
-				<a href="#" class="brands__brand">
-					<img src="img/brands/Belkin.png" alt="">
-				</a>
-			</div>
-			<div class="brands__all title">
-				<a href="" class="title__subtitle">Всі бренди</a>
-			</div>
-		</section>
+	</div>
 
 
 
-
-		<!-- seo текст -->
-		<section class="seo">
-			<div class="seo__inner seo__inner--closed container">
-				<p>Підшукуєте доступний інтернет магазин мобільних телефонів в Києві? Вас цікавлять тільки найновіші і стильні гаджети? В такому випадку дозвольте вам відрекомендувати наш магазин – Сота, де кожен знайде телефон до душі, зможе вибрати планшет або ноутбук, підшукає електронну книгу, вибере ігрову приставку на подарунок.</p>
-
-				<p>Чому саме наш інтернет магазин техніки?</p>
-
-				<p>Коли ви набираєте запит в стилі – інтернет магазин Київ, і при цьому додаєте «телефон» або «планшет», пошукова система автоматично видає найбільш популярні ресурси. Ми поки що не претендуємо на лаври монополістів, проте нам є чим залучити свого покупця:</p>
-
-				<p>Підбір асортименту з урахуванням актуальних трендів. Зверніть увагу, що продукція відомої американської компанії Apple міститься в окремому пункті меню, щоб ви могли максимально швидко знайти гучний Айфон. <br> Реальні акції.</p>
-
-				<p>Ми не використовуємо старий комерційний трюк, коли спочатку завищену вартість щедро знижують, і називають це знижкою. Ми пропонуємо чесні ціни + подарунки для окремих категорій товарів.</p>
-
-				<p>Наші фахівці готові підлаштовуватися під покупців, забезпечуючи максимально комфортні умови співпраці в таких напрямках, як доставка і оплата товару.
-					Вибираючи наш інтернет магазин планшетів, мобільних телефонів, ноутбуків та інших популярних гаджетів, ви отримуєте наступні гарантії: Допомога при виборі товару, що відповідає вимогам і бюджету. <br> Наші фахівці готові дати професійну пораду будь-яким зручним способом: електронна пошта, телефонна консультація.
-				</p>
-
-				<p>Тільки оригінальні товари відповідної якості.<br>
-					Можливість повернути товар. Форма повернення передбачає вичерпний список причин.<br>
-					Отже, щоб зробити покупку на Сота.укр, вам необхідно тільки одне – бажання!<br>
-				З рештою ми допоможемо.</p>
-			</div>
-			<a href="" class="seo__readAll container">Читати повністю</a>		
-		</section>
-
+	<main class="main">
+		
 	</main>
+
 
 
 	<footer class="footer">
@@ -1463,26 +1569,6 @@
 
 		</div>
 	</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -165,3 +165,10 @@
   width: 16px;
   height: 16px;
   background: url(../img/icons/star.svg) no-repeat; }
+
+.icon__grid::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/icons/ic_grid.svg) no-repeat; }

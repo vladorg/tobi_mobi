@@ -1,0 +1,40 @@
+@import "../var.sass"
+
+
+.category
+	&__tools
+		+flex(0,0,flex-start,center)
+	&__sort
+		+flex(0,0,flex-start,center)
+		&Type
+			margin-right: 32px
+	&__view
+		margin-left: 32px
+		+flex(0,0,0,center)
+		button
+			width: 40px
+			height: 40px
+			+flex(0,0,center,center)
+			+before
+				background-size: contain
+	&__pag
+		margin-left: auto
+		+flex(0,0,flex-start,center)
+		&Prev
+			margin-right: 24px
+			transform: rotate(180deg)
+		&Next
+			margin-left: 24px
+	&__pages
+		margin-left: 16px
+		font-size: 14px
+		
+
+.filter
+	background: #fff7e0
+	min-height: 1368px
+
+
+.category
+	.products
+		padding-top: 40px
