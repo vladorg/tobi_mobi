@@ -786,6 +786,7 @@
 				--short - если оба -->
 			<main class="main main--left">
 				<div class="category__tools">
+					<button class="btn btn--buy btn--filter icon__filter">Фільтри</button>
 					<div class="category__sort">
 						<div class="dropdown icon__right category__sortType">
 							<div class="dropdown__title">За популярністю</div>
@@ -834,10 +835,17 @@
 						<a href="" class="category__pagNext btn icon__right"></a>
 					</div>
 				</div>
+
+				<!-- стикеры
+					--new новинка
+					--spec акция
+					--soon скоро
+					--top топ продаж -->
 				<div class="products products--grid">
 
-				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
+				<div class="preview__wrap"><!--  превью товара -->
+					<div class="preview__item preview">
+					<div class="preview__sticker preview__sticker--new">Новинка</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image-5.png" alt="">
 					</a>
@@ -852,6 +860,7 @@
 						</div>
 						<div class="preview__ratingTotal">(12)</div>
 					</div>
+					<span class="preview__stick"></span>
 					<div class="preview__price">
 						<div class="preview__dis"> <!-- если скидка -->
 							<div class="preview__perc">-11%</div>
@@ -861,580 +870,803 @@
 					</div>
 					<div class="preview__tools"> 
 						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+						<!-- <button class="preview__btn icon__inCart btn btn--inCart btn--buy cursor"><span>У кошику</span></button> -->
 						<button class="preview__comp icon__compare btn cursor"></button>
 						<button class="preview__wish icon__heart btn cursor"></button> 
 					</div>
+					<!-- if chars -->
+					<ul class="preview__chars">
+						<li class="preview__row">
+							<span class="preview__key">Дисплей:</span>
+							<span class="preview__val">6.1", 2532 x 1170px, OLED</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Процесор:</span>
+							<span class="preview__val">Apple A14 Bionic</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Версія ОС:</span>
+							<span class="preview__val">iOS 14</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Оперативна пам'ять:</span>
+							<span class="preview__val">6 GB</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Вбудована пам'ять:</span>
+							<span class="preview__val">128 GB</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Основна камера:</span>
+							<span class="preview__val">3 x 12 Mpx</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Фронтальна камера:</span>
+							<span class="preview__val">12 Mpx</span>
+						</li>
+						<li class="preview__row">
+							<span class="preview__key">Зв'язок:</span>
+							<span class="preview__val">5G, Wi-Fi, NFC, Bluetooth</span>
+						</li>						
+					</ul>
 				</div>
-
-				<div class="preview__item preview preview--spec">
-					<div class="preview__sticker">Акція</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-4.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star-p"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
-						</div>
-						<div class="preview__ratingTotal">(153)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">4 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
 				</div>
+				
 
-				<div class="preview__item preview preview--hover preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-3.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--spec">Акція</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-4.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star-p"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(153)</div>
 						</div>
-						<div class="preview__ratingTotal">(3)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-15%</div>
-							<div class="preview__spec">58 499</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">4 999 грн</div>
 						</div>
-						<div class="preview__total">49 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor added"></button>
-						<button class="preview__wish icon__heart btn cursor added"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starPiece icon__star-e"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button>
 						</div>
-						<div class="preview__ratingTotal">(0)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">15 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-						<button class="preview__comp icon__compare btn cursor added"></button>
-						<button class="preview__wish icon__heart btn cursor added"></button> 
+						<!-- if chars -->
+						<ul class="preview__chars">
+							<li class="preview__row">
+								<span class="preview__key">Дисплей:</span>
+								<span class="preview__val">6.1", 2532 x 1170px, OLED</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Процесор:</span>
+								<span class="preview__val">Apple A14 Bionic</span>
+							</li>					
+						</ul>
 					</div>
 				</div>
+				
 
-				<div class="preview__item preview preview--top">
-					<div class="preview__sticker">Топ продаж</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2-1.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-3.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(3)</div>
 						</div>
-						<div class="preview__ratingTotal">(45)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-13%</div>
-							<div class="preview__spec">3 820</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-15%</div>
+								<div class="preview__spec">58 499</div>
+							</div>
+							<div class="preview__total">49 999 грн</div>
 						</div>
-						<div class="preview__total">3 330 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
+						<div class="preview__tools"> 
+							<!-- <button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button> -->
+							<button class="preview__btn icon__inCart btn btn--inCart btn--buy cursor"><span>У кошику</span></button>
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
 						</div>
-						<div class="preview__ratingTotal">(42)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">1 110 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
+						<!-- if chars -->
+						<ul class="preview__chars">
+							<li class="preview__row">
+								<span class="preview__key">Дисплей:</span>
+								<span class="preview__val">6.1", 2532 x 1170px, OLED</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Процесор:</span>
+								<span class="preview__val">Apple A14 Bionic</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Версія ОС:</span>
+								<span class="preview__val">iOS 14</span>
+							</li>					
+						</ul>
 					</div>
 				</div>
 
-				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star-p"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starPiece icon__star-e"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(0)</div>
+						</div>		
+						<span class="preview__stick"></span>			
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">15 999 грн</div>
 						</div>
-						<div class="preview__ratingTotal">(42)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
 						</div>
-						<div class="preview__total">1 110 грн</div>
+						<!-- if chars -->
+						<ul class="preview__chars">
+							<li class="preview__row">
+								<span class="preview__key">Дисплей:</span>
+								<span class="preview__val">6.1", 2532 x 1170px, OLED</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Процесор:</span>
+								<span class="preview__val">Apple A14 Bionic</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Версія ОС:</span>
+								<span class="preview__val">iOS 14</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Оперативна пам'ять:</span>
+								<span class="preview__val">6 GB</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Вбудована пам'ять:</span>
+								<span class="preview__val">128 GB</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Основна камера:</span>
+								<span class="preview__val">3 x 12 Mpx</span>
+							</li>						
+						</ul>
 					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--top">Топ продаж</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2-1.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(45)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-13%</div>
+								<div class="preview__spec">3 820</div>
+							</div>
+							<div class="preview__total">3 330 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+						<!-- if chars -->
+						<ul class="preview__chars">
+							<li class="preview__row">
+								<span class="preview__key">Дисплей:</span>
+								<span class="preview__val">6.1", 2532 x 1170px, OLED</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Процесор:</span>
+								<span class="preview__val">Apple A14 Bionic</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Версія ОС:</span>
+								<span class="preview__val">iOS 14</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Оперативна пам'ять:</span>
+								<span class="preview__val">6 GB</span>
+							</li>
+							<li class="preview__row">
+								<span class="preview__key">Вбудована пам'ять:</span>
+								<span class="preview__val">128 GB</span>
+							</li>													
+						</ul>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(42)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">1 110 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star-p"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(42)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">1 110 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-5.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(12)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">36 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--spec">Акція</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-4.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star-p"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(153)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">4 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-3.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(3)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-15%</div>
+								<div class="preview__spec">58 499</div>
+							</div>
+							<div class="preview__total">49 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starPiece icon__star-e"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(0)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">15 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--top">Топ продаж</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2-1.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(45)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-13%</div>
+								<div class="preview__spec">3 820</div>
+							</div>
+							<div class="preview__total">3 330 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(42)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">1 110 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star-p"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(42)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">1 110 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-5.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(12)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">36 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--spec">Акція</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-4.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star-p"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(153)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">4 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--new">Новинка</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-3.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(3)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-15%</div>
+								<div class="preview__spec">58 499</div>
+							</div>
+							<div class="preview__total">49 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image-2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starFull icon__star-e"></i>
+								<i class="preview__starPiece icon__star-e"></i>
+								<i class="preview__starEmpty icon__star-e"></i>
+							</div>
+							<div class="preview__ratingTotal">(0)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">15 999 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--top">Топ продаж</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2-1.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(45)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-13%</div>
+								<div class="preview__spec">3 820</div>
+							</div>
+							<div class="preview__total">3 330 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(42)</div>
+						</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">1 110 грн</div>
+						</div>
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
 					</div>
 				</div>
 
-				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-5.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
+				<div class="preview__wrap">
+					<div class="preview__item preview">
+						<div class="preview__sticker preview__sticker--soon">Скоро</div>
+						<a href="#" class="preview__thumb">
+							<img src="img/products/Image2.png" alt="">
+						</a>
+						<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
+						<div class="preview__rating">
+							<div class="preview__stars">
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starFull icon__star"></i>
+								<i class="preview__starPiece icon__star"></i>
+								<i class="preview__starEmpty icon__star-p"></i>
+							</div>
+							<div class="preview__ratingTotal">(42)</div>
 						</div>
-						<div class="preview__ratingTotal">(12)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
+						<span class="preview__stick"></span>
+						<div class="preview__price">
+							<div class="preview__dis"> <!-- если скидка -->
+								<div class="preview__perc">-11%</div>
+								<div class="preview__spec">5 599</div>
+							</div>
+							<div class="preview__total">1 110 грн</div>
 						</div>
-						<div class="preview__total">36 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
+						<div class="preview__tools"> 
+							<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
+							<button class="preview__comp icon__compare btn cursor"></button>
+							<button class="preview__wish icon__heart btn cursor"></button> 
+						</div>
 					</div>
 				</div>
-
-				<div class="preview__item preview preview--spec">
-					<div class="preview__sticker">Акція</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-4.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star-p"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
-						</div>
-						<div class="preview__ratingTotal">(153)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">4 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--hover preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-3.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(3)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-15%</div>
-							<div class="preview__spec">58 499</div>
-						</div>
-						<div class="preview__total">49 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor added"></button>
-						<button class="preview__wish icon__heart btn cursor added"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starPiece icon__star-e"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
-						</div>
-						<div class="preview__ratingTotal">(0)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">15 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-						<button class="preview__comp icon__compare btn cursor added"></button>
-						<button class="preview__wish icon__heart btn cursor added"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--top">
-					<div class="preview__sticker">Топ продаж</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2-1.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(45)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-13%</div>
-							<div class="preview__spec">3 820</div>
-						</div>
-						<div class="preview__total">3 330 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(42)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">1 110 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star-p"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
-						</div>
-						<div class="preview__ratingTotal">(42)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">1 110 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-5.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Мобільний телефон Apple iPhone 12 Pro 128GB Pacific Blue</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(12)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">36 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--spec">
-					<div class="preview__sticker">Акція</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-4.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star-p"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
-						</div>
-						<div class="preview__ratingTotal">(153)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">4 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--hover preview--new">
-					<div class="preview__sticker">Новинка</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-3.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Планшет Apple iPad Pro 4 12.9 A Wi-fi + Cellular 512gb 2020</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(3)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-15%</div>
-							<div class="preview__spec">58 499</div>
-						</div>
-						<div class="preview__total">49 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor added"></button>
-						<button class="preview__wish icon__heart btn cursor added"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image-2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Навушники Apple AirPods 2019 with Charging Case</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starFull icon__star-e"></i>
-							<i class="preview__starPiece icon__star-e"></i>
-							<i class="preview__starEmpty icon__star-e"></i>
-						</div>
-						<div class="preview__ratingTotal">(0)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">15 999 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-						<button class="preview__comp icon__compare btn cursor added"></button>
-						<button class="preview__wish icon__heart btn cursor added"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--top">
-					<div class="preview__sticker">Топ продаж</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2-1.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Стедікам DJI Osmo Mobile 3 Combo</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(45)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-13%</div>
-							<div class="preview__spec">3 820</div>
-						</div>
-						<div class="preview__total">3 330 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
-
-				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
-					<a href="#" class="preview__thumb">
-						<img src="img/products/Image2.png" alt="">
-					</a>
-					<a href="#" class="preview__name">Розумна колонка з голосовим асистентом Google Home Mini</a>
-					<div class="preview__rating">
-						<div class="preview__stars">
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starFull icon__star"></i>
-							<i class="preview__starPiece icon__star"></i>
-							<i class="preview__starEmpty icon__star-p"></i>
-						</div>
-						<div class="preview__ratingTotal">(42)</div>
-					</div>
-					<div class="preview__price">
-						<div class="preview__dis"> <!-- если скидка -->
-							<div class="preview__perc">-11%</div>
-							<div class="preview__spec">5 599</div>
-						</div>
-						<div class="preview__total">1 110 грн</div>
-					</div>
-					<div class="preview__tools"> 
-						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
-					</div>
-				</div>
+				
 
 
 

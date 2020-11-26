@@ -267,7 +267,7 @@
           -ms-flex-direction: column;
               flex-direction: column; } }
   .populars .preview {
-    width: 100%; }
+    width: 100% !important; }
     @media (max-width: 1750px) {
       .populars .preview {
         max-width: 240px; } }

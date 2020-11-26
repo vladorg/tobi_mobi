@@ -327,6 +327,9 @@ window.onload = function () {
 
 	var open_seo = document.querySelectorAll('.seo__readAll');
 	var open_dropdown = document.querySelectorAll('.dropdown__title');
+	var get_grid = document.querySelectorAll('.en_grid');
+	var get_list = document.querySelectorAll('.en_list');
+	var get_products = document.querySelector('.products');
 
 
 	for(var i=0;i<open_seo.length;i++) {
@@ -339,10 +342,28 @@ window.onload = function () {
 	}
 
 	for(var i=0;i<open_dropdown.length;i++) {
-		open_dropdown[i].addEventListener('click', function(e){ // развернуть блок сео текста
+		open_dropdown[i].addEventListener('click', function(e){ // развернуть дропдаун
 			e.preventDefault();
 			var list = this.parentNode;
 			list.classList.toggle('dropdown--open');
+		});
+	}
+
+	for(var i=0;i<get_grid.length;i++) {
+		get_grid[i].addEventListener('click', function(e){ // вид превью товара - сетка
+			get_products.classList.remove('products--list');
+			if (get_products.classList != 'products--grid') {
+				get_products.classList.add('products--grid');
+			}
+		});
+	}
+
+	for(var i=0;i<get_list.length;i++) {
+		get_list[i].addEventListener('click', function(e){ // вид превью товара - список
+			get_products.classList.remove('products--grid');
+			if (get_products.classList != 'products--list') {
+				get_products.classList.add('products--list');
+			}
 		});
 	}
 

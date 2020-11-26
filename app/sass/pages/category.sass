@@ -4,13 +4,36 @@
 .category
 	&__tools
 		+flex(0,0,flex-start,center)
+		+md
+			justify-content: space-between
 	&__sort
 		+flex(0,0,flex-start,center)
+		+xs
+			width: 49%
 		&Type
 			margin-right: 32px
+			+before
+				+xs
+					top: 16px
+			+xs
+				margin-right: 0
+				width: 100%
+			.dropdown__title
+				+xs
+					padding: 11px 30px 11px 16px
+					font-size: 12px
+			.dropdown__list
+				li
+					a
+						font-size: 12px
+		&Qua
+			+xs
+				display: none
 	&__view
 		margin-left: 32px
 		+flex(0,0,0,center)
+		+xs
+			display: none
 		button
 			width: 40px
 			height: 40px
@@ -20,6 +43,8 @@
 	&__pag
 		margin-left: auto
 		+flex(0,0,flex-start,center)
+		+md
+			display: none
 		&Prev
 			margin-right: 24px
 			transform: rotate(180deg)
@@ -28,6 +53,276 @@
 	&__pages
 		margin-left: 16px
 		font-size: 14px
+
+.products
+	.preview
+		width: 20%
+		max-width: 240px
+		min-height: 536px
+		padding-top: 24px
+		position: relative
+		+flex(column,0,0,0)
+		+break(1750)
+			width: auto
+			//max-width: unset
+		+xs
+			min-height: 436px
+		&__stick
+			display: none
+	&--grid
+		display: grid
+		grid-template-columns: repeat(5, 1fr)
+		grid-gap: 28px
+		animation: fadeIn .3s
+		justify-content: space-between
+		.preview
+			width: auto
+			margin-bottom: 56px
+			+sm
+				margin-bottom: 10px
+			&__wrap
+				.preview__item			
+					background: #fff
+					+hover
+						position: absolute
+						z-index: 1
+						+xs
+							position: relative
+	&--list
+		.preview
+			width: 100%
+			max-width: 100%
+			min-height: unset
+			height: 240px
+			padding-top: 0
+			position: relative
+			animation: fadeIn .3s
+			+flex(column,wrap,flex-start,flex-start)
+			&__wrap
+				&:not(:first-child)
+					padding-top: 48px
+				&:not(:last-child)
+					padding-bottom: 41px
+					border-bottom: 1px solid $tc_025
+			&__thumb
+				order: 1
+			&__name
+				order: 2
+				height: auto
+				width: 55%
+				margin-bottom: 12px
+				+text(24,700,32,0)
+			&__rating
+				order: 3
+			&__chars
+				order: 4
+				opacity: 1
+				max-height: 100%
+				column-count: 2
+				margin-top: auto
+			&__stick
+				display: inline-block
+				width: 1px
+				height: 100%
+				margin-left: auto
+				background: $tc_025
+				order: 5
+			&__price
+				order: 6
+				align-self: flex-end
+				width: 240px
+			&__tools
+				order: 7
+				align-self: flex-end
+				width: 240px
+			&__sticker
+				top: -30px
+			+hover
+				.preview__chars
+					padding-top: 0
+					transition: none
+				+before
+					top: -52px
+					bottom: -42px
+					left: -52px
+			+break(1750)
+				width: auto
+				max-width: unset
+			+xs
+				min-height: 436px
+
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+
+
+.preview
+	&__sticker
+		//display: none
+		position: absolute
+		top: 0
+		border-radius: 10px
+		padding-top: 4px
+		min-width: 104px
+		min-height: 38px
+		padding: 4px 5px 0 5px
+		background-size: 100%
+		text-align: center
+		+flex(0,0,center,center)
+		+text(14,600,24,#fff)
+		&--new
+			background-image: url('../img/icons/sticker_new.svg')
+		&--spec
+			background-image: url('../img/icons/sticker_spec.svg')
+		&--soon
+			color: $text_color
+			background-image: url('../img/icons/sticker_soon.svg')
+		&--top
+			background-image: url('../img/icons/sticker_top.svg')
+	&__thumb
+		width: 100%
+		max-width: 320px
+		height: 240px
+		margin-bottom: 16px
+		+flex(0,0,center,center)
+		img
+			object-fit: contain
+			+xs
+				max-height: 160px
+		+xs
+			width: 100%
+			max-height: 160px
+	&__name
+		display: block
+		margin-bottom: 20px
+		height: 72px
+		overflow: hidden
+		text-overflow: ellipsis
+		+text(18,400,24,0)
+		+xs
+			+text(14,0,20,0)
+			height: 60px
+	&__rating
+		margin-bottom: 20px
+		+flex(0,0,flex-start,center)
+	&__stars
+		margin-right: 8px
+		+flex(0,0,flex-start,0)
+		i
+			margin-right: 2px
+	&__starFull
+	&__starPiece
+	&__starEmpty
+	&__ratingTotal
+		+text(12,600,0,0)
+	&__price
+		margin-bottom: 20px
+		min-height: 52px
+		+flex(column,0,0,0)
+	&__dis
+		margin-bottom: 4px
+		+flex(0,0,flex-start,0)
+	&__perc
+		display: inline-block
+		background: #D9214F
+		border-radius: 2px
+		padding: 0 8px
+		margin-right: 8px
+		+text(16,700,24,#fff)
+	&__spec
+		text-decoration: line-through
+		+text(16,400,24,0)
+	&__total
+		margin-top: auto
+		+text(24,700,24,0)
+		+xs
+			+text(20,0,0,0)
+	&__tools
+		+flex(0,0,flex-start,center)
+	&__btn
+	&__comp
+		transform: scale(0.7)
+		margin-left: auto
+		+before
+			filter: invert(0.5)
+		+xs
+			position: absolute
+			top: calc(160px - 57px)
+			right: -7px
+			width: 42px
+			height: 42px
+			background: rgba(255,255,255,.9)
+			padding: 0
+			display: flex
+			justify-content: center
+			align-items: center
+			+before
+				filter: invert(.3)
+	&__wish
+		transform: scale(0.7)
+		+before
+			filter: invert(0.5)
+		+xs
+			position: absolute
+			top: calc(160px - 21px)
+			right: -7px
+			width: 42px
+			height: 42px
+			background: rgba(255,255,255,.9)
+			padding: 0
+			display: flex
+			justify-content: center
+			align-items: center
+			+before
+				filter: invert(.3)
+	&__chars
+		opacity: 0
+		max-height: 0
+		overflow: hidden
+		+sm
+			display: none
+		
+	&__row
+		&:not(:last-child)
+			margin-bottom: 8px
+		+flex(0,0,flex-start,center)
+		+text(12,500,20,0)
+	&__key
+		margin-right: 8px
+		+text(12,500,20,0)
+	&__val
+		font-weight: 700
+	+before
+		opacity: 0
+		transition: opacity .6s
+		position: absolute
+	+hover
+		position: relative
+		z-index: 1
+		+before
+			top: -48px
+			right: -48px
+			bottom: -32px
+			left: -48px
+			background: #fff
+			border: 2px solid $prim_color
+			box-sizing: border-box
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)
+			border-radius: 4px
+			z-index: -1
+			opacity: 1
+			transition: opacity .6s .4s
+			+sm
+				display: none
+		.preview__chars
+			opacity: 1
+			max-height: 999px
+			padding-top: 30px
+			transition: all .4s .4s
 		
 
 .filter
@@ -37,4 +332,6 @@
 
 .category
 	.products
-		padding-top: 40px
+		padding-top: 88px
+		+md
+			padding-top: 30px
