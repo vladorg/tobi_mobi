@@ -250,33 +250,40 @@ window.onload = function () {
 		slidesToShow: 6,
 		slidesToScroll: 1,
 		variableWidth: true,
-		//autoplay: true,
+		autoplay: true,
 		prevArrow: $('.related__left'),
 		nextArrow: $('.related__right'),
 		responsive: [
 		{
 			breakpoint: 1750,
 			settings: {
+				slidesToShow: 6,
+				variableWidth: false,
+			}
+		},
+		{
+			breakpoint: 1460,
+			settings: {
 				slidesToShow: 5,
 				variableWidth: false,
 			}
 		},
 		{
-			breakpoint: 1400,
+			breakpoint: 1200,
 			settings: {
 				slidesToShow: 4,
 				variableWidth: false,
 			}
 		},
 		{
-			breakpoint: 1100,
+			breakpoint: 992,
 			settings: {
 				slidesToShow: 3,
 				variableWidth: false,
 			}
 		},
 		{
-			breakpoint: 768,
+			breakpoint: 550,
 			settings: {
 				slidesToShow: 2,
 				variableWidth: false,
@@ -330,6 +337,8 @@ window.onload = function () {
 	var get_grid = document.querySelectorAll('.en_grid');
 	var get_list = document.querySelectorAll('.en_list');
 	var get_products = document.querySelector('.products');
+	var filter_btn = document.querySelectorAll('.filter__title');
+	var filter_btn_showAll = document.querySelectorAll('.filter__all');
 
 
 	for(var i=0;i<open_seo.length;i++) {
@@ -366,6 +375,84 @@ window.onload = function () {
 			}
 		});
 	}
+
+	for(var i=0;i<filter_btn.length;i++) {
+		filter_btn[i].addEventListener('click', function(e){ // открыть пункт фильтра
+			this.parentNode.querySelector('.filter__list').classList.toggle('filter__list--open');
+			this.classList.toggle('filter__title--open');
+		});
+	}
+
+	for(var i=0;i<filter_btn_showAll.length;i++) {
+		filter_btn_showAll[i].addEventListener('click', function(e){ // открыть остальные пункты
+			var others = this.parentNode.querySelectorAll('.filter__row--more')
+			for(var i=0;i<others.length;i++) {
+				others[i].classList.toggle('filter__row--open');
+			}
+		});
+	}
+
+
+
+	// range
+
+	$(function () {
+		var min_val = $("input#priceMin").data('min');
+		var max_val = $("input#priceMax").data('max');
+		console.log(min_val);
+		console.log(max_val);
+		$("#filter__range").slider({
+			min: min_val,
+			max: max_val,
+			values: [min_val,max_val],
+			range: true,
+			stop: function(event, ui) {
+				$("input#priceMin").val($("#filter__range").slider("values",0));
+				$("input#priceMax").val($("#filter__range").slider("values",1));
+
+				$('.price-range-min.value').html($("#filter__range").slider("values",0));
+				$('.price-range-max.value').html($("#filter__range").slider("values",1));
+			},
+			slide: function(event, ui){
+				$("input#priceMin").val($("#filter__range").slider("values",0));
+				$("input#priceMax").val($("#filter__range").slider("values",1));
+
+				$('.price-range-min.value').html($("#filter__range").slider("values",0));
+				$('.price-range-max.value').html($("#filter__range").slider("values",1));
+			}
+		});
+
+		$("input#priceMin").on('change', function(){
+			var value1=$("input#priceMin").val();
+			var value2=$("input#priceMax").val();
+			if(parseInt(value1) > parseInt(value2)){
+				value1 = value2;
+				$("input#priceMin").val(value1);
+				$('.price-range-min.value').html(value1);
+			}
+			$("#filter__range").slider("values", 0, value1);
+			$('.price-range-min.value').html(value1);
+		});
+
+		$("input#priceMax").on('change', function(){
+			var value1=$("input#priceMin").val();
+			var value2=$("input#priceMax").val();
+			if (value2 > max_val) { 
+				value2 = max_val; 
+				$("input#priceMax").val(max_val)
+			}
+			if(parseInt(value1) > parseInt(value2)){
+				value2 = value1;
+				$("input#priceMax").val(value2);
+				$('.price-range-max.value').html(value2);
+			}
+			$("#filter__range").slider("values",1,value2);
+			$('.price-range-max.value').html(value2);
+		});
+
+		$('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#filter__range').slider('values', 0 ) + '</span>');
+		$('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#filter__range').slider('values', 1 ) + '</span>');
+	});
 
 
 

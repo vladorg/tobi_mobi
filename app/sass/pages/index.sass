@@ -96,8 +96,6 @@
 				margin-right: 12px
 				&.slick-active
 					+tran(margin, .5s)
-					+ div
-						margin: 0 0 0 12px!important
 
 	.slick-list
 		overflow: visible
@@ -255,45 +253,3 @@
 		text-align: center
 		+xs
 			display: block
-
-
-.seo
-	border-top: 1px solid $tc_025
-	padding-top: 64px
-	+xs
-		padding-top: 24px
-	&__inner
-		column-count: 2
-		+xs
-			column-count: 1			
-			position: relative
-			+tran(max-height,2s)			
-		&--closed
-			+xs
-				max-height: 160px
-				overflow: hidden
-				+after
-					position: absolute
-					bottom: 0
-					left: 0
-					right: 0
-					height: 20px
-					background: rgba(255, 255, 255, .55)
-		&--opened
-			+xs
-				max-height: 2000px
-		p
-			break-inside: avoid
-			+text(12,500,20,$text_color)
-			&:not(:first-child)
-				margin: 25px 0
-				+xs
-					margin: 10px 0
-	&__readAll
-		display: none
-		margin-top: 8px
-		+text(13,600,24,$text_color)
-		+xs
-			display: block
-			+hover
-				text-decoration: none

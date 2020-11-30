@@ -59,6 +59,9 @@ a
 img
 	max-width: 100%
 
+input
+	font-family: $ff
+
 h1
 	+text(32,700,40,0)
 h2
@@ -81,6 +84,18 @@ button
 	width: 100%
 	&.mainPage
 		padding-bottom: 48px
+	.products--grid
+		grid-template-columns: repeat(6, 1fr)
+		+break(1600)
+			grid-template-columns: repeat(5, 18%)
+		+break(1460)
+			//grid-template-columns: repeat(4, 22%)
+		+md
+			grid-template-columns: repeat(4, 23%)
+		+sm
+			grid-template-columns: repeat(3, 30%)
+		+xxs
+				grid-template-columns: repeat(2, 1fr)
 	&--left
 		width: calc(100% - 268px)
 		padding-left: 20px
@@ -88,6 +103,7 @@ button
 			width: 100%
 			padding: 30px 0
 		.products--grid
+			grid-template-columns: repeat(5, 1fr)
 			+break(1600)
 				grid-template-columns: repeat(4, 240px)
 			+break(1460)
@@ -96,92 +112,10 @@ button
 				grid-template-columns: repeat(3, 30%)
 			+xxs
 				grid-template-columns: repeat(2, 1fr)
-	&--right
-		width: calc(100% - 376px)
-		// padding-right: 168px
-		padding-right: 20px
-		+md
-			width: calc(100% - 268px)
-		+sm
-			width: 100%
-			padding: 30px 0
-		.products--grid
-			grid-template-columns: repeat(4, 240px)
-			+break(1600)
-				grid-template-columns: repeat(3, 240px)
-			+break(1460)
-				justify-content: space-around
-				grid-template-columns: repeat(3, 30%)
-			+md
-				grid-template-columns: repeat(2, 240px)
-			+sm
-				grid-template-columns: repeat(3, 30%)
-				justify-content: space-between
-			+xxs
-				grid-template-columns: repeat(2, 1fr)
-	&--short
-		width: calc(100% - 644px)
-		padding: 0 20px
-		+sm
-			width: 100%
-			padding: 30px 0
-		.products--grid
-			grid-template-columns: repeat(3, 30%)
-			+break(1600)
-				grid-template-columns: repeat(2, 240px)
-				justify-content: space-around
-			+break(1460)
-				grid-template-columns: repeat(2, 50%)
-				grid-gap: 10px
-				justify-content: space-around
-			+md
-				grid-template-columns: repeat(1, 1fr)
-			+sm
-				grid-template-columns: repeat(3, 30%)
-				justify-content: space-between
-			+xxs
-				grid-template-columns: repeat(2, 1fr)
-		.category__pag, .category__view
-			display: none
-		.category__sort
-			width: 100%
-			+md
-				flex-direction: column
-			+sm
-				flex-direction: row
-				justify-content: space-between
-			+xs
-				width: 49%
-		.category__sortType
-			+md
-				margin-bottom: 15px
-				margin-right: 0
-				width: 100%
-			+sm
-				width: 49%
-				margin-bottom: 0
-			+xs
-				width: 100%
-		.category__sortQua
-			+md
-				width: 100%
-			+sm
-				width: 49%
-		.preview
-			+break(1600)
-				max-width: 100%!important
 
 .sidebar
 	&.left
 		width: 268px
-		+sm
-			width: 100%
-	&.right
-		width: 376px
-		height: 100vh
-		background: $prim_color
-		+md
-			width: 268px
 		+sm
 			width: 100%
 
@@ -199,7 +133,6 @@ button
 
 
 .content
-	min-height: 500px
 	+flex(0,0,space-between,flex-start)
 	+sm
 		flex-wrap: wrap
@@ -542,3 +475,98 @@ button
 			margin-right: 8px
 	&__to
 		pointer-events: none
+
+
+.pagination
+	padding: 16px 0 64px 0
+	ul
+		+flex(0,0,center,center)
+		li
+			margin-right: 16px
+			a
+				width: 40px
+				height: 40px
+				border: 2px solid $prim_color
+				border-radius: 4px
+				+flex(0,0,center,center)
+				+tran(all,.4s)
+				+hover
+					text-decoration: none
+					background: $prim_color
+	&__delim
+		margin: 0 24px 0 8px!important
+	&__current
+		a
+			background: $prim_color
+
+
+.seo
+	border-top: 1px solid $tc_025
+	padding-top: 64px
+	+xs
+		padding-top: 24px
+	&__inner
+		column-count: 2
+		+xs
+			column-count: 1			
+			position: relative
+			+tran(max-height,2s)			
+		&--closed
+			+xs
+				max-height: 160px
+				overflow: hidden
+				+after
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					height: 20px
+					background: rgba(255, 255, 255, .55)
+			a.seo__readAll
+				display: block
+		&--opened
+			+xs
+				max-height: 2000px
+		p
+			break-inside: avoid
+			+text(12,500,20,$text_color)
+			&:not(:first-child)
+				margin: 25px 0
+				+xs
+					margin: 10px 0
+	&__readAll
+		display: none
+		margin-top: 8px
+		+text(13,600,24,$text_color)
+		+xs
+			display: block
+			+hover
+				text-decoration: none
+	&--full
+		border-top: 0
+		padding-top: 0
+		.seo__inner
+			column-count: 1
+			max-height: 160px
+			overflow: hidden
+			position: relative
+			+tran(max-height,1s)
+			+flex(column,0,0,0)
+			+after
+				position: absolute
+				bottom: 0
+				left: 0
+				right: 0
+				height: 50px
+				background: linear-gradient(to top, white, transparent)
+			&--opened
+				max-height: 2000px
+				+after
+					opacity: 0
+		p
+			break-inside: unset!important
+			&:not(:first-child)
+				margin: 15px 0
+		.seo__readAll
+			display: block
+			

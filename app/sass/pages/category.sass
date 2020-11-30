@@ -2,6 +2,8 @@
 
 
 .category
+	.main
+		padding-bottom: 109px
 	&__tools
 		+flex(0,0,flex-start,center)
 		+md
@@ -81,23 +83,37 @@
 			+sm
 				margin-bottom: 10px
 			&__wrap
+				width: 100%
+				max-width: 240px
+				min-height: 592px
+				position: relative
+				+xs
+					min-height: 436px
+				&:hover
 				.preview__item			
 					background: #fff
+					max-width: 100%
 					+hover
 						position: absolute
 						z-index: 1
-						+xs
+						+md
 							position: relative
 	&--list
+		+md
+			padding-top: 60px!important
+		+xs
+			display: none
 		.preview
 			width: 100%
 			max-width: 100%
 			min-height: unset
 			height: 240px
-			padding-top: 0
+			padding: 0 10px 0 0
 			position: relative
 			animation: fadeIn .3s
 			+flex(column,wrap,flex-start,flex-start)
+			+md
+				justify-content: center
 			&__wrap
 				&:not(:first-child)
 					padding-top: 48px
@@ -106,12 +122,30 @@
 					border-bottom: 1px solid $tc_025
 			&__thumb
 				order: 1
+				+break(1600)
+					max-width: 200px
+					justify-self: center
+					height: 100%
+					margin: 0 10px 0 0
+				+break(1460)
+					max-width: 100px
 			&__name
 				order: 2
 				height: auto
 				width: 55%
 				margin-bottom: 12px
+				padding-right: 90px
+				max-height: 64px
+				overflow: hidden
+				text-overflow: ellipsis
 				+text(24,700,32,0)
+				+break(1600)
+					font-size: 18px
+				+break(1460)
+					font-size: 16px
+				+md
+					width: 40%
+					padding-right: 0
 			&__rating
 				order: 3
 			&__chars
@@ -120,21 +154,47 @@
 				max-height: 100%
 				column-count: 2
 				margin-top: auto
+				max-height: 108px
+				overflow: auto
 			&__stick
 				display: inline-block
 				width: 1px
 				height: 100%
 				margin-left: auto
+				margin-right: 32px
 				background: $tc_025
 				order: 5
 			&__price
 				order: 6
 				align-self: flex-end
 				width: 240px
+				+break(1460)
+					width: 200px
+				+md
+					width: 100%
+					max-width: 150px
+
 			&__tools
 				order: 7
 				align-self: flex-end
 				width: 240px
+				+break(1600)
+					+flex(row-reverse,wrap,center,0)
+				+break(1460)
+					width: 200px
+				+md
+					width: 100%
+					max-width: 150px
+				.preview__btn
+					+break(1600)
+						width: 100%
+						margin-bottom: 10px
+				.preview__comp
+					+break(1600)
+						margin-left: 0
+			&__total
+				font-size: 20px
+
 			&__sticker
 				top: -30px
 			+hover
@@ -283,7 +343,7 @@
 		opacity: 0
 		max-height: 0
 		overflow: hidden
-		+sm
+		+md
 			display: none
 		
 	&__row
@@ -327,11 +387,260 @@
 
 .filter
 	background: #fff7e0
-	min-height: 1368px
+	padding: 16px 16px 56px 16px
+	position: relative
+	+sm
+		position: fixed
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 2
+		overflow: auto
+	&__item
+		padding-bottom: 24px
+		overflow: hidden
+	&__price
+		+sm
+			max-width: 325px
+		.filter__list
+				padding-bottom: 20px
+		+xxs
+			max-width: 100%
+			
+	&__title
+		position: relative
+		padding-left: 24px
+		text-align: left
+		white-space: nowrap
+		width: 100%
+		overflow: hidden
+		text-overflow: ellipsis
+		+text(14,700,20,0)
+		+before
+			transform: rotate(90deg) scale(0.8)
+			position: absolute
+			top: 2px
+			left: 4px
+			+tran(all,.2s)
+		&--open
+			+before
+				transform: rotate(-90deg) scale(0.8)
+	&__list
+		opacity: 0
+		max-height: 0
+		overflow: hidden
+		+tran(all,.4s)
+		&--open
+			opacity: 1
+			max-height: 999px
+			padding-top: 16px
+	&__row
+		padding-bottom: 12px
+		label
+			position: relative
+			padding-left: 40px
+			display: block
+			min-height: 24px
+			+text(14,500,24,0)
+			+before
+				position: absolute
+				left: 0
+				top: 0
+				width: 24px
+				height: 24px
+				background: #fff
+				border: 2px solid $tc_025
+				border-radius: 4px
+				box-sizing: border-box
+		input
+			opacity: 0
+			position: absolute
+			width: 24px
+			height: 24px
+			margin: 0
+			&:checked
+				+ label
+					+before
+						background: url(../img/sprites/all.png) -51px -5px no-repeat
+						border: 0
+		&--more
+			opacity: 0
+			max-height: 0
+			padding: 0
+			overflow: hidden
+			+tran(all,.4s)
+		&--open
+			opacity: 1
+			max-height: 200px
+			padding-bottom: 12px
+	&__all
+		padding-top: 4px
+		position: relative
+		+sm
+			display: none
+	&__allTitle
+		padding: 0
+		text-align: left
+		position: relative
+		border-bottom: 1px dashed $text_color
+		border-radius: 0
+		+text(12,600,24,0)
+	&__count
+		margin-left: 4px
+		+text(12,500,20,$tc_06)
+	&__submit
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		background: $prim_color
+		width: 100%
+		padding: 12px 0
+		+hover
+			text-decoration: underline
+		+sm
+			position: static
+			max-width: 212px
+			margin-right: 21px
+	&__cancel
+		position: absolute
+		bottom: -64px
+		left: 0
+		right: 0
+		width: 100%
+		+hover
+			cursor: url('../img/icons/cursor_hand.svg'), auto!important
+			text-decoration: underline
+		+sm		
+			position: static
+			border: none
+			border-bottom: 1px dashed $text_color
+			color: $text_color
+			display: inline-block
+			width: auto
+			border-radius: 0
+			padding: 0
+			height: auto
+			+hover
+				text-decoration: none
+	&__active
+		.filter__title
+			padding-left: 0
+		.filter__list
+			+xxs
+				+flex(0,wrap,space-between,flex-start)
+		.filter__row
+			width: 48%
+		label
+			+before
+				background: url(../img/sprites/all.png) -51px -5px no-repeat
+				border: 0
+	&__btns
+		+sm
+			position: fixed
+			bottom: 0
+			left: 0
+			right: 0
+			background: #fff
+			+flex(0,0,center,center)
+			padding: 8px 18px
 
+.rangePrice
+	margin-bottom: 8px
+	input
+		width: 104px
+		+text(14,500,24,0)
+		+xxs
+			width: 100%
+	&__vals
+		margin-bottom: 27px
+		+flex(0,0,space-between,center)
+		+sm
+			justify-content: flex-start
+		+xxs
+			justify-content: space-between
+	&__min
+	&__max
+	&__delim
+		width: 14px
+		height: 1px
+		background: $text_color
+		+sm
+			margin: 0 10px
+
+.rangePrice__range
+	width: 100%
+	height: 2px
+	background: #fff
+	position: relative
+	.bar
+		position: absolute
+		left: 0
+		max-width: 100%!important
+		background: #FFC830
+		height: 2px
+		.lp
+			span
+				position: relative
+				left: -30px
+				display: none
+		.rp 
+			span
+				position: relative
+				left: 10px
+				display: none
+.rangePrice__range .bar .lp, .rangePrice__range .bar .rp
+	cursor: pointer
+	background: #fff
+	width: 24px
+	height: 24px
+	border-radius: 50%
+	position: absolute
+	border: 1px solid rgba(36, 36, 38, 0.5)
+.rangePrice__range .bar .lp
+	left: 0px
+	top: -11px
+.rangePrice__range .bar .rp
+	right: 0
+	top: -11px
 
 .category
 	.products
 		padding-top: 88px
 		+md
 			padding-top: 30px
+
+
+
+
+.filter__category 
+	margin-bottom: 25px 
+.ui-widget 
+	&.ui-widget-content 
+		border: 0 
+		height: 2px
+		border-radius: 0 
+		background: #fff
+		position: relative
+		width: calc(100% - 24px)
+.ui-slider-horizontal 
+	.ui-slider-range 
+		background: #fff
+		height: 2px
+		background: $prim_color
+		position: relative
+	.ui-slider-handle  
+
+.ui-slider 
+	.ui-slider-handle 
+		display: block
+		width: 24px!important
+		height: 24px!important
+		background: #fff
+		border-radius: 50%
+		position: absolute
+		top: -13px
+		border: 1px solid rgba(36, 36, 38, 0.5)
+.price-range-min, .price-range-max  
+	display: none

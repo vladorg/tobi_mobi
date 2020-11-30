@@ -120,9 +120,7 @@
           .related__prods .preview__item.slick-active {
             -webkit-transition: margin 0.5s;
             -o-transition: margin 0.5s;
-            transition: margin 0.5s; }
-            .related__prods .preview__item.slick-active + div {
-              margin: 0 0 0 12px !important; } }
+            transition: margin 0.5s; } }
   .related .slick-list {
     overflow: visible; }
   .related .preview__item {
@@ -338,63 +336,3 @@
     @media (max-width: 768px) {
       .brands__all {
         display: block; } }
-
-.seo {
-  border-top: 1px solid #c8c8c8;
-  padding-top: 64px; }
-  @media (max-width: 768px) {
-    .seo {
-      padding-top: 24px; } }
-  .seo__inner {
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2; }
-    @media (max-width: 768px) {
-      .seo__inner {
-        -webkit-column-count: 1;
-           -moz-column-count: 1;
-                column-count: 1;
-        position: relative;
-        -webkit-transition: max-height 2s;
-        -o-transition: max-height 2s;
-        transition: max-height 2s; } }
-    @media (max-width: 768px) {
-      .seo__inner--closed {
-        max-height: 160px;
-        overflow: hidden; }
-        .seo__inner--closed::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 20px;
-          background: rgba(255, 255, 255, 0.55); } }
-    @media (max-width: 768px) {
-      .seo__inner--opened {
-        max-height: 2000px; } }
-    .seo__inner p {
-      -webkit-column-break-inside: avoid;
-         -moz-column-break-inside: avoid;
-              break-inside: avoid;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 20px;
-      color: #242426; }
-      .seo__inner p:not(:first-child) {
-        margin: 25px 0; }
-        @media (max-width: 768px) {
-          .seo__inner p:not(:first-child) {
-            margin: 10px 0; } }
-  .seo__readAll {
-    display: none;
-    margin-top: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 24px;
-    color: #242426; }
-    @media (max-width: 768px) {
-      .seo__readAll {
-        display: block; }
-        .seo__readAll:hover {
-          text-decoration: none; } }
