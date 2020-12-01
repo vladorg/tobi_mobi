@@ -75,7 +75,7 @@ a {
 img {
   max-width: 100%; }
 
-input {
+input, textarea {
   font-family: "Montserrat"; }
 
 h1 {
@@ -113,6 +113,8 @@ h6 {
 
 button {
   font-family: "Montserrat"; }
+  button:hover {
+    cursor: url("../img/icons/cursor_hand.svg"), auto !important; }
 
 .main {
   width: 100%; }
@@ -404,6 +406,11 @@ button {
         font-size: 15px;
         font-weight: 600;
         line-height: 24px; } }
+  .btn--product {
+    background: #FFC830;
+    width: 216px; }
+    .btn--product:hover {
+      text-decoration: underline; }
 
 .cursor:hover {
   cursor: url("../img/icons/cursor_hand.svg"), auto; }
@@ -626,6 +633,18 @@ button {
   100% {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .added::after {
   content: '';

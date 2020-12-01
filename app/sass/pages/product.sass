@@ -1,11 +1,387 @@
 @import "../var.sass"
 
 .product
+
 	h1
 		margin-bottom: 12px
 	main
 		padding-top: 16px
+		position: relative
 	&__nav
+		border-bottom: 1px solid $tc_025
+		width: calc(100% - 544px)
 		+flex(0,0,flex-start,center)
 	&__info
-		padding: 40px 0 48px 0
+		padding: 64px 0 48px 0
+		min-height: 500px
+		border-bottom: 1px solid $tc_025
+		width: calc(100% - 544px)
+		animation: fadeIn 2s
+		+flex(0,0,0,flex-start)
+	&__tabs
+		position: relative
+		width: calc(100% - 544px)
+		min-height: 777px
+	&__tab
+		min-height: 200px
+		animation: fadeIn 1.5s
+		&--abs
+			display: none
+		&--active
+			display: block
+	&__btn
+		position: relative
+		border-radius: 0
+		padding: 0 0 11px 0
+		transition: none
+		+text(14,500,24,0)
+		+after
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 4px
+			background: $text_color
+			opacity: 0
+			+tran(opacity,.2s)
+		&:not(:last-child)
+			margin-right: 64px
+		&--active
+			font-weight: 700
+			+after
+				opacity: 1
+	&__slider
+		position: relative
+		+flex(0,0,0,center)
+		+after
+			display: block
+			clear: both
+	&__thumbNav
+		max-width: 104px
+		margin-right: 32px
+		img
+			max-width: 104px
+			max-height: 104px
+			padding: 12px
+			border: 2px solid transparent
+			border-radius: 2px
+			+tran(all,.2s)
+			&.slick-current
+				border-color: $prim_color
+			&:not(:last-child)
+				margin-bottom: 10px
+	&__thumb
+		max-width: 376px!important
+	&__details
+		margin-left: 32px
+	&__short
+		h6
+			margin-bottom: 16px
+		p
+			+text(14,500,24,0)
+	&__option
+		margin-top: 42px
+		&--color
+			label
+				width: 80px
+				height: 80px
+	&__optionTitle
+		margin-bottom: 16px
+		+flex(0,0,0,center)
+		h6
+			margin-right: 8px
+		span
+			+text(14,500,24,0)
+	&__optionItems
+		+flex(0,wrap,flex-start,flex-start)
+	&__optionItem
+		&:not(:last-child)
+			margin-right: 16px
+		label
+			padding: 12px
+			border: 2px solid $tc_025
+			border-radius: 2px
+			display: block
+			width: 80px
+			height: 48px
+			text-align: center
+			+tran(all,.3s)
+			+text(16,700,24,0)
+			img
+				object-fit: contain
+		input
+			display: none
+			&:checked
+				+ label
+					border-color: $prim_color
+		span
+			display: block
+			text-align: center
+			margin-top: 8px
+			+text(12,500,20,0)
+	&__option--color
+		label
+			width: 80px
+			height: 80px
+
+	&Widget
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 1
+		background: #fff
+		width: 376px
+		border: 2px solid #FFC830
+		box-sizing: border-box
+		box-shadow: 0px 4px 8px rgba(36, 36, 38, 0.25)
+		border-radius: 4px
+		padding: 32px 0 0 0
+		+text(14,500,24,0)
+
+		&__top
+			padding: 0 32px
+			+flex(0,0,space-between,flex-start)
+			.preview__price
+				margin-bottom: 12px
+		&__banner
+		&__reward
+			margin-bottom: 24px
+			padding: 0 32px
+			+text(14,700,20,#1B891B)
+			+flex(0,0,0,center)
+			+before
+				box-shadow: inset 0 0 0 4px #fff
+				margin: 0 8px 0 -4px
+		&__tools
+			margin-bottom: 16px
+			padding: 0 32px
+		&__cashback
+			padding: 16px 32px
+			border-top: 1px solid $tc_025
+			+flex(0,0,space-between,center)
+		&__cashbackTitle
+			+flex(0,0,0,center)
+			+text(14,500,24,0)
+			+before
+				transform: scale(0.7)
+				transform-origin: 0
+		&__cashbackVal
+			font-weight: 600
+		&__credit
+			border-top: 1px solid $tc_025
+			padding: 24px 32px
+			p
+				span
+					font-weight: 700
+		&__btnCredit
+			width: 131px
+			height: 32px
+			margin-top: 12px
+			+text(12,600,24,0)
+
+		&__delivery
+			border-top: 1px solid $tc_025
+			padding: 24px 32px
+		&__item
+			+flex(0,wrap,space-between,center)
+			&:not(:last-child)
+				margin-bottom: 24px
+			&Img
+				width: 100%
+		&__delTitle
+		&__delVal
+			font-weight: 600
+		&__social
+			border-top: 1px solid $tc_025
+			padding: 32px
+
+	&Description
+		padding-top: 64px
+		&__content
+			max-height: 500px
+			overflow: hidden
+			position: relative
+			+tran(all,1s)
+			+after
+				position: absolute
+				bottom: 0
+				left: 0
+				right: 0
+				height: 80px
+				background: linear-gradient(to top, #fff, transparent)
+				opacity: 1
+				+tran(all,1s)
+				transition: opacity 1s .5s
+			&--open
+				max-height: 9999px
+				+after
+					opacity: 0
+					transition: opacity 1s
+		&__btn
+			margin: 10px auto 0 auto
+			width: 240px
+			+before
+				display: none
+
+	&Chars
+		padding-top: 48px
+		h2
+			margin-bottom: 32px
+		&__item
+			margin-bottom: 24px
+		&__title
+			padding: 0 0 8px 32px
+			border-bottom: 1px solid $tc_025
+			border-radius: 0
+			width: 100%
+			position: relative
+			+text(18,400,24,0)
+			+flex(0,0,flex-start,center)
+			+before
+				margin-right: 20px
+				transform: rotate(90deg) scale(0.8)
+				position: absolute
+				left: 0
+				top: 4px
+				+tran(all,.4s)
+			&--open
+				+before
+					transform: rotate(-90deg) scale(0.8)
+		&__list
+			max-height: 0
+			opacity: 0
+			overflow: hidden
+			+tran(all,.4s)
+			&--open
+				max-height: 999px
+				opacity: 1
+		&__char
+			padding: 18px 32px
+			+text(14,700,20,0)
+			+flex(0,0,space-between,center)
+			&:nth-child(even)
+				background: $sup_color
+		&__charTitle
+			width: 50%			
+		&__charVal
+			width: 50%
+			font-weight: 500
+
+	&Test
+		padding-top: 48px
+		&__toolbar
+			margin: 32px 0 16px 0
+			+flex(0,0,space-between,center)
+		&__anc
+			width: 151px
+			height: 42px
+			+text(14,600,24,0)
+			+before
+				display: none
+		&__list
+			margin-bottom: 32px
+		&__item
+			border-radius: 4px
+			border: 1px solid $tc_025
+			&:nth-child(odd)
+				background: $sup_color
+				border: 0
+		&__ans
+			background: #fff
+			padding: 26px 24px 26px 48px
+			position: relative
+			margin-bottom: 34px
+			+before
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 24px
+				width: 2px
+				background: $tc_025
+				border-radius: 10px
+			+after			
+				width: 12px
+				height: 12px
+				border: 2px solid #c8c8c8
+				border-radius: 50%
+				position: absolute
+				top: 30px
+				left: 24px
+				margin-left: -7px
+				background: #fff
+		&__que
+			padding: 26px 24px 49px 24px
+		&__title
+			padding-bottom: 16px
+			+flex(0,0,space-between,center)
+		&__author
+			+text(18,400,24,0)
+		&__date
+			+text(14,500,24,#7b7b7c)
+		&__rating
+		&__text
+			+text(14,500,24,0)
+		&__ans
+		&__pagination
+			padding: 0 0 40px 0
+		&__add
+		&__addTitle
+			+text(20,800,24,0)
+		&__form
+			padding-top: 24px
+			input
+				width: 49%
+				text-align: left
+				padding-left: 16px
+				&[name=rating]
+					display: none
+			textarea
+				width: 100%
+				text-align: left
+				padding: 8px 0 0 16px
+				min-height: 104px
+				resize: none
+		&__row
+			margin-bottom: 16px
+			+flex(0,0,flex-start,center)
+		&__rate
+			margin-left: 32px
+			+flex(0,0,flex-start,center)
+		&__rateComment
+			margin-left: 24px
+			+text(18,400,0,0)
+		&__rateItem
+			margin-right: 10px
+			label
+				display: inline-block
+				transform: scale(1.5)	
+			input
+			&--active
+				~ .productTest__rateItem
+					label
+						+before
+							background: url(../img/icons/star_e.svg) no-repeat
+		&__btn
+			display: inline-block
+			width: 216px
+			+hover
+				background: $prim_color
+				text-decoration: underline
+
+	&Quest
+		&__anc
+			width: 171px
+			height: 42px
+			+text(14,600,24,0)
+			+before
+				display: none
+
+	&Related
+		padding-top: 48px
+		width: 100%
+		h2
+			margin-bottom: 32px
+		&__products
+			&--slider
+				width: 100%
+

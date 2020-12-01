@@ -59,7 +59,7 @@ a
 img
 	max-width: 100%
 
-input
+input, textarea
 	font-family: $ff
 
 h1
@@ -79,6 +79,8 @@ h6
 
 button
 	font-family: $ff
+	+hover
+		cursor: url('../img/icons/cursor_hand.svg'), auto!important
 
 .main
 	width: 100%
@@ -281,6 +283,11 @@ button
 			display: flex
 			width: 49%
 			+text(15,600,24,0)
+	&--product
+		background: $prim_color
+		width: 216px
+		&:hover
+			text-decoration: underline
 
 
 .cursor
@@ -431,6 +438,12 @@ button
     transform: rotate(0deg)  
   100% 
   	transform: rotate(180deg)
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+	100%
+		opacity: 1
 
 
 

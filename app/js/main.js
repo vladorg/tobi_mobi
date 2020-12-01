@@ -394,13 +394,11 @@ window.onload = function () {
 
 
 
-	// range
+	// range фильтр на странице категории
 
-	$(function () {
+	$(function () { 
 		var min_val = $("input#priceMin").data('min');
 		var max_val = $("input#priceMax").data('max');
-		console.log(min_val);
-		console.log(max_val);
 		$("#filter__range").slider({
 			min: min_val,
 			max: max_val,
@@ -453,6 +451,185 @@ window.onload = function () {
 		$('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#filter__range').slider('values', 0 ) + '</span>');
 		$('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#filter__range').slider('values', 1 ) + '</span>');
 	});
+
+
+
+
+
+	// ================================== //
+	// карточка товара
+
+
+
+	var product_btn_all = document.querySelector('.product__btn--all');
+	var product_btn_chars = document.querySelector('.product__btn--chars');
+	var product_btn_test = document.querySelector('.product__btn--test');
+	var product_btn_quest = document.querySelector('.product__btn--quest');
+	var product_btn_related = document.querySelector('.product__btn--related');
+
+	var tab_all = document.querySelector('.product__tab--all');
+	var tab_chars = document.querySelector('.product__tab--chars');
+	var tab_test = document.querySelector('.product__tab--test');
+	var tab_quest = document.querySelector('.product__tab--quest');
+	var tab_related = document.querySelector('.product__tab--related');
+
+	var product_desc_btn = document.querySelector('.productDescription__btn');
+	var product_desc_cont = document.querySelector('.productDescription__content');
+
+	var product_chars_btn = document.querySelectorAll('.productChars__title');
+
+	var product_test_rate = document.querySelectorAll('.productTest__rateItem');
+
+	var product_test_add = document.querySelector('.productTest__anc');
+	var product_test_area = document.querySelector('#testimonial_add');
+	var product_quest_add = document.querySelector('.productQuest__anc');
+	var product_quest_area = document.querySelector('#question_add');
+
+
+
+	function productTabs(elem, tab) { // переключатель табов
+		elem.addEventListener('click', function(e){
+			var btn_sibl = this.parentNode.querySelectorAll('.product__btn');
+			var btn_cls = this.classList;
+			var tab_sibl = tab.parentNode.querySelectorAll('.product__tab');
+			var tab_cls = tab.classList;
+
+
+			for(var i=0;i<btn_sibl.length;i++) {
+				if (btn_sibl[i].classList != btn_cls) {
+					btn_sibl[i].classList.remove('product__btn--active');
+				} else {
+					btn_sibl[i].classList.add('product__btn--active');
+				}
+			}
+			for(var i=0;i<tab_sibl.length;i++) {
+				if (tab_sibl[i].classList != tab_cls) {
+					tab_sibl[i].classList.remove('product__tab--active');
+				} else {
+					tab_sibl[i].classList.add('product__tab--active');
+				}
+				if (elem != product_btn_all) {
+					tab_sibl[i].classList.add('product__tab--abs');
+					document.querySelector('.product .product__info').classList.add('product__tab--abs');
+				} else {
+					tab_sibl[i].classList.remove('product__tab--abs');
+					document.querySelector('.product .product__info').classList.remove('product__tab--abs');
+				}
+			}
+
+			
+		});
+	}
+
+	productTabs(product_btn_all, tab_all);
+	productTabs(product_btn_chars, tab_chars);
+	productTabs(product_btn_test, tab_test);
+	productTabs(product_btn_quest, tab_quest);
+	productTabs(product_btn_related, tab_related);
+
+	$('.product__thumb').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.product__thumbNav',
+		infinite: true,
+
+	});
+	$('.product__thumbNav').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		vertical: true,
+		verticalSwiping: true,
+		asNavFor: '.product__thumb',
+		dots: false,
+		focusOnSelect: true,
+		infinite: true
+	});
+
+
+	product_desc_btn.addEventListener('click', function(e){  // развернуть описание в карточке товара
+		product_desc_cont.classList.toggle('productDescription__content--open');
+	});
+
+	for(var i=0;i<product_chars_btn.length;i++) { // развернуть список характеристик в карточке товара
+		product_chars_btn[i].addEventListener('click', function(e){
+			var others = this.parentNode.querySelector('.productChars__list')
+			this.classList.toggle('productChars__title--open');
+			others.classList.toggle('productChars__list--open');
+		});
+	}
+
+
+	for(var i=0;i<product_test_rate.length;i++) {  // рейтинг в карточке товара
+		product_test_rate[i].addEventListener('click', function(e){
+			var others = this.parentNode.querySelectorAll('.productTest__rateItem')
+			var rate = this.querySelector('input').value;
+			document.querySelector('.productTest__rateComment span').innerHTML = rate;
+			
+			for(var i=0;i<others.length;i++) {
+				others[i].classList.remove('productTest__rateItem--active');
+			}
+
+			this.classList.add('productTest__rateItem--active');
+		});
+	}
+
+
+	product_test_add.addEventListener('click', function(e) { // якорь к форме отзыва в карточке товара
+		product_test_area.scrollIntoView({
+			behavior: 'smooth',
+			block: 'center'
+		});
+	});
+
+	product_quest_add.addEventListener('click', function(e) { // якорь к форме вопроса в карточке товара
+		product_quest_area.scrollIntoView({
+			behavior: 'smooth',
+			block: 'center'
+		});
+	});
+
+
+
+	// $('.productRelated__products--slider').slick({
+	// 	infinite: true,
+	// 	slidesToShow: 4,
+	// 	slidesToScroll: 1,
+	// 	autoplay: true,
+	// 	responsive: [
+	// 	{
+	// 		breakpoint: 1750,
+	// 		settings: {
+	// 			slidesToShow: 5,
+	// 			variableWidth: false,
+	// 		}
+	// 	},
+	// 	{
+	// 		breakpoint: 1400,
+	// 		settings: {
+	// 			slidesToShow: 4,
+	// 			variableWidth: false,
+	// 		}
+	// 	},
+	// 	{
+	// 		breakpoint: 1100,
+	// 		settings: {
+	// 			slidesToShow: 3,
+	// 			variableWidth: false,
+	// 		}
+	// 	},
+	// 	{
+	// 		breakpoint: 768,
+	// 		settings: {
+	// 			slidesToShow: 2,
+	// 			variableWidth: false,
+	// 		}
+	// 	}
+	// 	]
+	// });
+	
+
 
 
 
