@@ -82,11 +82,19 @@ h1 {
   font-size: 32px;
   font-weight: 700;
   line-height: 40px; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+      line-height: 32px; } }
 
 h2 {
   font-size: 32px;
   font-weight: 700;
   line-height: 40px; }
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 24px;
+      line-height: 32px; } }
 
 h3 {
   font-size: 24px;
@@ -110,6 +118,11 @@ h6 {
   font-size: 14px;
   font-weight: 700;
   line-height: 20px; }
+  @media (max-width: 768px) {
+    h6 {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px; } }
 
 button {
   font-family: "Montserrat"; }
@@ -395,7 +408,19 @@ button {
     .btn--inCart span {
       border-bottom: 1px dashed #2373E3; }
   .btn--filter {
-    display: none; }
+    display: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px; }
+    @media (max-width: 992px) {
+      .btn--filter {
+        width: 200px;
+        height: 42px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-right: 10px; } }
     @media (max-width: 768px) {
       .btn--filter {
         display: -webkit-box;
@@ -403,14 +428,16 @@ button {
         display: -ms-flexbox;
         display: flex;
         width: 49%;
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 24px; } }
+        margin-right: 0;
+        height: 48px; } }
   .btn--product {
     background: #FFC830;
     width: 216px; }
     .btn--product:hover {
       text-decoration: underline; }
+    @media (max-width: 500px) {
+      .btn--product {
+        width: 196px; } }
 
 .cursor:hover {
   cursor: url("../img/icons/cursor_hand.svg"), auto; }
@@ -667,6 +694,9 @@ button {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
@@ -676,7 +706,7 @@ button {
         -ms-flex-align: center;
             align-items: center; }
     .breadcrumbs ul li {
-      margin-right: 16px;
+      margin: 0 16px 8px 0;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -755,12 +785,18 @@ button {
         -webkit-align-items: center;
             -ms-flex-align: center;
                 align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
         -webkit-transition: all 0.4s;
         -o-transition: all 0.4s;
         transition: all 0.4s; }
         .pagination ul li a:hover {
           text-decoration: none;
           background: #FFC830; }
+      @media (max-width: 768px) {
+        .pagination ul li:nth-child(4), .pagination ul li:nth-child(5) {
+          display: none; } }
   .pagination__delim {
     margin: 0 24px 0 8px !important; }
   .pagination__current a {

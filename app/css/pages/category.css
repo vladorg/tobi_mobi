@@ -702,11 +702,19 @@
     .filter {
       position: fixed;
       top: 0;
-      right: 0;
+      right: -105%;
       bottom: 0;
-      left: 0;
-      z-index: 2;
-      overflow: auto; } }
+      z-index: 3;
+      opacity: 0;
+      overflow: auto;
+      width: 100%;
+      -webkit-transition: right 0.6s cubic-bezier(0.14, 0.07, 0.1, 1.19), opacity 0.3s;
+      -o-transition: right 0.6s cubic-bezier(0.14, 0.07, 0.1, 1.19), opacity 0.3s;
+      transition: right 0.6s cubic-bezier(0.14, 0.07, 0.1, 1.19), opacity 0.3s;
+      padding-top: 64px; } }
+  .filter--open {
+    right: 0;
+    opacity: 1; }
   .filter__item {
     padding-bottom: 24px;
     overflow: hidden; }
@@ -878,8 +886,9 @@
       -webkit-align-items: flex-start;
           -ms-flex-align: start;
               align-items: flex-start; } }
-  .filter__active .filter__row {
-    width: 48%; }
+  @media (max-width: 500px) {
+    .filter__active .filter__row {
+      width: 48%; } }
   .filter__active label::before {
     content: '';
     background: url(../img/sprites/all.png) -51px -5px no-repeat;
@@ -904,6 +913,37 @@
           -ms-flex-align: center;
               align-items: center;
       padding: 8px 18px; } }
+  .filter__close {
+    display: none;
+    z-index: 4;
+    top: 15px; }
+    @media (max-width: 992px) {
+      .filter__close {
+        display: block; } }
+  .filter__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: #FFC830;
+    text-align: center;
+    padding: 7px 17px;
+    border-bottom: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 34px; }
+    .filter__header::before {
+      content: '';
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none;
+      top: 11px;
+      display: block;
+      position: absolute; }
+    @media (max-width: 992px) {
+      .filter__header {
+        display: block; } }
 
 .rangePrice {
   margin-bottom: 8px; }
