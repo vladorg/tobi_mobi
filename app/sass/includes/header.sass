@@ -355,10 +355,11 @@
 			line-height: 24px
 		&__item
 			padding-bottom: 16px
-			margin-bottom: 16px
 			border-bottom: 1px solid $tc_025
 			+flex(0,wrap,flex-start,center)
 			+text(14,500,24,$text_color)
+			&:not(:last-child)
+				margin-bottom: 16px
 		&__thumb
 			width: 100%
 			max-width: 50px

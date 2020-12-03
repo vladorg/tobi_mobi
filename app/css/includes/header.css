@@ -568,7 +568,6 @@
     line-height: 24px; }
   .headerCart__item {
     padding-bottom: 16px;
-    margin-bottom: 16px;
     border-bottom: 1px solid #c8c8c8;
     display: -webkit-box;
     display: -webkit-flex;
@@ -589,6 +588,8 @@
     font-weight: 500;
     line-height: 24px;
     color: #242426; }
+    .headerCart__item:not(:last-child) {
+      margin-bottom: 16px; }
   .headerCart__thumb {
     width: 100%;
     max-width: 50px; }

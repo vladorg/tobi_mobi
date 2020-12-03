@@ -38,6 +38,8 @@ table
 	&:target, &:focus, &:active 
 		border: none
 		outline: none
+article
+	~
 body 
 	font-family: $ff
 	font-weight: $fw
@@ -64,6 +66,8 @@ input, textarea
 
 h1
 	+text(32,700,40,0)
+	+sm
+		font-size: 26px
 	+xs
 		font-size: 24px
 		line-height: 32px
@@ -88,6 +92,9 @@ button
 	font-family: $ff
 	+hover
 		cursor: url('../img/icons/cursor_hand.svg'), auto!important
+
+.clearfix
+	clear: both
 
 .main
 	width: 100%
@@ -210,8 +217,9 @@ button
 	height: 40px
 	border: 1px solid $tc_025
 	box-sizing: border-box
+	padding-left: 16px
 	border-radius: 4px
-	text-align: center
+	//text-align: center
 	+text(14,500,0,$text_color)
 	&::-webkit-input-placeholder
 		+text(14,500,24,$tc_06)

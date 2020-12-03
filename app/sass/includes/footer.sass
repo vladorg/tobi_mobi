@@ -142,3 +142,25 @@
 				&:not(:last-child)
 					+xs
 						margin-right: 32px
+
+	&--checkout
+		background: none
+		padding: 16px 0
+		border-top: 1px solid $tc_025
+		+flex(0,0,space-between,center)
+		+md
+			flex-wrap: wrap
+		+sm
+			justify-content: center
+		.footer__copy
+			margin: 0 20px 0 0
+		.footer__pay
+			+sm
+				margin-top: 16px
+			+xxs
+				+flex(0,wrap,space-around,center)
+			img
+				&:not(:first-child)
+					margin-left: 20px
+					+sm
+						margin-left: 0

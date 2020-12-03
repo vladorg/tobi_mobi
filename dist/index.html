@@ -13,11 +13,10 @@
 	<!--[if IE 9]><link rel="stylesheet" href="css/oldIE.css"><![endif]-->
 	<link rel="stylesheet" href="css/style.min.css">
 
-
 	
 	
 </head>
-<body>
+<body class="column">
 
 	<header class="header container">
 		<div class="header__tool">
@@ -75,7 +74,7 @@
 				<div class="header__search">
 					<form action="#">
 						<input type="text" placeholder="Шукаю" name="search" class="input">
-						<button class="btn cursor">Пошук</button>
+						<button class="btn cursor icon__search">Пошук</button>
 					</form>
 				</div>
 				<div class="header__log">
@@ -333,7 +332,7 @@
 								<div class="headerCart__cost">24 498 грн</div>
 							</div>
 							<div class="headerCart__btns">
-								<a href="#" class="headerCart__checkout btn btn--yellow">Оформити замовлення</a>
+								<a href="checkout.html" class="headerCart__checkout btn btn--yellow">Оформити замовлення</a>
 								<a href="#" class="open_modal_cart headerCart__cart">Перейти до кошика</a> 
 							</div>
 						</div>
@@ -373,7 +372,7 @@
 					<nav class="topCatalogMenu">
 						<ul class="scroll scroll--catalog">
 							<li class="topCatalogMenu__hasChild">
-								<a href="/link1">
+								<a href="/category.html">
 									<div class="topCatalogMenu__ic">
 										<img src="img/icons/catalog/ic_2.svg" alt="">
 									</div>							
@@ -809,7 +808,7 @@
 					<button class="related__right icon__right slick-next"></button>
 				</div>
 			</div>
-			<div class="related__prods container products products--grid">
+			<div class="related__prods container products">
 
 				<div class="preview__item preview preview--new">
 					<div class="preview__sticker">Новинка</div>
@@ -896,8 +895,8 @@
 					</div>
 					<div class="preview__tools"> 
 						<button class="preview__btn icon__cartEmpty btn btn--buy cursor">Купити</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
+						<button class="preview__comp icon__compare btn cursor added"></button>
+						<button class="preview__wish icon__heart btn cursor added"></button> 
 					</div>
 				</div>
 
@@ -926,8 +925,8 @@
 					</div>
 					<div class="preview__tools"> 
 						<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-						<button class="preview__comp icon__compare btn cursor"></button>
-						<button class="preview__wish icon__heart btn cursor"></button> 
+						<button class="preview__comp icon__compare btn cursor added"></button>
+						<button class="preview__wish icon__heart btn cursor added"></button> 
 					</div>
 				</div>
 
@@ -1076,7 +1075,7 @@
 					<img src="img/populars/image1.png" alt="">
 				</a>
 
-				<div class="populars__prods products products--grid">					
+				<div class="populars__prods products">					
 					<div class="preview preview--new">
 						<div class="preview__sticker">Новинка</div>
 						<a href="#" class="preview__thumb">
@@ -1098,8 +1097,8 @@
 						</div>
 						<div class="preview__tools"> 
 							<button class="preview__btn icon__cartEmpty btn btn--wait cursor">Очікується</button>
-							<button class="preview__comp icon__compare btn cursor"></button>
-							<button class="preview__wish icon__heart btn cursor"></button> 
+							<button class="preview__comp icon__compare btn cursor added"></button>
+							<button class="preview__wish icon__heart btn cursor added"></button> 
 						</div>
 					</div>
 
@@ -1171,7 +1170,7 @@
 					<img src="img/populars/image2.jpg" alt="" class="populars__img">
 				</a>
 				
-				<div class="populars__prods products products--grid">
+				<div class="populars__prods products">
 					
 					<div class="preview">
 						<a href="#" class="preview__thumb">
@@ -1725,7 +1724,7 @@
 
 			<div class="modalCart__nav">
 				<button class="btn close_modal_cart modalCart__continue">Продовжити покупки</button>
-				<a href="/checkout" class="modalCart__checkout btn btn--yellow">Оформити замовлення</a>
+				<a href="/checkout.html" class="modalCart__checkout btn btn--yellow">Оформити замовлення</a>
 			</div>
 
 		</div>
@@ -1741,6 +1740,5 @@
 	<script src="libs/jquery/jquery-3.5.1.min.js"></script>
 	<script src="libs/slick/slick.min.js"></script>
 	<script src="js/main.min.js"></script>
-
 </body>
 </html>
