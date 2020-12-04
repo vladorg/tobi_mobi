@@ -37,6 +37,21 @@
         width: 100%; } }
   .checkout__step {
     padding-top: 24px; }
+    .checkout__step .checkout__inner {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
+    .checkout__step--active .checkout__inner {
+      max-height: 2000px;
+      opacity: 1; }
+    .checkout__step--completed .checkout__completed {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
   .checkout__widget {
     position: absolute;
     top: 24px;
@@ -61,10 +76,40 @@
       .checkout__widget .headerCart__cost {
         font-size: 16px; } }
   .checkout__completed {
-    display: none; }
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: none;
+    margin-top: 8px; }
+    .checkout__completed span {
+      padding-right: 5px;
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #7b7b7c; }
+      .checkout__completed span:not(:last-child)::after {
+        content: '';
+        content: ',';
+        display: inline-block; }
+    .checkout__completed button {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
   .checkout__change {
     border-bottom: 1px dashed #242426;
     border-radius: 0;
+    padding: 0;
+    margin-left: auto;
     font-size: 12px;
     font-weight: 600;
     line-height: 24px; }
@@ -164,6 +209,10 @@
               max-width: 65% !important; } }
           .checkout__row--passport .input + .input + .input {
             max-width: 100% !important; }
+    .checkout__row--idCard .input {
+      max-width: 100% !important; }
+      .checkout__row--idCard .input + .input {
+        max-width: 100% !important; }
   .checkout__rowTitle {
     margin-bottom: 12px;
     font-size: 14px;

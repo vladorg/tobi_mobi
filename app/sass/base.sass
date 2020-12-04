@@ -212,13 +212,14 @@ button
 .input
 	background: #FFFFFF
 	border-radius: 4px
-	border: 1px solid rgba(36, 36, 38, 0.25)
+	border: 1px solid transparent
+	border-color: $tc_025
 	width: 40px
 	height: 40px
-	border: 1px solid $tc_025
 	box-sizing: border-box
 	padding-left: 16px
 	border-radius: 4px
+	+tran(all,.4s)
 	//text-align: center
 	+text(14,500,0,$text_color)
 	&::-webkit-input-placeholder
@@ -233,6 +234,10 @@ button
 	&:-ms-input-placeholder
 		+text(14,500,24,$tc_06)     
 		color: $tc_06
+	&--err
+		border-color: #f00
+	&--ok
+		border-color: #1b891b
 
 .btn
 	+text(16,700,24,$text_color)

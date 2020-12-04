@@ -20,7 +20,7 @@
 	
 </head>
 <body class="column">
-	<header class="header header--checkout container">
+	<header class="header--checkout container">
 		<div class="header__logo">
 			<a href="/">
 				<img src="img/logo.svg" alt="">
@@ -46,198 +46,198 @@
 
 	<main class="main container checkout">
 		<h1>Оформлення замовлення</h1>
-		<form class="checkout__steps">
+		<form method="GET" class="checkout__steps" id="checkout_form">
 
-			<div class="checkout__step checkoutCustomer">
+			<div class="checkout__step checkout__step--active checkoutCustomer" data-complete="0">
 				<div class="checkout__title">
 					<span>Ваші контактні дані</span>
 					<div class="checkoutCustomer__completed checkout__completed">
-						<span class="checkout__name">Данило Іванов</span>
-						<span class="checkout__phone">+38 (097) 012 73 82</span>
-						<span class="checkout__email">myemail@gmail.com</span>
 						<button type="button" class="btn checkout__change checkoutCustomer__change">Змінити</button>
 					</div>
 				</div>
-				<div class="checkoutCustomer__nav">
-					<button type="button" class="btn checkoutCustomer__btn checkoutCustomer__btn--active">Я новий покупець</button>
-					<button type="button" class="btn checkoutCustomer__btn open_modal_login">Я постійний покупець</button>
-				</div>
-				<div class="checkoutCustomer__form">
-					<input class="input" type="text" name="name" placeholder="Ім’я та призвіще">
-					<input class="input" type="text" name="phone" placeholder="Номер телефону">
-					<input class="input" type="email" name="email" placeholder="Електрона адреса">
-					<div class="checkoutCustomer__recipient">
-						<input type="checkbox" name="recipient" id="checkout_recipient" checked>
-						<label class="icon__checkOn cursor" for="checkout_recipient">Я отримувач товару</label>
+				<div class="checkout__inner">
+					<div class="checkoutCustomer__nav">
+						<button type="button" class="btn checkoutCustomer__btn checkoutCustomer__btn--active">Я новий покупець</button>
+						<button type="button" class="btn checkoutCustomer__btn open_modal_login">Я постійний покупець</button>
 					</div>
-					<button type="button" class="btn btn--buy checkout__next">Далі</button>
-				</div>				
+					<div class="checkoutCustomer__form">
+						<input class="input checkoutCustomer__input checkout__required" type="text" name="name" placeholder="Ім’я та призвіще">
+						<input class="input checkoutCustomer__input checkout__required" type="text" name="phone" placeholder="Номер телефону">
+						<input class="input checkoutCustomer__input checkout__required" type="email" name="email" placeholder="Електрона адреса">
+						<div class="checkoutCustomer__recipient">
+							<input type="checkbox" name="recipient" id="checkout_recipient" checked>
+							<label class="icon__checkOn cursor" for="checkout_recipient">Я отримувач товару</label>
+						</div>
+						<button type="button" class="btn btn--buy checkout__next" id="customer_complete">Далі</button>
+					</div>
+				</div>
+
 			</div>
 
 
-			<div class="checkout__step checkoutDelivery">
+			<div class="checkout__step checkoutDelivery" data-complete="0">
 				<div class="checkout__title">
 					<span>Доставка</span>
 					<div class="checkoutDelivery__completed checkout__completed">
-						<span class="checkout__city">Харьків</span>
-						<span class="checkout__delivery">Самовивіз з Нової Пошти</span>
-						<span class="checkout__center">Відділення №1</span>
-						<span class="checkout__address">вул. Польова, 67</span>
 						<button type="button" class="btn checkout__change">Змінити</button>
 					</div>
 				</div>
-				<div class="checkoutDelivery__form">
-					<div class="checkout__row">
-						<div class="checkout__rowTitle">Населений пункт України</div>
-						<input class="input" type="text" name="city" placeholder="Наприклад Київ">
-						<div class="checkoutDelivery__cities">
-							<span>Київ</span>
-							<span>Харків</span>
-							<span>Одеса</span>
-							<span>Запоріжжя</span>
-							<span>Дніпро</span>
-							<span>Львів</span>
-						</div>							
+				<div class="checkout__inner">
+					<div class="checkoutDelivery__form">
+						<div class="checkout__row">
+							<div class="checkout__rowTitle">Населений пункт України</div>
+							<input class="input checkoutDelivery__city checkout__required" type="text" name="city" placeholder="Наприклад Київ">
+							<div class="checkoutDelivery__cities">
+								<span>Київ</span>
+								<span>Харків</span>
+								<span>Одеса</span>
+								<span>Запоріжжя</span>
+								<span>Дніпро</span>
+								<span>Львів</span>
+							</div>							
+						</div>
+						<div class="checkout__row">
+							<div class="checkout__rowTitle">Спосіб доставки</div>
+							<div class="checkout__rowItem checkout__hasFields checkoutDelivery__type checkoutDelivery__np">
+								<input type="radio" name="delivery_type" id="delivery_np" value="Самовивіз з Нової Пошти" checked>
+								<label class="icon__radioOn cursor" for="delivery_np">Самовивіз з Нової Пошти</label>
+								<span class="checkout__tooltip">Відправимо 28 жовтня</span>
+								<input class="input checkout__input checkout__required" type="text" name="address_np" placeholder="Адреса або номер відділення">
+							</div>
+							<div class="checkout__rowItem checkout__hasFields checkoutDelivery__type checkoutDelivery__npCurier">
+								<input type="radio" name="delivery_type" id="delivery_np_curier" value="Кур'єр Нової Пошти">
+								<label class="icon__radioOn cursor" for="delivery_np_curier">Кур'єр Нової Пошти</label>
+								<span class="checkout__tooltip">Відправимо 28 жовтня</span>
+								<input class="input checkout__input checkout__required" type="text" name="address_np_curier" placeholder="Адреса">
+							</div>
+							<div class="checkout__rowItem checkout__hasFields checkoutDelivery__type checkoutDelivery__ukrp">
+								<input type="radio" name="delivery_type" id="address_ukrp" value="Самовивіз з Укрпошти">
+								<label class="icon__radioOn cursor" for="address_ukrp">Самовивіз з Укрпошти</label>
+								<span class="checkout__tooltip">Відправимо 29 жовтня</span>
+								<input class="input checkout__input checkout__required" type="text" name="address_ukrp" placeholder="Адреса">
+								<span class="checkout__delPrice">Безкоштовно</span>
+							</div>
+						</div>
+						<button type="button" class="btn btn--buy checkout__next" id="delivery_complete">Далі</button>
 					</div>
-					<div class="checkout__row">
-						<div class="checkout__rowTitle">Спосіб доставки</div>
-						<div class="checkout__rowItem checkoutDelivery__type checkoutDelivery__np">
-							<input type="radio" name="delivery_type" id="delivery_np" value="Самовивіз з Нової Пошти">
-							<label class="icon__radioOn cursor" for="delivery_np">Самовивіз з Нової Пошти</label>
-							<span class="checkout__tooltip">Відправимо 28 жовтня</span>
-							<input class="input" type="text" name="address_np" placeholder="Адреса або номер відділення">
-						</div>
-						<div class="checkout__rowItem checkoutDelivery__type checkoutDelivery__npCurier">
-							<input type="radio" name="delivery_type" id="delivery_np_curier" value="Кур'єр Нової Пошти">
-							<label class="icon__radioOn cursor" for="delivery_np_curier">Кур'єр Нової Пошти</label>
-							<span class="checkout__tooltip">Відправимо 28 жовтня</span>
-							<input class="input" type="text" name="address_np_curier" placeholder="Адреса">
-						</div>
-						<div class="checkout__rowItem checkoutDelivery__type checkoutDelivery__ukrp">
-							<input type="radio" name="delivery_type" id="address_ukrp" value="Самовивіз з Укрпошти">
-							<label class="icon__radioOn cursor" for="address_ukrp">Самовивіз з Укрпошти</label>
-							<span class="checkout__tooltip">Відправимо 29 жовтня</span>
-							<input class="input" type="text" name="address_ukrp" placeholder="Адреса">
-							<span class="checkout__delPrice">Безкоштовно</span>
-						</div>
-					</div>
-					<button type="button" class="btn btn--buy checkout__next">Далі</button>
 				</div>
 			</div>
 		</div>
 
 
-		<div class="checkout__step checkoutPayment">
+		<div class="checkout__step checkoutPayment" data-complete="0">
 			<div class="checkout__title">
 				<span>Оплата</span>
 			</div>
-			<div class="checkoutCashback">
-				<div class="checkoutCashback__title">
-					На вашому кешбек рахунку<span>999 грн</span>
-				</div>
-				<div class="checkoutCashback__desc">Ви можете сплатити до 50% від суми покупки за рахунок доступного кешбеку</div>
-				<div class="checkoutCustomer__recipient checkoutCashback__row">
-					<input type="checkbox" name="cashback_btn" id="checkout_cashback">
-					<label class="icon__checkOn cursor" for="checkout_cashback">Використати кешбек</label>
-					<div class="checkoutWidgetTools__promo checkoutCashback__edit">
-						<input type="text" class="input" name="cashback" placeholder="До 999 грн">
-						<button type="button" class="headerCart__checkout btn btn--yellow">Застосувати</button>
+			<div class="checkout__inner">
+				<div class="checkoutCashback">
+					<div class="checkoutCashback__title">
+						На вашому кешбек рахунку<span>999 грн</span>
+					</div>
+					<div class="checkoutCashback__desc">Ви можете сплатити до 50% від суми покупки за рахунок доступного кешбеку</div>
+					<div class="checkoutCustomer__recipient checkoutCashback__row">
+						<input type="checkbox" name="cashback_btn" id="checkout_cashback">
+						<label class="icon__checkOn cursor" for="checkout_cashback">Використати кешбек</label>
+						<div class="checkoutWidgetTools__promo checkoutCashback__edit">
+							<input type="text" class="input" name="cashback" placeholder="До 999 грн">
+							<button type="button" class="headerCart__checkout btn btn--yellow">Застосувати</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="checkout__row">
-				<div class="checkout__rowItem checkoutPayment__type checkoutDelivery__type">
-					<input type="radio" name="payment_type" id="payment_imposed" value="Оплата при отриманні товару">
-					<label class="icon__radioOn cursor" for="payment_imposed">Оплата при отриманні товару</label>
-					<span class="checkout__tooltip">Оплата здійснюється при отриманні товару у відділенні Нової Пошти або при зустрічі з кур'єром</span>
-				</div>
-				<div class="checkout__rowItem checkoutPayment__type checkoutDelivery__type">
-					<input type="radio" name="payment_type" id="payment_online" value="Оплата картою онлайн">
-					<label class="icon__radioOn cursor" for="payment_online">Оплата картою онлайн</label>
-					<span class="checkout__tooltip">Visa, MasterCard, Google Pay, Apple Pay, Приват24</span>
-				</div>
-				<div class="checkout__rowItem checkoutPayment__type checkoutDelivery__type">
-					<input type="radio" name="payment_type" id="payment_credit" value="Кредит та оплата частинами">
-					<label class="icon__radioOn cursor" for="payment_credit">Кредит та оплата частинами</label>
-					<span class="checkout__tooltip">Monobank, ПриватБанк, Альфа-банк, оплата частинами</span>
-					<div class="checkoutPayment__credit">
-						<div class="checkout__row">
-							<div class="dropdown icon__right checkoutPayment__bank">
-								<div class="dropdown__title">
-									<img src="img/alfa.png" alt="">
-									<span>Альфа-Банк. Легка розстрочка (3 міс.)</span>
+				<div class="checkout__row">
+					<div class="checkout__rowItem checkoutPayment__type checkoutDelivery__type">
+						<input type="radio" name="payment_type" id="payment_imposed" value="Оплата при отриманні товару" checked>
+						<label class="icon__radioOn cursor" for="payment_imposed">Оплата при отриманні товару</label>
+						<span class="checkout__tooltip">Оплата здійснюється при отриманні товару у відділенні Нової Пошти або при зустрічі з кур'єром</span>
+					</div>
+					<div class="checkout__rowItem checkoutPayment__type checkoutDelivery__type">
+						<input type="radio" name="payment_type" id="payment_online" value="Оплата картою онлайн">
+						<label class="icon__radioOn cursor" for="payment_online">Оплата картою онлайн</label>
+						<span class="checkout__tooltip">Visa, MasterCard, Google Pay, Apple Pay, Приват24</span>
+					</div>
+					<div class="checkout__rowItem checkout__hasFields checkoutPayment__type checkoutDelivery__type">
+						<input type="hidden" name="credit_program" id="credit_program" value="Альфа-Банк. Легка розстрочка (3 міс.)">
+						<input type="radio" name="payment_type" id="payment_credit" value="Кредит та оплата частинами">
+						<label class="icon__radioOn cursor" for="payment_credit">Кредит та оплата частинами</label>
+						<span class="checkout__tooltip">Monobank, ПриватБанк, Альфа-банк, оплата частинами</span>
+						<div class="checkoutPayment__credit">
+							<div class="checkout__row">
+								<div class="dropdown icon__right checkoutPayment__bank">
+									<div class="dropdown__title">
+										<img src="img/alfa.png" alt="1">
+										<span>Альфа-Банк. Легка розстрочка (3 міс.)</span>
+									</div>
+									<ul class="dropdown__list">
+										<li>
+											<input type="radio" name="payment_bank" id="payment_bank_alfa" value="Альфа-Банк. Легка розстрочка (3 міс.)">
+											<label for="payment_bank_alfa">
+												<img src="img/alfa.png" alt="2">
+												<span>Альфа-Банк. Легка розстрочка (3 міс.)</span>
+											</label>
+										</li>
+										<li>
+											<input type="radio" name="payment_bank" id="payment_bank_alfa1"
+											value="Альфа-Банк. Легка розстрочка (6 міс.)">
+											<label for="payment_bank_alfa1">
+												<img src="img/alfa.png" alt="3">
+												<span>Альфа-Банк. Легка розстрочка (6 міс.)</span>
+											</label>
+										</li>
+										<li>
+											<input type="radio" name="payment_bank" id="payment_bank_alfa2"
+											value="Альфа-Банк. Легка розстрочка (12 міс.)">
+											<label for="payment_bank_alfa2">
+												<img src="img/alfa.png" alt="4">
+												<span>Альфа-Банк. Легка розстрочка (12 міс.)</span>
+											</label>
+										</li>
+									</ul>
 								</div>
-								<ul class="dropdown__list">
-									<li>
-										<input type="radio" name="payment_bank" id="payment_bank_alfa" value="Альфа-Банк. Легка розстрочка (3 міс.)">
-										<label for="payment_bank_alfa">
-											<img src="img/alfa.png" alt="">
-											<span>Альфа-Банк. Легка розстрочка (3 міс.)</span>
-										</label>
-									</li>
-									<li>
-										<input type="radio" name="payment_bank" id="payment_bank_alfa1"
-										value="Альфа-Банк. Легка розстрочка (6 міс.)">
-										<label for="payment_bank_alfa1">
-											<img src="img/alfa.png" alt="">
-											<span>Альфа-Банк. Легка розстрочка (6 міс.)</span>
-										</label>
-									</li>
-									<li>
-										<input type="radio" name="payment_bank" id="payment_bank_alfa2"
-										value="Альфа-Банк. Легка розстрочка (12 міс.)">
-										<label for="payment_bank_alfa2">
-											<img src="img/alfa.png" alt="">
-											<span>Альфа-Банк. Легка розстрочка (12 міс.)</span>
-										</label>
-									</li>
-								</ul>
+								<span class="checkout__tooltip">3 платежі на 3 місяці</span>
+								<span class="checkoutPayment__creditPrice">7 670 грн / місяць</span>
 							</div>
-							<span class="checkout__tooltip">3 платежі на 3 місяці</span>
-							<span class="checkoutPayment__creditPrice">7 670 грн / місяць</span>
-						</div>
-						<div class="checkout__row">
-							<div class="checkout__rowTitle">Ваші особисті дані</div>
-							<input class="input" type="text" name="credit_lastname" placeholder="Призвіще">
-							<input class="input" type="text" name="credit_firstname" placeholder="Ім’я">
-							<input class="input" type="text" name="credit_midlename" placeholder="По батькові">
-							<input class="input" type="text" name="credit_inn" placeholder="Ідентифікаційний номер">
-						</div>
-						<div class="checkout__row checkout__row--birth">
-							<div class="checkout__rowTitle">Дата народження</div>
-							<input class="input" type="text" name="credit_day_of_birth" placeholder="День">
-							<input class="input" type="text" name="credit_month_of_birth" placeholder="Місяць">
-							<input class="input" type="text" name="credit_year_of_birth" placeholder="Рік">
-						</div>
-						<div class="checkout__row checkout__passport">
-							
-							<input id="checkout_pass_pass" type="radio" name="passport" class="btn checkoutCustomer__btn checkout__passportPass" value="Паспорт" checked>
-							<label for="checkout_pass_pass" class="btn">Паспорт</label>
+							<div class="checkout__row">
+								<div class="checkout__rowTitle">Ваші особисті дані</div>
+								<input class="input checkout__required" type="text" name="credit_lastname" placeholder="Призвіще">
+								<input class="input" type="text" name="credit_firstname" placeholder="Ім’я">
+								<input class="input" type="text" name="credit_midlename" placeholder="По батькові">
+								<input class="input" type="text" name="credit_inn" placeholder="Ідентифікаційний номер">
+							</div>
+							<div class="checkout__row checkout__row--birth">
+								<div class="checkout__rowTitle">Дата народження</div>
+								<input class="input" type="text" name="credit_day_of_birth" placeholder="День">
+								<input class="input" type="text" name="credit_month_of_birth" placeholder="Місяць">
+								<input class="input" type="text" name="credit_year_of_birth" placeholder="Рік">
+							</div>
+							<div class="checkout__row checkout__passport">
 
-							<input id="checkout_pass_id" type="radio" name="passport" class="btn checkoutCustomer__btn checkout__passportIdCard" value="ID карта">						
-							<label for="checkout_pass_id" class="btn">ID Карта</label>
+								<input id="checkout_pass_pass" type="radio" name="passport" class="btn checkoutCustomer__btn checkout__passportPass" value="Паспорт" checked>
+								<label for="checkout_pass_pass" class="btn">Паспорт</label>
 
-							<div class="checkout__row checkout__row--passport checkout__row--pass">
-								<input class="input" type="text" name="credit_pass_serie" placeholder="Серія">
-								<input class="input" type="text" name="credit_pass_num" placeholder="Номер">
-								<input class="input" type="text" name="credit_pass_from" placeholder="Ким виданий паспорт">
+								<input id="checkout_pass_id" type="radio" name="passport" class="btn checkoutCustomer__btn checkout__passportIdCard" value="ID карта">						
+								<label for="checkout_pass_id" class="btn">ID Карта</label>
+
+								<div class="checkout__row checkout__row--passport checkout__row--passport--required checkout__row--pass">
+									<input class="input checkout__required" type="text" name="credit_pass_serie" placeholder="Серія">
+									<input class="input checkout__required" type="text" name="credit_pass_num" placeholder="Номер">
+									<input class="input checkout__required" type="text" name="credit_pass_from" placeholder="Ким виданий паспорт">
+								</div>
+								<div class="checkout__row checkout__row--passport checkout__row--passport--required checkout__row--idCard">
+									<input class="input" type="text" name="credit_pass_id_num" placeholder="Номер2">
+									<input class="input" type="text" name="credit_pass_id_from" placeholder="Ким виданий паспорт2">
+								</div>
 							</div>
-							<div class="checkout__row checkout__row--passport checkout__row--idCard">
-								<input class="input" type="text" name="credit_pass_id_serie" placeholder="Серія2">
-								<input class="input" type="text" name="credit_pass_id_num" placeholder="Номер2">
-								<input class="input" type="text" name="credit_pass_id_from" placeholder="Ким виданий паспорт2">
+							<div class="checkout__row checkout__row--birth">
+								<div class="checkout__rowTitle">Дата видачі паспорту</div>
+								<input class="input" type="text" name="credit_day_of_get_passport" placeholder="День">
+								<input class="input" type="text" name="credit_month_of_get_passport" placeholder="Місяць">
+								<input class="input" type="text" name="credit_year_of_get_passport" placeholder="Рік">
 							</div>
-						</div>
-						<div class="checkout__row checkout__row--birth">
-							<div class="checkout__rowTitle">Дата видачі паспорту</div>
-							<input class="input" type="text" name="credit_day_of_get_passport" placeholder="День">
-							<input class="input" type="text" name="credit_month_of_get_passport" placeholder="Місяць">
-							<input class="input" type="text" name="credit_year_of_get_passport" placeholder="Рік">
-						</div>
-						<div class="checkout__row">
-							<input class="input" type="text" name="credit_phone" placeholder="Телефон для зв’язку з Вами">
-							<input class="input" type="text" name="credit_work_giver" placeholder="Роботодавець">
-							<input class="input" type="text" name="credit_work_phone" placeholder="Міський номер телефону з місця роботи">
+							<div class="checkout__row">
+								<input class="input" type="text" name="credit_phone" placeholder="Телефон для зв’язку з Вами">
+								<input class="input" type="text" name="credit_work_giver" placeholder="Роботодавець">
+								<input class="input" type="text" name="credit_work_phone" placeholder="Міський номер телефону з місця роботи">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -345,7 +345,7 @@
 				<div class="headerCart__cost">24 009 грн</div>
 			</div>
 			<div class="headerCart__btns">
-				<button type="submit" class="headerCart__checkout btn btn--yellow">Замовлення підтверджую</button>
+				<button type="submit" class="headerCart__checkout btn btn--yellow" id="checkout_order">Замовлення підтверджую</button>
 			</div>
 			<div class="checkout__widgetEnd">
 				Підтверджуючи замовлення, я приймаю умови <a href="">угоди користувача</a>

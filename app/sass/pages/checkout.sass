@@ -26,6 +26,19 @@
 			width: 100%
 	&__step
 		padding-top: 24px
+		.checkout__inner
+			opacity: 0
+			max-height: 0
+			overflow: hidden
+			+tran(all,.5s)
+		&--active
+			.checkout__inner
+				max-height: 2000px
+				opacity: 1
+		&--completed
+			.checkout__completed
+				display: flex
+	
 	&__widget
 		position: absolute
 		top: 24px
@@ -48,10 +61,24 @@
 			+xs
 				font-size: 16px
 	&__completed
+		+flex(0,0,0,center)
 		display: none
+		margin-top: 8px
+		span
+			padding-right: 5px
+			order: 1
+			+text(14,500,24,$tc_06)
+			&:not(:last-child)
+				+after
+					content: ','
+					display: inline-block
+		button
+			order: 2
 	&__change
 		border-bottom: 1px dashed $text_color
 		border-radius: 0
+		padding: 0
+		margin-left: auto
 		+text(12,600,24,0)
 	&__title
 		padding-bottom: 8px
@@ -109,6 +136,13 @@
 						max-width: 65%!important
 					+ .input
 						max-width: 100%!important
+		&--idCard
+			.input
+				max-width: 100%!important
+				+ .input
+					max-width: 100%!important
+			.input
+				width: 
 	&__rowTitle
 		margin-bottom: 12px
 		+text(14,700,20,0)
