@@ -47,6 +47,7 @@ if (open_dropdown) {
 			e.preventDefault();
 			var list = this.parentNode;
 			list.classList.toggle('dropdown--open');
+			console.log(1);
 		});
 	}
 }
@@ -593,7 +594,7 @@ if (open_dropdown) {
 			]
 		});
 
-		$('.product__nav').slick({
+		$('.products .product__nav').slick({
 			slidesToShow: 5,
 			slidesToScroll: 1,
 			variableWidth: true,
@@ -892,6 +893,211 @@ if (open_dropdown) {
 		});
 		
 	}
+
+
+
+
+
+
+
+
+
+	// account ==========================
+
+	var account = document.querySelector('.account');
+	var account_form = document.querySelector('.accountForm form');
+	var account_submit = document.querySelector('.accountForm__submit');
+	var account_required = document.querySelectorAll('input.account__required');
+	var account_picker;
+	var account_pass_new = document.querySelector('input[name=pass_new]');
+	var account_pass_repeat = document.querySelector('input[name=pass_repeat]');
+
+	if (account) {
+		account_submit.addEventListener('click', function(){
+			account_picker = null;
+
+			for(var i=0;i<account_required.length;i++){
+				if (account_required[i].value == '') {
+					account_required[i].classList.remove('input--ok');
+					account_required[i].classList.add('input--err');
+					account_picker = false;
+				} else {
+					account_required[i].classList.add('input--ok');
+					account_required[i].classList.remove('input--err');
+					if (account_picker != false) {
+						account_picker = true;
+					}
+				}
+			}
+
+			if (account_pass_new.value != '' && account_pass_repeat.value != '' && account_pass_new.value == account_pass_repeat.value) {
+				account_pass_new.classList.add('input--ok');
+				account_pass_new.classList.remove('input--err');
+				account_pass_repeat.classList.add('input--ok');
+				account_pass_repeat.classList.remove('input--err');
+				if (account_picker != false) {
+					account_picker = true;
+				}
+			} else {
+				account_pass_new.classList.remove('input--ok');
+				account_pass_new.classList.add('input--err');
+				account_pass_repeat.classList.remove('input--ok');
+				account_pass_repeat.classList.add('input--err');
+				account_picker = false;
+			}
+
+			if (account_picker) {
+				alert('success');
+				account_form.submit();
+			} else {
+				account_form.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
+		});
+	}
+
+
+
+
+
+	// orders =========================
+
+
+
+	var orders = document.querySelector('.orders');
+
+	var orders_btn_all = document.querySelector('.product__btn--all');
+	var orders_btn_inwork = document.querySelector('.product__btn--inWork');
+	var orders_btn_completed = document.querySelector('.product__btn--completed');
+	var orders_btn_pre = document.querySelector('.product__btn--preOrder');
+	var orders_btn_canceled = document.querySelector('.product__btn--canceled');
+
+	var tab_all = document.querySelector('.orders__tab--all');
+	var tab_inwork = document.querySelector('.orders__tab--inWork');
+	var tab_completed = document.querySelector('.orders__tab--completed');
+	var tab_pre = document.querySelector('.orders__tab--preOrder');
+	var tab_canceled = document.querySelector('.orders__tab--canceled');
+
+
+	if (orders) {
+		var order_open = document.querySelectorAll('.orders__open');
+
+		for(var i=0;i<order_open.length;i++) {  // 
+			order_open[i].addEventListener('click', function(e){
+				this.classList.toggle('orders__right--open');
+				this.parentNode.parentNode.querySelector('.orders__detail').classList.toggle('orders__detail--open');
+			});
+		}
+
+		function ordersTabs(elem, tab) { // переключатель табов
+			elem.addEventListener('click', function(e){
+				var btn_sibl = this.parentNode.querySelectorAll('.product__btn');
+				var btn_cls = this.classList;
+				var tab_sibl = tab.parentNode.querySelectorAll('.orders__tab');
+				var tab_cls = tab.classList;
+
+				for(var i=0;i<btn_sibl.length;i++) {
+					if (btn_sibl[i].classList != btn_cls) {
+						btn_sibl[i].classList.remove('product__btn--active');
+					} else {
+						btn_sibl[i].classList.add('product__btn--active');
+					}
+				}
+				for(var i=0;i<tab_sibl.length;i++) {
+					if (tab_sibl[i].classList != tab_cls) {
+						tab_sibl[i].classList.remove('orders__tab--active');
+					} else {
+						tab_sibl[i].classList.add('orders__tab--active');
+					}
+				}
+
+
+			});
+		}
+
+
+		ordersTabs(orders_btn_all, tab_all);
+		ordersTabs(orders_btn_inwork, tab_inwork);
+		ordersTabs(orders_btn_completed, tab_completed);
+		ordersTabs(orders_btn_pre, tab_pre);
+		ordersTabs(orders_btn_canceled, tab_canceled);
+
+		$('.orders .product__nav').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			variableWidth: true,
+			arrows: false,
+			infinite: false,
+			responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 4,
+					variableWidth: true,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 5,
+					variableWidth: true,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 5,
+					variableWidth: true,
+				}
+			},
+			{
+				breakpoint: 550,
+				settings: {
+					slidesToShow: 3,
+					variableWidth: true,
+				}
+			}
+			]
+		});
+	}
+
+
+
+
+	// reviews =========================
+
+
+	var review = document.querySelector('.reviews');
+	var modal_review = document.querySelector('#modal_review');
+	var reviews_close = document.querySelectorAll('.close_modal_review');	
+	var reviews_open = document.querySelectorAll('.reviews_open');
+
+	if (review) {
+
+		for(var i=0;i<reviews_close.length;i++) {
+		reviews_close[i].addEventListener('click', function(e){ // закрыть pop up добавления отзывыа
+			e.preventDefault();
+			modal_review.classList.remove('modal--open', 'modalCart--open');
+		});
+	}
+
+	for(var i=0;i<reviews_open.length;i++) {
+		reviews_open[i].addEventListener('click', function(e){ // открыть pop up добавления отзывыа
+			e.preventDefault();
+			modal_review.classList.add('modal--open', 'modalCart--open');
+		});
+	}
+
+	document.onclick = function(e){ // закрытие блоков по клику вне них
+		if ( !modal_review.querySelector('.modal__win').contains(e.target) && !reviews_open[0].contains(e.target)  ) { // закрытие popupа добавления отзыва
+			modal_review.classList.remove('modal--open', 'modalCart--open');
+		};
+	};
+
+}
+
 
 
 

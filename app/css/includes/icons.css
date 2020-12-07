@@ -186,3 +186,17 @@
   width: 24px;
   height: 24px;
   background: url(../img/icons/ic_filter.svg) no-repeat; }
+
+.icon__calendar::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url(../img/icons/ic_calendar.svg) no-repeat; }
+
+.icon__arrow::before {
+  content: '';
+  display: block;
+  width: 23px;
+  height: 15px;
+  background: url(../img/icons/ic_arrow.svg) no-repeat; }
