@@ -1,0 +1,153 @@
+@import "../var.sass"
+
+.compare
+	.main
+		padding-bottom: 80px
+		&--compareFixed
+			padding-top: 696px
+	&__title
+		padding-bottom: 32px
+		+flex(0,0,space-between,center)
+	h1
+		margin-bottom: 0
+	&__add
+		position: relative
+		padding: 0 0 0 32px
+		border-radius: 0
+		border-bottom: 1px dashed transparent
+		+text(14,600,24,0)
+		+tran(all,.4s)
+		+hover
+			border-color: $text_color
+		+before
+			position: absolute
+			top: 50%
+			left: 0
+			width: 16px
+			height: 2px
+			margin-top: -1px
+			background: $text_color
+		+after
+			position: absolute
+			top: 50%
+			left: 0
+			width: 16px
+			height: 2px
+			margin-top: -1px
+			background: $text_color
+			transform: rotate(90deg)
+	&__clear
+		margin-top: 40px
+		color: #D9214F
+		border-bottom: 1px dashed #D9214F
+		border-radius: 0
+		padding: 0
+		+text(12,600,24,0)
+
+
+
+	&Header
+		+flex(0,0,flex-start,0)
+		&__tools
+			min-width: 240px
+			padding-left: calc((100% - 1600px) / 2)
+		&__views
+		&__viewsTitle
+			margin-bottom: 16px
+			+text(14,700,20,0)
+		&__viewsItems
+			label
+				margin-bottom: 16px
+				+text(14,500,24,0)
+		&__products
+			width: 100%
+			overflow-x: auto
+			overflow-y: hidden
+			padding: 50px 0 35px 50px
+			margin-left: -40px
+			+flex(0,0,flex-start,0)
+			min-height: 536px
+			.preview
+				margin-right: 32px
+
+
+	&Inner
+		//+flex(0,0,flex-start,0)
+		position: relative
+		&__names
+			padding-left: calc((100% - 1600px) / 2)
+			.productChars__list
+				width: 100%
+			.productChars__charTitle
+				width: 100%
+				max-width: 232px
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+		&__chars
+			position: absolute
+			top: 0
+			left: 430px
+			right: 0
+			overflow-x: auto
+			overflow-y: hidden
+			opacity: 0
+			max-height: 0
+			+tran(all,.4s)
+			+flex(0,0,flex-start,0)
+			&--open
+				max-height: 999px
+				opacity: 1
+			.productChars__list
+				width: 232px
+			.productChars__char
+				padding: 18px 10px
+		&__item
+			padding-top: 33px
+			.productChars__charVal
+				width: 100%
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+		&__col
+			margin-right: 32px
+
+	&__fixed
+		&--fixed
+			position: fixed
+			left: 0
+			right: 0
+			top: 0
+			background: #fff
+			z-index: 1
+			padding-top: 24px
+			animation: compare_fixed .4s
+			.compareHeader__products
+				padding: 0 0 24px 50px
+				min-height: unset
+			.compare__title
+				padding-bottom: 24px
+			.preview
+				min-height: unset
+				padding-top: 0
+				+flex(row,wrap,0,center)
+				+before
+					display: none
+				.preview__rating, .preview__dis, .preview__sticker
+					display: none
+				.preview__thumb
+					max-width: 46px
+					height: auto
+				.preview__name
+					display: inline-block
+					width: calc(100% - 62px)
+					margin-left: 16px
+					+text(14,500,24,0)
+				.preview__total
+					font-size: 20px
+					font-weight: 800
+					margin-top: 0
+				.preview__price
+					margin-bottom: 8px
+					min-height: auto
+			

@@ -6,6 +6,9 @@
 
 .info .main--left {
   padding-left: 32px; }
+  @media (max-width: 992px) {
+    .info .main--left {
+      padding-left: 0; } }
 
 .infoNav__title {
   margin: 0 0 16px 0 !important;
@@ -133,3 +136,12 @@
 .actions__link {
   width: 100%;
   display: block; }
+
+.reviews__sort {
+  width: 240px;
+  max-width: 100% !important;
+  z-index: 0; }
+  @media (max-width: 500px) {
+    .reviews__sort {
+      max-width: 145px !important;
+      margin-right: 10px; } }

@@ -40,7 +40,7 @@ table
 		outline: none
 article
 	~
-body 
+body
 	font-family: $ff
 	font-weight: $fw
 	font-size: $fz
@@ -51,6 +51,16 @@ body
 		+flex(column,0,0,0)
 		.footer
 			margin-top: auto
+	&.hidden
+		overflow-y: hidden
+		padding-right: 5px
+	&::-webkit-scrollbar
+		display: block
+		width: 5px
+		height: 3px
+		background: transparent
+  &::-webkit-scrollbar-thumb
+  	background: $prim_color
 a 
 	color: $text_color
 	text-decoration: none
@@ -375,6 +385,9 @@ blockquote
     width: 2px
     height: 3px
     background: transparent
+    position: fixed
+    bottom: 0
+    left: 0
   &::-webkit-scrollbar-thumb
     background: $prim_color
   &::-webkit-scrollbar-track-piece
@@ -382,6 +395,18 @@ blockquote
   	&::-webkit-scrollbar
   		width: 3px
   		background: #c8c8c8
+  &--hide
+  	&::-webkit-scrollbar
+  		display: none
+  &--body
+  	&::-webkit-scrollbar
+    	width: 5px
+    	background: transparent
+    	position: fixed
+    	bottom: 0
+    	left: 0
+  	&::-webkit-scrollbar-thumb
+    	background: $prim_color
 
 
 .close
@@ -525,6 +550,12 @@ blockquote
 		background: transparent
 	100%
 		background: rgba(255, 200, 48, 0.5)
+
+@keyframes compare_fixed
+	0%
+		top: -100%
+	100%
+		top: 0
 
 
 
@@ -878,6 +909,25 @@ blockquote
 .modalReview
 	&__form
 		padding: 34px
+		+xs
+			padding: 25px 10px
 		form
 			padding-top: 0
+	&__success
+		display: none
+		padding: 15px 0
+		+xs
+			text-align: center
+	.productTest__rate
+		+xs
+			width: 100%
+			justify-content: center
+	.productTest__rateComment
+		+xs
+			margin: 16px 0 0 0
+			width: 100%
+			text-align: center
+	.close_modal_review
+		+xs
+			top: 15px
 			

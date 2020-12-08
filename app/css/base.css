@@ -63,6 +63,16 @@ body {
             flex-direction: column; }
     body.column .footer {
       margin-top: auto; }
+  body.hidden {
+    overflow-y: hidden;
+    padding-right: 5px; }
+  body::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    height: 3px;
+    background: transparent; }
+    body::-webkit-scrollbar::-webkit-scrollbar-thumb {
+      background: #FFC830; }
 
 a {
   color: #242426;
@@ -516,7 +526,10 @@ blockquote {
 .scroll::-webkit-scrollbar {
   width: 2px;
   height: 3px;
-  background: transparent; }
+  background: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0; }
 
 .scroll::-webkit-scrollbar-thumb {
   background: #FFC830; }
@@ -524,6 +537,19 @@ blockquote {
 .scroll--catalog::-webkit-scrollbar {
   width: 3px;
   background: #c8c8c8; }
+
+.scroll--hide::-webkit-scrollbar {
+  display: none; }
+
+.scroll--body::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0; }
+
+.scroll--body::-webkit-scrollbar-thumb {
+  background: #FFC830; }
 
 .close {
   background: transparent; }
@@ -755,6 +781,18 @@ blockquote {
     background: transparent; }
   100% {
     background: rgba(255, 200, 48, 0.5); } }
+
+@-webkit-keyframes compare_fixed {
+  0% {
+    top: -100%; }
+  100% {
+    top: 0; } }
+
+@keyframes compare_fixed {
+  0% {
+    top: -100%; }
+  100% {
+    top: 0; } }
 
 .added::after {
   content: '';
@@ -1310,5 +1348,33 @@ blockquote {
 
 .modalReview__form {
   padding: 34px; }
+  @media (max-width: 768px) {
+    .modalReview__form {
+      padding: 25px 10px; } }
   .modalReview__form form {
     padding-top: 0; }
+
+.modalReview__success {
+  display: none;
+  padding: 15px 0; }
+  @media (max-width: 768px) {
+    .modalReview__success {
+      text-align: center; } }
+
+@media (max-width: 768px) {
+  .modalReview .productTest__rate {
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; } }
+
+@media (max-width: 768px) {
+  .modalReview .productTest__rateComment {
+    margin: 16px 0 0 0;
+    width: 100%;
+    text-align: center; } }
+
+@media (max-width: 768px) {
+  .modalReview .close_modal_review {
+    top: 15px; } }

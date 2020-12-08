@@ -5,6 +5,8 @@
 		align-items: unset
 	.main--left
 		padding-left: 32px
+		+sm
+			padding-left: 0
 	&Nav
 		&__title
 			margin: 0 0 16px 0 !important
@@ -96,5 +98,10 @@
 		display: block
 
 .reviews
-
-
+	&__sort
+		width: 240px
+		max-width: 100%!important
+		z-index: 0
+		+xxs
+			max-width: 145px!important
+			margin-right: 10px

@@ -521,6 +521,8 @@ if (open_dropdown) {
 	var product_quest_add = document.querySelector('.productQuest__anc');
 	var product_quest_area = document.querySelector('#question_add');
 
+	var product_test_btn = $('.productTest__btn');
+
 
 	if (product)  {
 		function productTabs(elem, tab) { // переключатель табов
@@ -698,6 +700,72 @@ if (open_dropdown) {
 			}
 			]
 		});
+	});
+
+	product_test_btn.on('click', function(e){ // добавление нового отзыва в карточке
+		e.preventDefault();
+
+		var rev_name = $(this).parent().find('input[name=name]');
+		var rev_text = $(this).parent().find('textarea[name=text]');
+		var rev_rate = $(this).parent().find('input[name=rating]');
+		var rev_form = $(this).parent();
+		var rev_success = $(this).parent().parent().find('.modalReview__success');
+
+		var picker_name = null;
+		var picker_text = null;
+		var picker_rate = null;
+
+		if (rev_name.val() != '') {
+			picker_name = true;
+			rev_name.removeClass('input--err');
+			rev_name.addClass('input--ok');
+		} else {
+			picker_name = false;
+			rev_name.removeClass('input--ok');
+			rev_name.addClass('input--err');
+		}
+
+		if (rev_text.val() != '') {
+			picker_text = true;
+			rev_text.removeClass('input--err');
+			rev_text.addClass('input--ok');
+		} else {
+			picker_text = false;
+			rev_text.removeClass('input--ok');
+			rev_text.addClass('input--err');
+		}
+
+		if (rev_rate.length != 0) {
+			rev_rate.each(function(){
+				if ( $(this).is(':checked') ) {
+					picker_rate = true;
+					$('.productTest__rateComment').removeClass('productTest__rateComment--err');
+					$('.productTest__rateComment').addClass('productTest__rateComment--ok');
+				} else {
+					if (picker_rate != true) {
+						picker_rate = false;
+						$('.productTest__rateComment').removeClass('productTest__rateComment--ok');
+						$('.productTest__rateComment').addClass('productTest__rateComment--err');;
+					}
+				}
+			});
+		} else {
+			picker_rate = true;
+		}
+
+
+		
+
+		if (picker_name && picker_text && picker_rate) {
+			rev_form.slideToggle(200);
+			setTimeout(function(){
+				rev_success.slideToggle(200);
+			}, 230);
+			setTimeout(function(){
+				rev_form.submit();
+			}, 2000);
+		}
+
 	});
 
 
@@ -1073,6 +1141,8 @@ if (open_dropdown) {
 	var modal_review = document.querySelector('#modal_review');
 	var reviews_close = document.querySelectorAll('.close_modal_review');	
 	var reviews_open = document.querySelectorAll('.reviews_open');
+	var product_test_rate = document.querySelectorAll('.productTest__rateItem');
+	var product_test_btn = $('.productTest__btn');
 
 	if (review) {
 
@@ -1096,6 +1166,138 @@ if (open_dropdown) {
 		};
 	};
 
+
+for(var i=0;i<product_test_rate.length;i++) {  // рейтинг на странице отзывов
+	product_test_rate[i].addEventListener('click', function(e){
+		var others = this.parentNode.querySelectorAll('.productTest__rateItem')
+		var rate = this.querySelector('input').value;
+		document.querySelector('.productTest__rateComment span').innerHTML = rate;
+
+		for(var i=0;i<others.length;i++) {
+			others[i].classList.remove('productTest__rateItem--active');
+		}
+
+		this.classList.add('productTest__rateItem--active');
+	});
+}
+
+
+
+
+product_test_btn.on('click', function(e){ // добавление нового отзыва на странице отзывов
+	e.preventDefault();
+
+	var rev_name = $('input[name=name]');
+	var rev_text = $('textarea[name=text]');
+	var rev_rate = $('input[name=rating]');
+	var rev_form = $('.productTest__form');
+	var rev_success = $('.modalReview__success');
+
+	var picker_name = null;
+	var picker_text = null;
+	var picker_rate = null;
+
+	if (rev_name.val() != '') {
+		picker_name = true;
+		rev_name.removeClass('input--err');
+		rev_name.addClass('input--ok');
+	} else {
+		picker_name = false;
+		rev_name.removeClass('input--ok');
+		rev_name.addClass('input--err');
+	}
+
+	if (rev_text.val() != '') {
+		picker_text = true;
+		rev_text.removeClass('input--err');
+		rev_text.addClass('input--ok');
+	} else {
+		picker_text = false;
+		rev_text.removeClass('input--ok');
+		rev_text.addClass('input--err');
+	}
+
+
+	rev_rate.each(function(){
+		if ( $(this).is(':checked') ) {
+			picker_rate = true;
+			$('.productTest__rateComment').removeClass('productTest__rateComment--err');
+			$('.productTest__rateComment').addClass('productTest__rateComment--ok');
+		} else {
+			if (picker_rate != true) {
+				picker_rate = false;
+				$('.productTest__rateComment').removeClass('productTest__rateComment--ok');
+				$('.productTest__rateComment').addClass('productTest__rateComment--err');;
+			}
+		}
+	});
+
+	if (picker_name && picker_text && picker_rate) {
+		rev_form.slideToggle(200);
+		setTimeout(function(){
+			rev_success.slideToggle(200);
+		}, 230);
+		setTimeout(function(){
+			rev_form.submit();
+		}, 2000);
+	}
+
+});
+
+}
+var compare = document.querySelector('.compare');
+
+
+if (compare) {
+
+	var compare_fixed = document.querySelector('.compare__fixed');
+	var compare_inner = document.querySelectorAll('.compareInner');
+	var compare_main = document.querySelector('.main');
+	var offset = compare_inner[0].offsetTop;
+	
+
+	document.addEventListener('scroll', function(){
+		if (window.pageYOffset > offset) {
+			compare_fixed.classList.add('compare__fixed--fixed');
+			compare_main.classList.add('main--compareFixed');			
+		} else {
+			compare_fixed.classList.remove('compare__fixed--fixed');
+			compare_main.classList.remove('main--compareFixed');
+		}
+	});
+
+	(function($){var types=['DOMMouseScroll','mousewheel'];if($.event.fixHooks){for(var i=types.length;i;){$.event.fixHooks[types[--i]]=$.event.mouseHooks;}}
+		$.event.special.mousewheel={setup:function(){if(this.addEventListener){for(var i=types.length;i;){this.addEventListener(types[--i],handler,false);}}else{this.onmousewheel=handler;}},teardown:function(){if(this.removeEventListener){for(var i=types.length;i;){this.removeEventListener(types[--i],handler,false);}}else{this.onmousewheel=null;}}};$.fn.extend({mousewheel:function(fn){return fn?this.bind("mousewheel",fn):this.trigger("mousewheel");},unmousewheel:function(fn){return this.unbind("mousewheel",fn);}});function handler(event){var orgEvent=event||window.event,args=[].slice.call(arguments,1),delta=0,returnValue=true,deltaX=0,deltaY=0;event=$.event.fix(orgEvent);event.type="mousewheel";if(orgEvent.wheelDelta){delta=orgEvent.wheelDelta/120;}
+		if(orgEvent.detail){delta=-orgEvent.detail/3;}
+		deltaY=delta;if(orgEvent.axis!==undefined&&orgEvent.axis===orgEvent.HORIZONTAL_AXIS){deltaY=0;deltaX=-1*delta;}
+		if(orgEvent.wheelDeltaY!==undefined){deltaY=orgEvent.wheelDeltaY/120;}
+		if(orgEvent.wheelDeltaX!==undefined){deltaX=-1*orgEvent.wheelDeltaX/120;}
+		args.unshift(event,delta,deltaX,deltaY);return($.event.dispatch||$.event.handle).apply(this,args);}})(jQuery);
+
+		var scroll_elem = $('.compare_scroll');
+		$('.compare_scroll').mousewheel(function(e, delta) {
+			for (var i=0;i<scroll_elem.length;i++) {
+				$('.compare_scroll')[i].scrollLeft -= (delta * 40);
+			}
+		});
+		$('.compare_scroll').hover(function(){ 
+			$('body').addClass('hidden');
+		}, function(){  	
+			$('body').removeClass('hidden');
+		});
+	}
+
+	var product_chars_btn = document.querySelectorAll('.productChars__title');
+for(var i=0;i<product_chars_btn.length;i++) { // развернуть список характеристик в сравнении
+
+	product_chars_btn[i].addEventListener('click', function(e){
+		var others = this.parentNode.querySelector('.productChars__list');
+		var char_list = this.parentNode.parentNode.parentNode.querySelector('.compareInner__chars');
+		this.classList.toggle('productChars__title--open');
+		others.classList.toggle('productChars__list--open');
+		char_list.classList.toggle('compareInner__chars--open');
+
+	});
 }
 
 

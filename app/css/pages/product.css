@@ -859,11 +859,18 @@
         margin-left: 0; } }
   .productTest__rateComment {
     margin-left: 24px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
     font-size: 18px;
     font-weight: 400; }
     @media (max-width: 768px) {
       .productTest__rateComment {
         font-size: 14px; } }
+    .productTest__rateComment--ok {
+      color: #1b891b; }
+    .productTest__rateComment--err {
+      color: #f00; }
   .productTest__rateItem {
     margin-right: 10px; }
     .productTest__rateItem label {
