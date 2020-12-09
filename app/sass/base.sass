@@ -315,11 +315,18 @@ blockquote
 		width: 100%
 		text-align: center
 		border: 2px solid transparent
-		+tran(all, .4s)
 		+hover
-			text-decoration: none
-			border-color: $prim_color
-			background: #fff
+			text-decoration: underline
+	&--blue
+		background: #4267B2
+		color: #fff
+		padding: 14px 0
+		width: 100%
+		text-align: center
+		border: 2px solid transparent
+		display: block
+		+hover
+			text-decoration: underline
 	&--buy
 		border: 2px solid $prim_color
 		width: 144px
@@ -415,34 +422,7 @@ blockquote
 		display: block
 
 
-.modal
-	position: fixed
-	top: 0
-	right: 0
-	bottom: 0
-	left: 0
-	z-index: 3
-	background: $ov_color
-	opacity: 0
-	pointer-events: none
-	+flex(0,0,center,center)
-	+tran(opacity, .4s)
-	&--open
-		opacity: 1
-		pointer-events: auto
-	&__win
-		position: relative
-		width: 100%
-		max-width: 1056px
-		background: #fff
-		padding: 32px 24px
-		+xs
-			max-height: 100vh
-			overflow: auto
-	&__close
-		position: absolute
-		top: 32px
-		right: 24px
+
 
 .quantly
 	width: 100%
@@ -906,28 +886,5 @@ blockquote
 			max-width: unset
 			margin-left: calc(50% - 50vw)
 
-.modalReview
-	&__form
-		padding: 34px
-		+xs
-			padding: 25px 10px
-		form
-			padding-top: 0
-	&__success
-		display: none
-		padding: 15px 0
-		+xs
-			text-align: center
-	.productTest__rate
-		+xs
-			width: 100%
-			justify-content: center
-	.productTest__rateComment
-		+xs
-			margin: 16px 0 0 0
-			width: 100%
-			text-align: center
-	.close_modal_review
-		+xs
-			top: 15px
+
 			

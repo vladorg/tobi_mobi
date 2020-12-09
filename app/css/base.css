@@ -416,14 +416,19 @@ blockquote {
     padding: 11px 0;
     width: 100%;
     text-align: center;
-    border: 2px solid transparent;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s; }
+    border: 2px solid transparent; }
     .btn--yellow:hover {
-      text-decoration: none;
-      border-color: #FFC830;
-      background: #fff; }
+      text-decoration: underline; }
+  .btn--blue {
+    background: #4267B2;
+    color: #fff;
+    padding: 14px 0;
+    width: 100%;
+    text-align: center;
+    border: 2px solid transparent;
+    display: block; }
+    .btn--blue:hover {
+      text-decoration: underline; }
   .btn--buy {
     border: 2px solid #FFC830;
     width: 144px;
@@ -555,49 +560,6 @@ blockquote {
   background: transparent; }
   .close img {
     display: block; }
-
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  transition: opacity 0.4s; }
-  .modal--open {
-    opacity: 1;
-    pointer-events: auto; }
-  .modal__win {
-    position: relative;
-    width: 100%;
-    max-width: 1056px;
-    background: #fff;
-    padding: 32px 24px; }
-    @media (max-width: 768px) {
-      .modal__win {
-        max-height: 100vh;
-        overflow: auto; } }
-  .modal__close {
-    position: absolute;
-    top: 32px;
-    right: 24px; }
 
 .quantly {
   width: 100%;
@@ -1345,36 +1307,3 @@ blockquote {
       width: 100vw;
       max-width: unset;
       margin-left: calc(50% - 50vw); } }
-
-.modalReview__form {
-  padding: 34px; }
-  @media (max-width: 768px) {
-    .modalReview__form {
-      padding: 25px 10px; } }
-  .modalReview__form form {
-    padding-top: 0; }
-
-.modalReview__success {
-  display: none;
-  padding: 15px 0; }
-  @media (max-width: 768px) {
-    .modalReview__success {
-      text-align: center; } }
-
-@media (max-width: 768px) {
-  .modalReview .productTest__rate {
-    width: 100%;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; } }
-
-@media (max-width: 768px) {
-  .modalReview .productTest__rateComment {
-    margin: 16px 0 0 0;
-    width: 100%;
-    text-align: center; } }
-
-@media (max-width: 768px) {
-  .modalReview .close_modal_review {
-    top: 15px; } }

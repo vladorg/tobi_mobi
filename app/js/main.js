@@ -4,9 +4,6 @@ window.onload = function () {
 	
 	// basic =======================================
 
-	var open_modal_login = document.querySelectorAll('.open_modal_login');
-	var close_modal_login = document.querySelectorAll('.close_modal_login');
-	var modal_login = document.querySelector('#modal_login');
 	var open_dropdown = document.querySelectorAll('.dropdown__title');
 	var open_seo = document.querySelectorAll('.seo__readAll');
 
@@ -21,25 +18,7 @@ window.onload = function () {
 	}
 }
 
-if (modal_login) {
-	for(var i=0;i<open_modal_login.length;i++) {
-		open_modal_login[i].addEventListener('click', function(e){ // отрыть pop up авторизации
-			e.preventDefault();
-			if (cart_items) {
-				cart_items.classList.remove('headerCart__itemsWrap--open');
-			}
-			
-			modal_login.classList.add('modal--open');
-		});
-	}
 
-	for(var i=0;i<close_modal_login.length;i++) {
-		close_modal_login[i].addEventListener('click', function(e){ // закрыть pop up авторизации
-			e.preventDefault();
-			modal_login.classList.remove('modal--open')
-		});
-	}
-}
 
 if (open_dropdown) {
 	for(var i=0;i<open_dropdown.length;i++) {
@@ -834,7 +813,7 @@ if (open_dropdown) {
 		});
 
 
-		function validate($btn, $picker, $cur_step, $next_step, $last = false) {
+		function validate($btn, $picker, $cur_step, $next_step, $last = false) { // валидация полей с определенным классом
 			$btn.on('click', function(e){
 				e.preventDefault();
 				var step_values = $cur_step.find('.checkout__required');
@@ -949,7 +928,7 @@ if (open_dropdown) {
 		validate(delivery_next, delivery, delivery_step, payment_step);
 		validate(checkout_order, payment, payment_step, false, true);
 
-		checkout_step_back.on('click', function(){
+		checkout_step_back.on('click', function(){ // проверка прохождения шагов и отправка формы
 
 			var current_step = $(this).closest('.checkout__step');
 			var other_step = current_step.siblings();
@@ -981,7 +960,7 @@ if (open_dropdown) {
 	var account_pass_repeat = document.querySelector('input[name=pass_repeat]');
 
 	if (account) {
-		account_submit.addEventListener('click', function(){
+		account_submit.addEventListener('click', function(){ // валидация и отправка формы редактирования личных данных
 			account_picker = null;
 
 			for(var i=0;i<account_required.length;i++){
@@ -1197,7 +1176,7 @@ product_test_btn.on('click', function(e){ // добавление нового �
 	var picker_text = null;
 	var picker_rate = null;
 
-	if (rev_name.val() != '') {
+	if (rev_name.val() != '') { // проверка на пустоту поля имени
 		picker_name = true;
 		rev_name.removeClass('input--err');
 		rev_name.addClass('input--ok');
@@ -1207,7 +1186,7 @@ product_test_btn.on('click', function(e){ // добавление нового �
 		rev_name.addClass('input--err');
 	}
 
-	if (rev_text.val() != '') {
+	if (rev_text.val() != '') {  // проверка на пустоту поля текста
 		picker_text = true;
 		rev_text.removeClass('input--err');
 		rev_text.addClass('input--ok');
@@ -1218,7 +1197,7 @@ product_test_btn.on('click', function(e){ // добавление нового �
 	}
 
 
-	rev_rate.each(function(){
+	rev_rate.each(function(){ // валидация кнопок оценки
 		if ( $(this).is(':checked') ) {
 			picker_rate = true;
 			$('.productTest__rateComment').removeClass('productTest__rateComment--err');
@@ -1232,7 +1211,7 @@ product_test_btn.on('click', function(e){ // добавление нового �
 		}
 	});
 
-	if (picker_name && picker_text && picker_rate) {
+	if (picker_name && picker_text && picker_rate) { // при успешной валидации отправить форму
 		rev_form.slideToggle(200);
 		setTimeout(function(){
 			rev_success.slideToggle(200);
@@ -1245,49 +1224,55 @@ product_test_btn.on('click', function(e){ // добавление нового �
 });
 
 }
-var compare = document.querySelector('.compare');
 
 
-if (compare) {
+	// compare =========================
 
-	var compare_fixed = document.querySelector('.compare__fixed');
-	var compare_inner = document.querySelectorAll('.compareInner');
-	var compare_main = document.querySelector('.main');
-	var offset = compare_inner[0].offsetTop;
-	
+	var compare = document.querySelector('.compare');
 
-	document.addEventListener('scroll', function(){
-		if (window.pageYOffset > offset) {
-			compare_fixed.classList.add('compare__fixed--fixed');
-			compare_main.classList.add('main--compareFixed');			
-		} else {
-			compare_fixed.classList.remove('compare__fixed--fixed');
-			compare_main.classList.remove('main--compareFixed');
-		}
-	});
 
-	(function($){var types=['DOMMouseScroll','mousewheel'];if($.event.fixHooks){for(var i=types.length;i;){$.event.fixHooks[types[--i]]=$.event.mouseHooks;}}
-		$.event.special.mousewheel={setup:function(){if(this.addEventListener){for(var i=types.length;i;){this.addEventListener(types[--i],handler,false);}}else{this.onmousewheel=handler;}},teardown:function(){if(this.removeEventListener){for(var i=types.length;i;){this.removeEventListener(types[--i],handler,false);}}else{this.onmousewheel=null;}}};$.fn.extend({mousewheel:function(fn){return fn?this.bind("mousewheel",fn):this.trigger("mousewheel");},unmousewheel:function(fn){return this.unbind("mousewheel",fn);}});function handler(event){var orgEvent=event||window.event,args=[].slice.call(arguments,1),delta=0,returnValue=true,deltaX=0,deltaY=0;event=$.event.fix(orgEvent);event.type="mousewheel";if(orgEvent.wheelDelta){delta=orgEvent.wheelDelta/120;}
-		if(orgEvent.detail){delta=-orgEvent.detail/3;}
-		deltaY=delta;if(orgEvent.axis!==undefined&&orgEvent.axis===orgEvent.HORIZONTAL_AXIS){deltaY=0;deltaX=-1*delta;}
-		if(orgEvent.wheelDeltaY!==undefined){deltaY=orgEvent.wheelDeltaY/120;}
-		if(orgEvent.wheelDeltaX!==undefined){deltaX=-1*orgEvent.wheelDeltaX/120;}
-		args.unshift(event,delta,deltaX,deltaY);return($.event.dispatch||$.event.handle).apply(this,args);}})(jQuery);
+	if (compare) {
 
-		var scroll_elem = $('.compare_scroll');
-		$('.compare_scroll').mousewheel(function(e, delta) {
-			for (var i=0;i<scroll_elem.length;i++) {
-				$('.compare_scroll')[i].scrollLeft -= (delta * 40);
+		var compare_fixed = document.querySelector('.compare__fixed');
+		var compare_inner = document.querySelectorAll('.compareInner');
+		var compare_main = document.querySelector('.main');
+		var offset = compare_inner[0].offsetTop;
+
+
+		document.addEventListener('scroll', function(){ // смена отображения и позиционирования превью товаров
+			if (window.pageYOffset > offset) {
+				compare_fixed.classList.add('compare__fixed--fixed');
+				compare_main.classList.add('main--compareFixed');			
+			} else {
+				compare_fixed.classList.remove('compare__fixed--fixed');
+				compare_main.classList.remove('main--compareFixed');
 			}
 		});
-		$('.compare_scroll').hover(function(){ 
-			$('body').addClass('hidden');
-		}, function(){  	
-			$('body').removeClass('hidden');
-		});
-	}
 
-	var product_chars_btn = document.querySelectorAll('.productChars__title');
+		// колесо мыши
+		(function($){var types=['DOMMouseScroll','mousewheel'];if($.event.fixHooks){for(var i=types.length;i;){$.event.fixHooks[types[--i]]=$.event.mouseHooks;}}
+			$.event.special.mousewheel={setup:function(){if(this.addEventListener){for(var i=types.length;i;){this.addEventListener(types[--i],handler,false);}}else{this.onmousewheel=handler;}},teardown:function(){if(this.removeEventListener){for(var i=types.length;i;){this.removeEventListener(types[--i],handler,false);}}else{this.onmousewheel=null;}}};$.fn.extend({mousewheel:function(fn){return fn?this.bind("mousewheel",fn):this.trigger("mousewheel");},unmousewheel:function(fn){return this.unbind("mousewheel",fn);}});function handler(event){var orgEvent=event||window.event,args=[].slice.call(arguments,1),delta=0,returnValue=true,deltaX=0,deltaY=0;event=$.event.fix(orgEvent);event.type="mousewheel";if(orgEvent.wheelDelta){delta=orgEvent.wheelDelta/120;}
+			if(orgEvent.detail){delta=-orgEvent.detail/3;}
+			deltaY=delta;if(orgEvent.axis!==undefined&&orgEvent.axis===orgEvent.HORIZONTAL_AXIS){deltaY=0;deltaX=-1*delta;}
+			if(orgEvent.wheelDeltaY!==undefined){deltaY=orgEvent.wheelDeltaY/120;}
+			if(orgEvent.wheelDeltaX!==undefined){deltaX=-1*orgEvent.wheelDeltaX/120;}
+			args.unshift(event,delta,deltaX,deltaY);return($.event.dispatch||$.event.handle).apply(this,args);}})(jQuery);
+
+			var scroll_elem = $('.compare_scroll');
+
+			$('body').mousewheel(function(e, delta) {
+				$('body').removeClass('hidden'); // отменяем запрет на скрол страницы
+			});
+			$('.compare_scroll').mousewheel(function(e, delta) {
+				$('body').addClass('hidden'); // запретить скрол страницы при скроле блоков сравнения
+				e.preventDefault();
+				e.stopPropagation();
+				for (var i=0;i<scroll_elem.length;i++) {
+					$('.compare_scroll')[i].scrollLeft -= (delta * 40);
+				}
+			});
+
+			var product_chars_btn = document.querySelectorAll('.productChars__title');
 for(var i=0;i<product_chars_btn.length;i++) { // развернуть список характеристик в сравнении
 
 	product_chars_btn[i].addEventListener('click', function(e){
@@ -1298,7 +1283,106 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 		char_list.classList.toggle('compareInner__chars--open');
 
 	});
+
+
 }
+
+
+
+	// скролл блоков сравнения по свайпу на мобильных
+	$('.compareInner .compare_scroll').on('touchmove', function(e){
+		$('.compareHeader .compare_scroll').scrollLeft($(this).scrollLeft());
+		$('.compareInner .compare_scroll').scrollLeft($(this).scrollLeft());
+	});
+
+	$('.compareHeader .compare_scroll').on('touchmove', function(e){
+		$('.compareInner .compare_scroll').scrollLeft($(this).scrollLeft());
+	});
+	
+
+
+}
+
+
+
+
+	// авторизация, регистрация, сброс пароля, изменения пароля, успешная регистрация =========================
+
+
+	var cart_items = document.querySelector('.headerCart__itemsWrap--cart');
+	
+	var open_modal_login = document.querySelectorAll('.open_modal_login');
+	var close_modal_login = document.querySelectorAll('.close_modal_login');
+	var modal_login = document.querySelector('#modal_login');
+
+	var open_modal_register = document.querySelectorAll('.open_modal_register');
+	var close_modal_register = document.querySelectorAll('.close_modal_register');
+	var modal_register = document.querySelector('#modal_register');
+
+	var pass_show = document.querySelectorAll('.modalLogin__showPass');
+
+	for(var i=0;i<pass_show.length;i++) {
+		pass_show[i].addEventListener('click', function(e){ // отрыть pop up авторизации
+			e.preventDefault();
+			var check_status = this.parentNode.querySelector('.input').getAttribute('type');
+			if (check_status == 'password') {
+				this.parentNode.querySelector('.input').setAttribute('type','text');
+			} else {
+				this.parentNode.querySelector('.input').setAttribute('type','password');
+			}					
+		});
+	}
+
+
+
+	if (modal_login) {
+		for(var i=0;i<open_modal_login.length;i++) {
+		open_modal_login[i].addEventListener('click', function(e){ // отрыть pop up авторизации
+			e.preventDefault();
+			if (cart_items) {
+				cart_items.classList.remove('headerCart__itemsWrap--open');
+			}
+
+			modal_register.classList.remove('modal--open');
+			setTimeout(function(){
+				modal_login.classList.add('modal--open');
+			}, 200);		
+			
+		});
+	}
+
+	for(var i=0;i<close_modal_login.length;i++) {
+		close_modal_login[i].addEventListener('click', function(e){ // закрыть pop up авторизации
+			e.preventDefault();
+			modal_login.classList.remove('modal--open')
+		});
+	}
+
+	if (modal_register) {
+		for(var i=0;i<open_modal_register.length;i++) {
+		open_modal_register[i].addEventListener('click', function(e){ // отрыть pop up регистрации
+			e.preventDefault();
+			if (cart_items) {
+				cart_items.classList.remove('headerCart__itemsWrap--open');
+			}
+			
+			modal_login.classList.remove('modal--open');
+			setTimeout(function(){
+				modal_register.classList.add('modal--open');
+			}, 200);
+			
+		});
+	}
+
+	for(var i=0;i<close_modal_register.length;i++) {
+		close_modal_register[i].addEventListener('click', function(e){ // закрыть pop up регистрации
+			e.preventDefault();
+			modal_register.classList.remove('modal--open')
+		});
+	}
+}
+}
+
 
 
 
