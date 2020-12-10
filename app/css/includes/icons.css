@@ -204,13 +204,13 @@
 .icon__eye::before {
   content: '';
   display: block;
-  width: 24px;
+  width: 25px;
   height: 24px;
   background: url(../img/icons/ic_eye.svg) no-repeat; }
 
 .icon__eye_open::before {
   content: '';
   display: block;
-  width: 22px;
-  height: 14px;
+  width: 25px;
+  height: 24px;
   background: url(../img/icons/ic_eye_open.svg) no-repeat; }

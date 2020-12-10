@@ -64,6 +64,10 @@
 			padding: 24px 40px
 			border: 1px solid $prim_color
 			border-radius: 4px
+			+xs
+				max-height: 80vh
+			+xxs
+				padding: 15px 10px
 		.modal__close
 			top: 15px
 			right: 20px
@@ -71,10 +75,14 @@
 			text-align: center
 			margin-bottom: 16px
 			+text(24,700,29,0)
+			+xxs
+				+text(16,600,20,0)
 		&__msg
 			text-align: center
 			margin-bottom: 16px
 			+text(16,400,20,0)
+			+xxs
+				font-size: 14px
 			&--err
 				color: #EB001B
 		&__form
@@ -84,6 +92,8 @@
 				width: 100%
 				height: 56px
 				padding-left: 9px
+				+xxs
+					height: 40px
 			&:not(:first-child)
 				margin-top: 16px
 		&__showPass
@@ -91,7 +101,7 @@
 			top: 50%
 			right: 16px
 			transform: translateY(-50%)
-			width: 24px
+			width: 25px
 			height: 24px
 			+before
 				position: absolute
@@ -102,13 +112,13 @@
 			+after
 				position: absolute
 				opacity: 0
-				width: 22px
-				height: 14px
-				top: 5px
-				right: 1px
+				width: 25px
+				height: 24px
+				top: 0
+				right: 0
 				background: url(../img/icons/ic_eye_open.svg) no-repeat
 				+tran(all,.4s)
-			&--show
+			&--showed
 				+before
 					opacity: 0
 				+after
@@ -123,6 +133,8 @@
 			+text(14,500,24,0)
 			+hover
 				border-color: transparent
+			+xxs
+				font-size: 12px
 		&__submit
 			margin-bottom: 16px
 
@@ -132,10 +144,44 @@
 			display: block
 			margin: 0 auto
 			+text(16,500,18,0)
+			+xxs
+				font-size: 14px
 		&Social
 			padding-top: 29px
+			+xxs
+				padding-top: 14px
 			&__title
 				margin-bottom: 16px
 				text-align: center
 				+text(14,400,17,0)
+				+xxs
+					font-size: 12px
 			&__facebook
+		&__auth
+			font-weight: 700
+			margin: 0 auto
+		&__register
+			margin-top: 24px
+		&__comm
+			margin-top: 24px
+			text-align: center
+			+text(14,400,17,0)
+		&__repeatSend
+			padding-top: 8px
+			+flex(0,0,center,center)
+			+xxs
+				flex-direction: column
+				padding-top: 15px
+			span
+				+xxs
+					font-size: 14px
+			.modalLogin__forgot
+				margin: 0 0 0 3px
+
+	&Auth
+		z-index: 11
+	&Register
+		z-index: 11
+	&Recovery
+		z-index: 11
+			

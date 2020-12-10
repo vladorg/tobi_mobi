@@ -1,5 +1,12 @@
 .category .main {
-  padding-bottom: 109px; }
+  padding: 0 0 109px 20px; }
+  @media (max-width: 768px) {
+    .category .main {
+      padding: 0 0 32px 0; } }
+
+@media (max-width: 768px) {
+  .category .pagination {
+    padding-top: 40px; } }
 
 .category__tools {
   display: -webkit-box;
@@ -408,6 +415,9 @@
     background-image: url("../img/icons/sticker_soon.svg"); }
   .preview__sticker--top {
     background-image: url("../img/icons/sticker_top.svg"); }
+  .preview__sticker--card {
+    top: -20px;
+    z-index: 1; }
 
 .preview__thumb {
   width: 100%;
@@ -1031,7 +1041,7 @@
   top: -11px; }
 
 .category .products {
-  padding-top: 88px; }
+  padding-top: 64px; }
   @media (max-width: 1199px) {
     .category .products {
       padding-top: 30px; } }

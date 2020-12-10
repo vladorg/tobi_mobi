@@ -105,7 +105,7 @@
 			align-items: unset
 			margin-bottom: 32px
 		+xxs
-			align-items: flex-end
+			align-items: center
 		img
 	&__thumbNav
 		max-width: 104px
@@ -131,6 +131,7 @@
 				max-height: 100px
 	&__thumb
 		max-width: 376px
+		position: relative
 		width: calc(100% - 136px)
 		+break(1600)
 			max-width: 300px
@@ -315,6 +316,10 @@
 			padding: 32px
 			+xs
 				padding: 16px
+	&Widget.product__tab--abs
+		display: block
+		+xs
+			display: none
 
 	&Description
 		padding-top: 64px
@@ -349,7 +354,9 @@
 				display: none
 
 	&Chars
-		padding-top: 24px
+		padding-top: 48px
+		+xs
+			padding-top: 24px
 		h2
 			margin-bottom: 32px
 		&__item
@@ -412,7 +419,9 @@
 			.dropdown__title
 				padding: 8px 30px 8px 16px
 			.dropdown
-				max-width: 156px
+				max-width: 240px
+				+xxs
+					max-width: 49%
 				+before
 					top: 13px
 		&__anc
@@ -566,11 +575,21 @@
 	&Related
 		padding-top: 48px
 		width: 100%
+		+xs
+			padding-top: 24px
 		h2
 			margin-bottom: 32px
 		&__item
 			position: relative
 			margin-bottom: 10px
+			width: calc(100% + 120px)
+			padding: 0 0 0 60px
+			margin: 15px -60px
+			overflow: hidden
+			+md
+				width: 100%
+				padding: 0
+				margin: 0
 		&__title
 			padding: 0 0 8px 32px
 			border-bottom: 1px solid $tc_025
@@ -579,6 +598,8 @@
 			position: relative
 			+text(18,400,24,0)
 			+flex(0,0,flex-start,center)
+			+xs
+				font-size: 14px
 			+before
 				margin-right: 20px
 				transform: rotate(90deg) scale(0.8)
@@ -586,13 +607,17 @@
 				left: 0
 				top: 4px
 				+tran(all,.4s)
+				+md
+					left: 10px
 			&--open
 				+before
 					transform: rotate(-90deg) scale(0.8)
 		&__products
 			width: 100%
-			padding: 32px 0 64px 0
-			margin-bottom: 10px
+			padding-top: 60px
+			+md
+				padding-top: 0
+				padding-bottom: 20px
 		.title__arrows
 			position: absolute
 			top: -3px
@@ -601,6 +626,10 @@
 			opacity: 0
 			pointer-events: none
 			+tran(all,.4s)
+			+xxs
+				position: static
+				width: 65px
+				margin: 15px auto
 			&--open
 				opacity: 1
 				pointer-events: auto
@@ -616,4 +645,8 @@
 				+tran(all,.2s)
 		.slick-list
 			overflow: visible
+			+md
+				overflow: hidden
+		.slick-track
+			margin-left: 0
 

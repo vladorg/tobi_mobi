@@ -3,7 +3,12 @@
 
 .category
 	.main
-		padding-bottom: 109px
+		padding: 0 0 109px 20px
+		+xs
+			padding: 0 0 32px 0
+	.pagination
+		+xs
+			padding-top: 40px
 	&__tools
 		+flex(0,0,flex-start,center)
 		+md
@@ -236,6 +241,9 @@
 			background-image: url('../img/icons/sticker_soon.svg')
 		&--top
 			background-image: url('../img/icons/sticker_top.svg')
+		&--card
+			top: -20px
+			z-index: 1
 	&__thumb
 		width: 100%
 		max-width: 320px
@@ -635,7 +643,7 @@
 
 .category
 	.products
-		padding-top: 88px
+		padding-top: 64px
 		+md
 			padding-top: 30px
 

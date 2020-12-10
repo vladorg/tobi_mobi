@@ -139,9 +139,6 @@ if (open_dropdown) {
 		if ( !modal_cart.querySelector('.modal__win').contains(e.target) && !cart_items.contains(e.target) && !cart_link_mobile.contains(e.target) ) { // закрытие popupа корзины
 			modal_cart.classList.remove('modal--open', 'modalCart--open');
 		};
-		if ( !modal_login.querySelector('.modal__win').contains(e.target) && !header_area.contains(e.target) ) { // закрытие popupа авторизации
-			modal_login.classList.remove('modal--open');
-		};
 	};
 
 	for(var i=0;i<open_modal_cart.length;i++) {
@@ -195,14 +192,22 @@ if (open_dropdown) {
 			e.preventDefault();
 			header_area.classList.remove('header--active');
 			mob_menu.classList.remove('mobMenu--open');
-			catalog.classList.add('topCatalog--open')
+			
+			document.querySelector('.top').classList.add('top--show');
+			setTimeout(function(){
+				catalog.classList.add('topCatalog--open');
+			}, 10);
 		});
 	}
 
 	for(var i=0;i<close_cat.length;i++) {
 		close_cat[i].addEventListener('click', function(e){ // закрыть каталог
 			e.preventDefault();
-			catalog.classList.remove('topCatalog--open')
+			catalog.classList.remove('topCatalog--open');			
+			setTimeout(function(){
+				document.querySelector('.top').classList.remove('top--show');
+			}, 200);
+
 		});
 	}
 
@@ -241,6 +246,7 @@ if (open_dropdown) {
 			autoplaySpeed: 4000,
 			speed: 700,
 			dots: true,
+			pauseOnHover: false,
 			responsive: [
 			{
 				breakpoint: 768,
@@ -548,7 +554,7 @@ if (open_dropdown) {
 		productTabs(product_btn_related, tab_related);
 
 
-		$('.product__thumb').slick({
+		$('.product__thumbSlider').slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			arrows: false,
@@ -561,7 +567,7 @@ if (open_dropdown) {
 			slidesToScroll: 1,
 			vertical: true,
 			verticalSwiping: true,
-			asNavFor: '.product__thumb',
+			asNavFor: '.product__thumbSlider',
 			dots: false,
 			focusOnSelect: true,
 			infinite: true,
@@ -665,7 +671,6 @@ if (open_dropdown) {
 		$this.slick({
 			slidesToShow: 4,
 			slidesToScroll: 1,
-			//variableWidth: false,
 			prevArrow: left,
 			nextArrow: right,
 			infinite: false,
@@ -674,7 +679,24 @@ if (open_dropdown) {
 				breakpoint: 1600,
 				settings: {
 					slidesToShow: 3,
-					//variableWidth: false,
+				}
+			},
+			{
+				breakpoint: 1100,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 2,
 				}
 			}
 			]
@@ -813,7 +835,10 @@ if (open_dropdown) {
 		});
 
 
-		function validate($btn, $picker, $cur_step, $next_step, $last = false) { // валидация полей с определенным классом
+		function validate($btn, $picker, $cur_step, $next_step, $last) { // валидация полей с определенным классом
+			if ($last === undefined) {
+				$last = false;
+			}
 			$btn.on('click', function(e){
 				e.preventDefault();
 				var step_values = $cur_step.find('.checkout__required');
@@ -959,7 +984,7 @@ if (open_dropdown) {
 	var account_pass_new = document.querySelector('input[name=pass_new]');
 	var account_pass_repeat = document.querySelector('input[name=pass_repeat]');
 
-	if (account) {
+	if (account_submit) {
 		account_submit.addEventListener('click', function(){ // валидация и отправка формы редактирования личных данных
 			account_picker = null;
 
@@ -1319,23 +1344,129 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 	var close_modal_register = document.querySelectorAll('.close_modal_register');
 	var modal_register = document.querySelector('#modal_register');
 
+	var open_modal_recovery = document.querySelectorAll('.open_modal_recovery');
+	var close_modal_recovery = document.querySelectorAll('.close_modal_recovery');
+	var modal_recovery = document.querySelector('#modal_recovery');
+
+	var open_modal_change = document.querySelectorAll('.open_modal_change');
+	var close_modal_change = document.querySelectorAll('.close_modal_change');
+	var modal_change = document.querySelector('#modal_change');
+
+	var open_modal_reg_success = document.querySelectorAll('.open_modal_reg_success');
+	var close_modal_reg_success = document.querySelectorAll('.close_modal_reg_success');
+	var modal_reg_success = document.querySelector('#modal_reg_success');
+
 	var pass_show = document.querySelectorAll('.modalLogin__showPass');
 
 	for(var i=0;i<pass_show.length;i++) {
-		pass_show[i].addEventListener('click', function(e){ // отрыть pop up авторизации
+		pass_show[i].addEventListener('click', function(e){ // скрыть/показать пароль
 			e.preventDefault();
 			var check_status = this.parentNode.querySelector('.input').getAttribute('type');
 			if (check_status == 'password') {
 				this.parentNode.querySelector('.input').setAttribute('type','text');
+				this.classList.add('modalLogin__showPass--showed');
 			} else {
 				this.parentNode.querySelector('.input').setAttribute('type','password');
+				this.classList.remove('modalLogin__showPass--showed');
 			}					
 		});
 	}
 
+	// закомментил, можно случайно закрыть окно, неудобно
+	// document.onclick = function(e){ // закрытие блоков по клику вне них
+	// 	if ( !modal_login.querySelector('.modal__win').contains(e.target) && !open_modal_login[0].contains(e.target) ) { // закрытие popupа авторизации
+	// 		modal_login.classList.remove('modal--open');
+	// 	};
+	// 	if ( !modal_register.querySelector('.modal__win').contains(e.target) && !open_modal_register[0].contains(e.target) ) { // закрытие popupа регистрации
+	// 		modal_register.classList.remove('modal--open');
+	// 	};
+	// 	if ( !modal_recovery.querySelector('.modal__win').contains(e.target) && !open_modal_recovery[0].contains(e.target) ) { // закрытие popupа сброса пароля
+	// 		modal_recovery.classList.remove('modal--open');
+	// 	};
+	// };
 
+
+	function validateLoginModal($modal, $pass, $register){
+		if ($pass === undefined) {
+			$pass = false;
+		}
+		if ($register === undefined) {
+			$register = false;
+		}
+		var sbm = $modal.querySelector('.modalLogin__submit');
+		var form = $modal.querySelector('.modalLogin__form');
+		var req = sbm.parentNode.querySelectorAll('.modalLogin_required');
+		var inp = sbm.parentNode.querySelectorAll('.input');
+
+		sbm.addEventListener('click', function(){
+			var picker = null;
+
+			for (var i=0;i<req.length;i++) {
+				if (req[i].value == '') {
+					req[i].classList.remove('input--ok');
+					req[i].classList.add('input--err');
+					picker = false;
+				} else {
+					req[i].classList.remove('input--err');
+					req[i].classList.add('input--ok');
+					if (picker != false) {
+						picker = true;
+					}
+				}
+			}
+
+			if ($pass) {
+				var pass_f = $modal.querySelector('input[name=password]');
+				var pass_l = $modal.querySelector('input[name=password_repeat]');
+
+				if (pass_f.value != pass_l.value || pass_f.value == '' || pass_l.value == '' ) {
+					pass_f.classList.remove('input--ok');
+					pass_f.classList.add('input--err');
+					pass_l.classList.remove('input--ok');
+					pass_l.classList.add('input--err');
+					picker = false;
+				} else {
+					pass_f.classList.add('input--ok');
+					pass_f.classList.remove('input--err');
+					pass_l.classList.add('input--ok');
+					pass_l.classList.remove('input--err');
+					if (picker != false) {
+						picker = true;
+					}
+				}
+			}
+
+			if (picker) { // успешная валидация - отправка формы (ajax)
+
+				// if success
+				if ($register) { // если это форма регистрации то выводим окно успеха
+
+					$modal.classList.remove('modal--open');
+					setTimeout(function(){
+						modal_reg_success.classList.add('modal--open');
+						for (var i=0;i<inp.length;i++) {
+							inp[i].value = '';
+							inp[i].classList.remove('input--ok');
+						}
+					}, 200);
+
+				} else {
+					form.submit();
+				}
+				// else
+				// do something
+				
+			}
+		});
+	}
+
+
+	// =====
 
 	if (modal_login) {
+
+		validateLoginModal(modal_login);
+
 		for(var i=0;i<open_modal_login.length;i++) {
 		open_modal_login[i].addEventListener('click', function(e){ // отрыть pop up авторизации
 			e.preventDefault();
@@ -1344,12 +1475,15 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 			}
 
 			modal_register.classList.remove('modal--open');
+			modal_recovery.classList.remove('modal--open');
+			modal_change.classList.remove('modal--open');
+			modal_reg_success.classList.remove('modal--open');
 			setTimeout(function(){
 				modal_login.classList.add('modal--open');
 			}, 200);		
 			
 		});
-	}
+	} // for
 
 	for(var i=0;i<close_modal_login.length;i++) {
 		close_modal_login[i].addEventListener('click', function(e){ // закрыть pop up авторизации
@@ -1357,8 +1491,14 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 			modal_login.classList.remove('modal--open')
 		});
 	}
+}
+
+	// =====
 
 	if (modal_register) {
+
+		validateLoginModal(modal_register, true, true);
+
 		for(var i=0;i<open_modal_register.length;i++) {
 		open_modal_register[i].addEventListener('click', function(e){ // отрыть pop up регистрации
 			e.preventDefault();
@@ -1367,12 +1507,15 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 			}
 			
 			modal_login.classList.remove('modal--open');
+			modal_recovery.classList.remove('modal--open');
+			modal_change.classList.remove('modal--open');
+			modal_reg_success.classList.remove('modal--open');
 			setTimeout(function(){
 				modal_register.classList.add('modal--open');
 			}, 200);
 			
 		});
-	}
+	} // for
 
 	for(var i=0;i<close_modal_register.length;i++) {
 		close_modal_register[i].addEventListener('click', function(e){ // закрыть pop up регистрации
@@ -1381,7 +1524,106 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 		});
 	}
 }
+
+
+
+	// =====
+	
+	if (modal_recovery) {
+
+		validateLoginModal(modal_recovery);
+
+		for(var i=0;i<open_modal_recovery.length;i++) {
+		open_modal_recovery[i].addEventListener('click', function(e){ // отрыть pop up сброса пароля
+			e.preventDefault();
+			if (cart_items) {
+				cart_items.classList.remove('headerCart__itemsWrap--open');
+			}
+
+			modal_login.classList.remove('modal--open');
+			modal_register.classList.remove('modal--open');
+			modal_change.classList.remove('modal--open');
+			modal_reg_success.classList.remove('modal--open');
+			setTimeout(function(){
+				modal_recovery.classList.add('modal--open');
+			}, 200);		
+			
+		});
+	} // for
+
+	for(var i=0;i<close_modal_recovery.length;i++) {
+		close_modal_recovery[i].addEventListener('click', function(e){ // закрыть pop up сброса пароля
+			e.preventDefault();
+			modal_recovery.classList.remove('modal--open')
+		});
+	}
+
 }
+
+	// ======
+
+	if (modal_change) {
+
+		validateLoginModal(modal_change, true, false);
+
+		for(var i=0;i<open_modal_change.length;i++) {
+		open_modal_change[i].addEventListener('click', function(e){ // отрыть pop up успешной регистрации
+			e.preventDefault();
+			if (cart_items) {
+				cart_items.classList.remove('headerCart__itemsWrap--open');
+			}
+
+			modal_register.classList.remove('modal--open');
+			modal_recovery.classList.remove('modal--open');
+			modal_login.classList.remove('modal--open');
+			modal_reg_success.classList.remove('modal--open');
+			setTimeout(function(){
+				modal_change.classList.add('modal--open');
+			}, 200);		
+			
+		});
+	} // for
+
+	for(var i=0;i<close_modal_change.length;i++) {
+		close_modal_change[i].addEventListener('click', function(e){ // закрыть pop up успешной регистрации
+			e.preventDefault();
+			modal_change.classList.remove('modal--open')
+		});
+	}
+}
+
+	// ======
+
+	if (modal_reg_success) {
+
+		for(var i=0;i<open_modal_reg_success.length;i++) {
+		open_modal_reg_success[i].addEventListener('click', function(e){ // отрыть pop up успешной регистрации
+			e.preventDefault();
+			if (cart_items) {
+				cart_items.classList.remove('headerCart__itemsWrap--open');
+			}
+
+			modal_register.classList.remove('modal--open');
+			modal_recovery.classList.remove('modal--open');
+			modal_login.classList.remove('modal--open');
+			modal_change.classList.remove('modal--open');
+			setTimeout(function(){
+				modal_reg_success.classList.add('modal--open');
+			}, 200);		
+			
+		});
+	} // for
+
+	for(var i=0;i<close_modal_change.length;i++) {
+		close_modal_reg_success[i].addEventListener('click', function(e){ // закрыть pop up авторизации
+			e.preventDefault();
+			modal_reg_success.classList.remove('modal--open');
+		});
+	}
+}
+
+
+
 
 
 

@@ -6,14 +6,12 @@
 
 	<title>Main</title>
 
-	<link href="libs/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="libs/slick/slick.css" rel="stylesheet">
 	<link href="libs/slick/slick-theme.css" rel="stylesheet">
 
 	<!--[if IE 9]><link rel="stylesheet" href="css/oldIE.css"><![endif]-->
 	<!-- build:css -->
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/responsive.css">
 	<!-- endbuild -->
 
 	
@@ -807,7 +805,6 @@
 				<h3 class="title__title">Рекомендовані товари</h3>
 				<div class="title__arrows">
 					<button class="related__left icon__right slick-prev"></button>
-					<a href="" class="related__items title__subtitle">27 товарів</a>
 					<button class="related__right icon__right slick-next"></button>
 				</div>
 			</div>
@@ -1275,7 +1272,6 @@
 		<section class="brands container">
 			<div class="brands__title title">
 				<h3 class="title__title">Топ бренди</h3>
-				<a href="" class="title__subtitle">Всі бренди</a>
 			</div>
 			<div class="brands__items">
 				<a href="#" class="brands__brand">
@@ -1314,9 +1310,6 @@
 				<a href="#" class="brands__brand">
 					<img src="img/brands/Belkin.png" alt="">
 				</a>
-			</div>
-			<div class="brands__all title">
-				<a href="" class="title__subtitle">Всі бренди</a>
 			</div>
 		</section>
 
@@ -1496,7 +1489,7 @@
 			<a href="/" class="mobMenu__logo">
 				<img src="img/logo_mobile.svg" alt="">
 			</a>
-			<div class="mobMenu__langs">
+			<div class="mobMenu__langs header__langs">
 				<ul>
 					<li class="header__langActive">
 						<a href="#">УКР</a>
@@ -1510,6 +1503,8 @@
 		</div>
 		<div class="mobMenu__inner scroll">
 			<button class="mobMenu__cat open_catalog btn cursor">Каталог товарів</button>
+
+			<!-- if logged -->
 			<ul class="mobMenuAcc">
 				<li class="mobMenuAcc__link mobMenuAcc__link--prof">
 					<a class="icon__ava" href="#">Профіль</a>
@@ -1527,6 +1522,13 @@
 					<a class="icon__cashback" href="#">Кешбек</a>
 				</li>
 			</ul>
+			<!-- else -->
+			<!-- <ul class="mobMenuAcc">
+				<li class="mobMenuAcc__link mobMenuAcc__link--prof">
+					<a class="icon__ava open_modal_login" href="#">Личный кабинет</a>
+				</li>
+			</ul> -->
+
 			<div class="mobMenuSocial">
 				<span class="mobMenuSocial__title">Ми на зв’язку:</span>
 				<ul class="mobMenuSocial__links">
@@ -1743,13 +1745,13 @@
 			и пароль</div>
 			<form class="modalLogin__form">
 				<div class="modalLogin__row">
-					<input type="email" name="email" class="input" placeholder="Email">
+					<input type="email" name="email" class="input modalLogin_required" placeholder="Email">
 				</div>
 				<div class="modalLogin__row">
-					<input type="password" name="password" class="input" placeholder="Пароль">
+					<input type="password" name="password" class="input modalLogin_required" placeholder="Пароль">
 					<button class="btn modalLogin__showPass icon__eye"></button>
 				</div>
-				<button type="button" class="btn modalLogin__forgot">Забыли пароль?</button>
+				<button type="button" class="btn modalLogin__forgot open_modal_recovery">Забыли пароль?</button>
 				<button type="button" class="modalLogin__submit headerCart__checkout btn btn--yellow">Войти</button>
 			</form>
 			<button class="btn modalLogin__supBtn modalLogin__forgot open_modal_register">Зарегистрироваться</button>
@@ -1765,23 +1767,94 @@
 		<div class="modal__win">
 			<button class="close_modal_register modal__close icon__close close btn"></button>
 			<div class="modalLogin__title">Регистрация</div>
-			<div class="modalLogin__msg modalLogin__msg">Для входа введите электронную почту
-			и пароль</div>
+			<div class="modalLogin__msg modalLogin__msg">Введите ваши контактные данные</div>
 			<form class="modalLogin__form">
 				<div class="modalLogin__row">
-					<input type="email" name="email" class="input" placeholder="Email">
+					<input type="text" name="name" class="input modalLogin_required" placeholder="Имя*">
+				</div>
+				<div class="modalLogin__row">
+					<input type="text" name="phone" class="input modalLogin_required" placeholder="Номер телефона*">
+				</div>
+				<div class="modalLogin__row">
+					<input type="text" name="email" class="input modalLogin_required" placeholder="Email">
 				</div>
 				<div class="modalLogin__row">
 					<input type="password" name="password" class="input" placeholder="Пароль">
 					<button class="btn modalLogin__showPass icon__eye"></button>
 				</div>
-				<button type="button" class="btn modalLogin__forgot">Забыли пароль?</button>
-				<button type="button" class="modalLogin__submit headerCart__checkout btn btn--yellow">Войти</button>
+				<div class="modalLogin__row">
+					<input type="password" name="password_repeat" class="input" placeholder="Повторите пароль*">
+					<button class="btn modalLogin__showPass icon__eye"></button>
+				</div>
+				<button type="button" class="modalLogin__submit modalLogin__register headerCart__checkout btn btn--yellow">Зарегистрироваться</button>
+				<button type="button" class="open_modal_login btn modalLogin__auth modalLogin__forgot">Войти</button>
 			</form>
-			<button class="btn modalLogin__supBtn modalLogin__forgot open_modal_register">Зарегистрироваться</button>
+			<div class="modalLogin__comm">Регистрируясь, вы соглашаетесь с
+			пользовательским соглашением</div>
+		</div>
+	</div>
+
+	<!-- popup сброс пароля -->
+	<div class="modal modalRecovery modalLogin" id="modal_recovery">
+		<div class="modal__win">
+			<button class="close_modal_recovery modal__close icon__close close btn"></button>
+			<div class="modalLogin__title">Сброс пароля</div>
+			<div class="modalLogin__msg modalLogin__msg">Вам на почту будет отправленно письмо
+			с сылкой для сброса пароля</div>
+			<form class="modalLogin__form">
+				<div class="modalLogin__row">
+					<input type="text" name="email" class="input modalLogin_required" placeholder="Email">
+				</div>
+				<div class="modalLogin__repeatSend">
+					<span>Не пришло письмо?</span>
+					<button type="button" class="btn modalLogin__forgot">Повторить отправку</button>
+				</div>
+				<button type="button" class="modalLogin__submit modalLogin__register headerCart__checkout btn btn--yellow">Отправить</button>
+				<button type="button" class="open_modal_register btn modalLogin__auth modalLogin__forgot">Зарегистрироваться</button>
+			</form>
 			<div class="modalLoginSocial">
 				<div class="modalLoginSocial__title">Войти как пользователь</div>
 				<a href="#" class="btn btn--blue modalLoginSocial__facebook">Facebook</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- popup изменение пароля -->
+	<div class="modal modalPassChange modalLogin" id="modal_change">
+		<div class="modal__win">
+			<button class="close_modal_change modal__close icon__close close btn"></button>
+			<div class="modalLogin__title">Изменение пароля</div>
+			<div class="modalLogin__msg modalLogin__msg">Пароль должен быть не менение 8 символов 
+			из заглавных и строчных букв, цифр.</div>
+			<form class="modalLogin__form">
+				<div class="modalLogin__row">
+					<input type="password" name="password" class="input modalLogin_required" placeholder="Новый пароль">
+					<button class="btn modalLogin__showPass icon__eye"></button>
+				</div>
+				<div class="modalLogin__row">
+					<input type="password" name="password_repeat" class="input modalLogin_required" placeholder="Повторите пароль">
+					<button class="btn modalLogin__showPass icon__eye"></button>
+				</div>
+				<button type="button" class="modalLogin__submit modalLogin__register headerCart__checkout btn btn--yellow">Сохранить</button>
+				<button type="button" class="open_modal_register btn modalLogin__auth modalLogin__forgot">Зарегистрироваться</button>
+			</form>
+			<div class="modalLoginSocial">
+				<div class="modalLoginSocial__title">Войти как пользователь</div>
+				<a href="#" class="btn btn--blue modalLoginSocial__facebook">Facebook</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- popup успешная регистрация -->
+	<div class="modal modalRegSuccess modalLogin" id="modal_reg_success">
+		<div class="modal__win">
+			<button class="close_modal_reg_success modal__close icon__close close btn"></button>
+			<div class="modalLogin__title">Спасибо за регистрацию!</div>
+			<div class="modalLogin__msg modalLogin__msg">Вам на почту будет отправленно письмо
+			с сылкой для подтверждения регистрации.</div>
+			<div class="modalLogin__repeatSend">
+				<span>Не пришло письмо?</span>
+				<button class="btn modalLogin__forgot">Повторить отправку</button>
 			</div>
 		</div>
 	</div>

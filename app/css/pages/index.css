@@ -2,6 +2,26 @@
   overflow: hidden; }
 
 @media (max-width: 768px) {
+  .mainTop .top {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 15px 0 0 0 !important; } }
+
+.mainTop .topFeatures {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+@media (max-width: 768px) {
+  .mainTop .topCatalogMobile {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+@media (max-width: 768px) {
   .mainTop {
     padding-top: 15px;
     display: -webkit-box;

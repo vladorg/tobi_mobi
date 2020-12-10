@@ -434,6 +434,15 @@
 	padding: 36px 0 30px 0
 	position: relative
 	z-index: 2
+	+xs
+		position: absolute
+		opacity: 0
+		pointer-events: none
+		padding: 0 !important
+	&--show
+		position: static
+		opacity: 1
+		pointer-events: auto
 	+flex(0,0,flex-start,center)
 	+md
 		align-items: flex-start
@@ -775,7 +784,7 @@
 			height: 100%
 			+text(15,600,24,0)
 			+before
-				display: blockd
+				display: block
 				position: static
 				width: 24px
 				height: 14px
@@ -783,6 +792,7 @@
 				background: url(../img/icons/catalog/burger.svg) no-repeat
 			+xs
 				+flex(0,0,center,center)
+				display: none
 
 
 	&Features
@@ -795,6 +805,7 @@
 			justify-content: space-around
 			align-items: center
 			padding-top: 21px
+			display: none
 		&__item
 			margin-right: 20px
 			+flex(0,0,flex-start,center)

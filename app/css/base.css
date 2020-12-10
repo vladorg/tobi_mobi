@@ -965,6 +965,12 @@ blockquote {
   .seo--full {
     border-top: 0;
     padding-top: 0; }
+    @media (max-width: 768px) {
+      .seo--full {
+        padding: 28px 5% 0 5%;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        border-top: 1px solid #c8c8c8; } }
     .seo--full .seo__inner {
       -webkit-column-count: 1;
          -moz-column-count: 1;
