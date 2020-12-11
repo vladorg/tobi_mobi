@@ -2972,8 +2972,8 @@ blockquote {
           width: 94px;
           height: 48px;
           display: block;
-          -o-object-fit: cover;
-             object-fit: cover; } }
+          -o-object-fit: contain;
+             object-fit: contain; } }
 
 .header__innerRight {
   display: -webkit-box;
