@@ -99,6 +99,8 @@
 			display: none
 		+xs
 			max-width: 156px
+			display: block
+			text-align: center
 	.input
 		width: 512px
 		max-width: 100%
@@ -416,9 +418,11 @@
 			right: 0
 			top: 0
 			opacity: 0
+			max-height: 0
+			overflow: hidden
 			pointer-events: none
 			padding-top: 8px
-			+tran(opacity,.5s)
+			+tran(all,.2s)
 			button
 				font-size: 14px
 				padding: 3px 12px
@@ -429,9 +433,12 @@
 				+xs
 					font-size: 13px
 		&__price
-			padding: 16px 0 24px 0
+			padding: 0
 			+flex(0,0,space-between,center)
-			display: none
+			opacity: 0
+			max-height: 0
+			overflow: hidden
+			transition: all .3s .3s
 			.preview__dis
 				margin-bottom: 0
 			span
@@ -441,6 +448,8 @@
 			border-radius: 0
 			display: inline-block
 			margin: 0 0 24px 0
+			//max-height: 0
+			//overflow: hidden
 			float: right
 			+tran(all,.4s)
 			+text(12,600,24,0)
@@ -455,6 +464,19 @@
 				~ .checkoutWidgetTools__promo
 					opacity: 1
 					pointer-events: auto
+					max-height: 999px!important
+		&--completed
+			.checkoutWidgetTools__promo
+				opacity: 0!important
+				pointer-events: none!important
+
+			.checkoutWidgetTools__promoBtn
+				max-height: 0
+				margin-bottom: 0 !important
+			.checkoutWidgetTools__price
+				opacity: 1
+				max-height: 999px
+				padding: 0 0 24px 0
 	&Cashback
 		border: 2px solid $prim_color
 		padding: 24px 40px

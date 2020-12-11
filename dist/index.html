@@ -803,7 +803,6 @@
 				<h3 class="title__title">Рекомендовані товари</h3>
 				<div class="title__arrows">
 					<button class="related__left icon__right slick-prev"></button>
-					<a href="" class="related__items title__subtitle">27 товарів</a>
 					<button class="related__right icon__right slick-next"></button>
 				</div>
 			</div>
@@ -1271,7 +1270,6 @@
 		<section class="brands container">
 			<div class="brands__title title">
 				<h3 class="title__title">Топ бренди</h3>
-				<a href="" class="title__subtitle">Всі бренди</a>
 			</div>
 			<div class="brands__items">
 				<a href="#" class="brands__brand">
@@ -1310,9 +1308,6 @@
 				<a href="#" class="brands__brand">
 					<img src="img/brands/Belkin.png" alt="">
 				</a>
-			</div>
-			<div class="brands__all title">
-				<a href="" class="title__subtitle">Всі бренди</a>
 			</div>
 		</section>
 
@@ -1492,7 +1487,7 @@
 			<a href="/" class="mobMenu__logo">
 				<img src="img/logo_mobile.svg" alt="">
 			</a>
-			<div class="mobMenu__langs">
+			<div class="mobMenu__langs header__langs">
 				<ul>
 					<li class="header__langActive">
 						<a href="#">УКР</a>
@@ -1506,6 +1501,8 @@
 		</div>
 		<div class="mobMenu__inner scroll">
 			<button class="mobMenu__cat open_catalog btn cursor">Каталог товарів</button>
+
+			<!-- if logged -->
 			<ul class="mobMenuAcc">
 				<li class="mobMenuAcc__link mobMenuAcc__link--prof">
 					<a class="icon__ava" href="#">Профіль</a>
@@ -1523,6 +1520,13 @@
 					<a class="icon__cashback" href="#">Кешбек</a>
 				</li>
 			</ul>
+			<!-- else -->
+			<!-- <ul class="mobMenuAcc">
+				<li class="mobMenuAcc__link mobMenuAcc__link--prof">
+					<a class="icon__ava open_modal_login" href="#">Личный кабинет</a>
+				</li>
+			</ul> -->
+
 			<div class="mobMenuSocial">
 				<span class="mobMenuSocial__title">Ми на зв’язку:</span>
 				<ul class="mobMenuSocial__links">

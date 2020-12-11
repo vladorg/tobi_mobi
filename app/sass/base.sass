@@ -269,9 +269,10 @@ blockquote
 	border: 1px solid transparent
 	border-color: $tc_025
 	width: 40px
-	height: 40px
+	//height: 40px
 	box-sizing: border-box
-	padding-left: 16px
+	//padding-left: 16px
+	padding: 10px 0 10px 16px
 	border-radius: 4px
 	+tran(all,.4s)
 	//text-align: center
@@ -306,6 +307,7 @@ blockquote
 		font-size: 12px
 		white-space: nowrap
 	+xs
+		align-self: center
 		+text(15,600,0,0)
 	&:hover
 		cursor: pointer
@@ -414,6 +416,13 @@ blockquote
     	left: 0
   	&::-webkit-scrollbar-thumb
     	background: $prim_color
+@-moz-document url-prefix()
+// firefox fix
+.scroll
+  scrollbar-color: $prim_color rgba(0,0,0,0)
+  scrollbar-width: thin
+  &--hide
+  	scrollbar-width: none
 
 
 .close
@@ -641,7 +650,7 @@ blockquote
 					left: 0
 					right: 0
 					height: 20px
-					background: rgba(255, 255, 255, .55)
+					background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0))
 			a.seo__readAll
 				display: block
 		&--opened
@@ -683,7 +692,7 @@ blockquote
 				left: 0
 				right: 0
 				height: 50px
-				background: linear-gradient(to top, white, transparent)
+				background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0))
 			&--opened
 				max-height: 2000px
 				+after
@@ -726,25 +735,36 @@ blockquote
 
 .cashInfo
 	border-top: 1px solid $tc_025
+	border-radius: 0
+	padding: 16px 16px 0 16px
 	+flex(0,wrap,space-between,center)
 	+text(14,500,24,0)
-	+xs
-		border-top: 0
-		padding-top: 0
 	&__title
 		+flex(0,0,flex-start,center)
 		+before
 			margin-right: 15px
 	&__cash
 		font-weight: 600
-		+xs
-			display: none
 	&__comm
 		width: 100%
 		color: $tc_06
 		text-align: right
+	&--desktop
 		+xs
 			display: none
+	&--mobile
+		display: none
+		border-top: 0
+		padding: 8px 0 0 0
+		+xs
+			display: flex
+		.cashInfo__title, .cashInfo__cash, .cashInfo__comm
+			font-size: 13px
+			line-height: 10px
+		.cashInfo__title
+			+before
+				transform: scale(0.8)
+				margin-right: 8px
 
 .radio
 	display: none

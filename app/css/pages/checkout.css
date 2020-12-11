@@ -137,7 +137,9 @@
       display: none; }
     @media (max-width: 768px) {
       .checkout__next {
-        max-width: 156px; } }
+        max-width: 156px;
+        display: block;
+        text-align: center; } }
   .checkout .input {
     width: 512px;
     max-width: 100%;
@@ -616,11 +618,13 @@
       right: 0;
       top: 0;
       opacity: 0;
+      max-height: 0;
+      overflow: hidden;
       pointer-events: none;
       padding-top: 8px;
-      -webkit-transition: opacity 0.5s;
-      -o-transition: opacity 0.5s;
-      transition: opacity 0.5s; }
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
       .checkoutWidgetTools__promo button {
         font-size: 14px;
         padding: 3px 12px;
@@ -632,7 +636,7 @@
           .checkoutWidgetTools__promo button {
             font-size: 13px; } }
     .checkoutWidgetTools__price {
-      padding: 16px 0 24px 0;
+      padding: 0;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -645,7 +649,12 @@
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
-      display: none; }
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: all .3s .3s;
+      -o-transition: all .3s .3s;
+      transition: all .3s .3s; }
       .checkoutWidgetTools__price .preview__dis {
         margin-bottom: 0; }
       .checkoutWidgetTools__price span {
@@ -671,7 +680,18 @@
         margin-bottom: 40px; }
       .checkoutWidgetTools__write:checked ~ .checkoutWidgetTools__promo {
         opacity: 1;
-        pointer-events: auto; }
+        pointer-events: auto;
+        max-height: 999px !important; }
+    .checkoutWidgetTools--completed .checkoutWidgetTools__promo {
+      opacity: 0 !important;
+      pointer-events: none !important; }
+    .checkoutWidgetTools--completed .checkoutWidgetTools__promoBtn {
+      max-height: 0;
+      margin-bottom: 0 !important; }
+    .checkoutWidgetTools--completed .checkoutWidgetTools__price {
+      opacity: 1;
+      max-height: 999px;
+      padding: 0 0 24px 0; }
   .checkoutCashback {
     border: 2px solid #FFC830;
     padding: 24px 40px;

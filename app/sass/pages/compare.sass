@@ -58,8 +58,6 @@
 	&Header
 		+flex(0,0,flex-start,0)
 		+xs
-			// width: 90%
-			// margin: 0 auto
 			padding-left: calc((100% - 90%) / 2)
 		&__tools
 			min-width: 240px
@@ -87,7 +85,7 @@
 			+xs
 				margin-left: 0
 				padding-left: 0
-				min-height: unset
+				min-height: 1px
 				padding: 0 0 24px 0
 			.preview
 				margin-right: 32px
@@ -109,8 +107,9 @@
 			.productChars__title
 				z-index: 1
 				+xs
-					justify-content: center
 					padding-left: 0
+					display: block
+					text-align: center
 			.productChars__list
 				width: 100%
 			.productChars__charTitle
@@ -124,9 +123,6 @@
 					text-align: center
 			.productChars__char
 				+xs
-					//background: transparent!important
-					//padding: 18px 16px 54px 16px
-					//line-height: 20px
 					margin-bottom: 54px
 					background: #fff
 					position: relative
@@ -201,7 +197,7 @@
 				padding-top: 16px
 			.compareHeader__products
 				padding: 0 0 24px 50px
-				min-height: unset
+				min-height: 1px
 				+xs
 					padding: 0 0 20px 0
 			.compare__title
@@ -209,7 +205,7 @@
 				+xs
 					display: none
 			.preview
-				min-height: unset
+				min-height: 1px
 				padding-top: 0
 				+flex(row,wrap,0,center)
 				+before

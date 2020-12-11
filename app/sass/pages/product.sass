@@ -336,7 +336,8 @@
 				left: 0
 				right: 0
 				height: 80px
-				background: linear-gradient(to top, #fff, transparent)
+				background: -webkit-linear-gradient(to top, #fff, rgba(255,255,255,0))
+				background: linear-gradient(to top, #fff, rgba(255,255,255,0))
 				opacity: 1
 				+tran(all,1s)
 				transition: opacity 1s .5s
@@ -583,7 +584,7 @@
 			position: relative
 			margin-bottom: 10px
 			width: calc(100% + 120px)
-			padding: 0 0 0 60px
+			padding: 0 60px 0 60px
 			margin: 15px -60px
 			overflow: hidden
 			+md
@@ -622,10 +623,12 @@
 			position: absolute
 			top: -3px
 			min-height: 30px
-			right: 0
+			right: 60px
 			opacity: 0
 			pointer-events: none
 			+tran(all,.4s)
+			+md
+				right: 0
 			+xxs
 				position: static
 				width: 65px

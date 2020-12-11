@@ -277,6 +277,7 @@
     @media (max-width: 768px) {
       .modalCart__nav {
         padding: 16px;
+        min-height: 123px;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;

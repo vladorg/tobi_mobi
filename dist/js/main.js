@@ -192,14 +192,22 @@ if (open_dropdown) {
 			e.preventDefault();
 			header_area.classList.remove('header--active');
 			mob_menu.classList.remove('mobMenu--open');
-			catalog.classList.add('topCatalog--open')
+			
+			document.querySelector('.top').classList.add('top--show');
+			setTimeout(function(){
+				catalog.classList.add('topCatalog--open');
+			}, 10);
 		});
 	}
 
 	for(var i=0;i<close_cat.length;i++) {
 		close_cat[i].addEventListener('click', function(e){ // закрыть каталог
 			e.preventDefault();
-			catalog.classList.remove('topCatalog--open')
+			catalog.classList.remove('topCatalog--open');			
+			setTimeout(function(){
+				document.querySelector('.top').classList.remove('top--show');
+			}, 200);
+
 		});
 	}
 
@@ -238,6 +246,7 @@ if (open_dropdown) {
 			autoplaySpeed: 4000,
 			speed: 700,
 			dots: true,
+			pauseOnHover: false,
 			responsive: [
 			{
 				breakpoint: 768,
@@ -545,7 +554,7 @@ if (open_dropdown) {
 		productTabs(product_btn_related, tab_related);
 
 
-		$('.product__thumb').slick({
+		$('.product__thumbSlider').slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			arrows: false,
@@ -558,7 +567,7 @@ if (open_dropdown) {
 			slidesToScroll: 1,
 			vertical: true,
 			verticalSwiping: true,
-			asNavFor: '.product__thumb',
+			asNavFor: '.product__thumbSlider',
 			dots: false,
 			focusOnSelect: true,
 			infinite: true,
@@ -662,7 +671,6 @@ if (open_dropdown) {
 		$this.slick({
 			slidesToShow: 4,
 			slidesToScroll: 1,
-			//variableWidth: false,
 			prevArrow: left,
 			nextArrow: right,
 			infinite: false,
@@ -670,8 +678,37 @@ if (open_dropdown) {
 			{
 				breakpoint: 1600,
 				settings: {
+					slidesToShow: 4,
+				}
+			},
+			{
+				breakpoint: 1300,
+				settings: {
 					slidesToShow: 3,
-					//variableWidth: false,
+				}
+			},
+			{
+				breakpoint: 1100,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 4,
+				}
+			},
+			{
+				breakpoint: 840,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 2,
 				}
 			}
 			]
@@ -758,9 +795,14 @@ if (open_dropdown) {
 	// checkout =========================================
 
 	var checkout = document.querySelector('.checkout');
-	var checkout_login_nav = document.querySelector('.checkoutCustomer__nav')
+	var checkout_login_nav = document.querySelector('.checkoutCustomer__nav');
+	
+
 
 	if (checkout) {
+
+		var checkout_promo_enter = document.querySelector('.checkout_promoEnter');
+		var checkout_promo_val = checkout_promo_enter.parentNode.querySelector('input[name=promocode]');
 
 		document.onclick = function(e) { // закрытие popupа авторизации при клике вне его
 			if ( !modal_login.querySelector('.modal__win').contains(e.target) && !checkout_login_nav.contains(e.target) ) { 
@@ -937,6 +979,17 @@ if (open_dropdown) {
 				current_step.removeClass('checkout__step--completed');
 				current_step.addClass('checkout__step--active');
 			}, 600);
+		});
+
+		checkout_promo_enter.addEventListener('click', function(){
+			if (checkout_promo_val.value == '') {
+				checkout_promo_val.classList.remove('input--ok');
+				checkout_promo_val.classList.add('input--err');
+			} else {
+				checkout_promo_val.classList.remove('input--err');
+				checkout_promo_val.classList.add('input--ok');
+				document.querySelector('.checkoutWidgetTools').classList.add('checkoutWidgetTools--completed');			
+			}
 		});
 		
 	}

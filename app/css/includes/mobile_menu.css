@@ -79,6 +79,9 @@
       width: 24px;
       height: 14px;
       margin-right: 16px;
+      -webkit-align-self: center;
+          -ms-flex-item-align: center;
+              align-self: center;
       background: url(../img/icons/catalog/burger.svg) no-repeat; }
   .mobMenuAcc {
     padding: 24px; }
