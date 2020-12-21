@@ -3,11 +3,18 @@
 .compare
 	.main
 		padding-bottom: 80px
+		max-width: 100%
+		+xs
+			overflow: auto
 		&--compareFixed
 			padding-top: 696px
 	&__title
 		padding-bottom: 32px
 		+flex(0,0,space-between,center)
+		h1
+			+xs
+				position: sticky
+				left: calc((100% - 90%) / 2)
 	&__del
 		position: absolute
 		top: 0
@@ -87,13 +94,18 @@
 				padding-left: 0
 				min-height: 1px
 				padding: 0 0 24px 0
+				overflow-x: unset
+				overflow-y: unset
 			.preview
 				margin-right: 32px
 				+xs
-					min-width: 31%
-					margin-right: 12px
+					min-width: calc(34% - 12px)
+					&:not(:last-child)
+						margin-right: 12px
+					&:last-child
+						margin-right: 0
 				+xxs
-					min-width: 48%
+					min-width: calc(51% - 12px)
 
 
 	&Inner
@@ -101,6 +113,9 @@
 		margin-left: calc((100% - 1600px) / 2)
 		+break(1600)
 			margin-left: calc((100% - 90%) / 2)
+		+xs
+			margin-left: 0
+			padding-left: calc((100% - 90%) / 2)
 		&__names
 			+xs
 				//position: absolute
@@ -110,8 +125,16 @@
 					padding-left: 0
 					display: block
 					text-align: center
+					width: 100vw
+					position: sticky
+					left: 50%
+					left: calc((100% - 90%) / 2)
 			.productChars__list
-				width: 100%
+				width: 100vw
+				position: sticky
+				left: 50%
+				left: calc((100% - 90%) / 2)
+				//transform: translateX(-50%)
 			.productChars__charTitle
 				width: 100%
 				max-width: 232px
@@ -127,6 +150,13 @@
 					background: #fff
 					position: relative
 					z-index: 1
+			.productChars__item
+				+xs
+					// width: 200px
+					// position: sticky
+					// left: 50%
+					// transform: translateX(-50%)
+
 		&__chars
 			position: absolute
 			top: 0
@@ -144,8 +174,10 @@
 			+sm
 				left: 245px
 			+xs
-				left: 0
+				left: calc((100% - 90%) / 2)
 				top: 55px
+				overflow-x: unset
+				overflow-y: unset
 			&--open
 				max-height: 999px
 				opacity: 1
@@ -156,10 +188,10 @@
 			.productChars__char
 				padding: 18px 10px
 				+xs
+					background: $sup_color
 				&:not(:last-child)
 					+xs
 						margin-bottom: 54px
-						background: #F5F6F7
 		&__item
 			padding-top: 33px
 			+xs
@@ -197,9 +229,11 @@
 				padding-top: 16px
 			.compareHeader__products
 				padding: 0 0 24px 50px
+				overflow-x: auto
 				min-height: 1px
 				+xs
 					padding: 0 0 20px 0
+					pointer-events: none
 			.compare__title
 				padding-bottom: 24px
 				+xs
@@ -217,6 +251,7 @@
 					height: auto
 					+xs
 						margin-bottom: 8px
+						pointer-events: auto
 				.preview__name
 					display: inline-block
 					width: calc(100% - 62px)
@@ -228,6 +263,7 @@
 						width: 100%
 						height: 40px
 						margin: 0 0 8px 0
+						pointer-events: auto
 				.preview__total
 					font-size: 20px
 					font-weight: 800
@@ -246,4 +282,6 @@
 				.preview__tools
 					+xs
 						width: 100%
-			
+				.preview__btn
+					+xs
+						pointer-events: auto

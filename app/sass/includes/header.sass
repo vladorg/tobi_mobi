@@ -5,10 +5,10 @@
 .header
 	&--active
 		position: relative
-		z-index: 3
+		z-index: 4
 	+hover
 		position: relative
-		z-index: 3
+		z-index: 4
 	+xs
 		padding-top: 5px
 		width: 95%
@@ -90,13 +90,13 @@
 			a
 				display: block
 				img
-					width: 94px
+					width: 112px
 					height: 48px
 					display: block
 					object-fit: contain
 	&__innerRight
 		+flex(0,0,flex-start,center)	
-		width: 100%
+		width: calc(100% - 226px)
 		padding: 23px 46px 15px 46px
 		position: relative
 		+before
@@ -127,6 +127,7 @@
 		+xs
 			padding: 0 5px
 			flex-wrap: nowrap
+			width: calc(100% - 122px)
 			+before
 				border-radius: 10px 5px 5px 5px
 				transform: skew(-8deg) rotate(-1.5deg)
@@ -165,6 +166,7 @@
 				padding: 8px 35px
 				background: #242426
 				color: #fff
+				font-size: 14px
 				+before
 					display: none
 					+sm
@@ -208,6 +210,8 @@
 		+xs
 			transform: scale(0.7)
 			margin: 8px 5px 0 5px
+		+hover
+			cursor: url(../img/icons/cursor_hand.svg), auto
 		&__link
 			position: relative
 			display: block
@@ -241,6 +245,8 @@
 		+xs
 			transform: scale(0.7)
 			margin: 8px 5px 0 5px
+		+hover
+			cursor: url(../img/icons/cursor_hand.svg), auto
 		&__link
 			a
 				display: none
@@ -434,7 +440,7 @@
 .top
 	padding: 36px 0 30px 0
 	position: relative
-	z-index: 2
+	z-index: 3
 	+xs
 		position: absolute
 		opacity: 0
@@ -811,6 +817,7 @@
 			padding-top: 21px
 			display: none
 		&__item
+			width: 20%
 			margin-right: 20px
 			+flex(0,0,flex-start,center)
 			+last

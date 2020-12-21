@@ -38,12 +38,15 @@
 		&--completed
 			.checkout__completed
 				display: flex
+	&__wrap
+		+xs
+			+flex(column-reverse,0,0,0)
 	
 	&__widget
-		position: absolute
-		top: 24px
-		right: 0
+		position: sticky
+		top: 40px
 		width: 376px
+		float: right
 		+sm
 			width: 320px
 			padding: 15px
@@ -51,6 +54,7 @@
 			position: static
 			margin: 42px 0 0 -5%
 			width: calc(100% + 10%)
+			float: none
 		.headerCart__list
 			max-height: 220px
 		.headerCart__totalLabel, .headerCart__name, .headerCart__price, 
@@ -68,6 +72,9 @@
 			padding-right: 5px
 			order: 1
 			+text(14,500,24,$tc_06)
+			+xs
+				font-size: 12px
+				line-height: 20px
 			&:not(:last-child)
 				+after
 					content: ','
@@ -278,7 +285,8 @@
 						+after
 							opacity: 0
 					~ .checkoutCashback__edit
-						display: block
+						opacity: 1
+						max-height: 200px
 			
 
 	&Delivery
@@ -432,6 +440,7 @@
 				right: 4px
 				+xs
 					font-size: 13px
+					top: 9px
 		&__price
 			padding: 0
 			+flex(0,0,space-between,center)
@@ -504,7 +513,7 @@
 			pointer-events: auto
 			width: 336px
 			margin-top: 16px
-			display: none
+			//display: none
 			+sm
 				width: 100%
 			input

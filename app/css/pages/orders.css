@@ -29,9 +29,8 @@
       .orders .product__btn:not(:last-child) {
         margin-right: 16px; } }
   .orders__item {
-    padding: 24px 0; }
-    .orders__item:not(:last-child) {
-      border-bottom: 1px solid #c8c8c8; }
+    padding: 24px 0;
+    border-bottom: 1px solid #c8c8c8; }
     @media (max-width: 768px) {
       .orders__item {
         padding: 16px 0; } }
@@ -72,7 +71,7 @@
       left: 0;
       width: 12px;
       height: 12px;
-      margin-top: -7px;
+      margin-top: -6px;
       background: #7b7b7c;
       border-radius: 50%; }
     .orders__status--completed::before {

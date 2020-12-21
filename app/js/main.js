@@ -788,7 +788,34 @@ if (open_dropdown) {
 		$(this).parent().find('.productRelated__products').slideToggle(300);
 		$(this).parent().find('.title__arrows').toggleClass('title__arrows--open');
 	});
-}
+
+
+
+	var product_h1 = document.querySelector('h1');
+	var product_offset_h1 = product_h1.offsetTop;
+	var product_nav = document.querySelector('.product__nav');
+	var product_offset_nav = product_nav.offsetTop;
+	var product_slot = document.querySelector('.product__slot');
+
+
+		if ($(window).width() < 768) {
+			document.addEventListener('scroll', function(){ // по скроллу меняем вид h1 и слайдера навигации
+			if (window.pageYOffset >= product_offset_h1) {
+				product.classList.add('product--fixed');		
+			} else {
+				product.classList.remove('product--fixed');
+			}
+
+			if (window.pageYOffset >= product_offset_nav) {
+				product_nav.style = "top:"+product_h1.clientHeight+'px';
+				product_slot.classList.add('product__slot--fixed');
+			} else {
+				product_nav.style = "top: 1px";
+				product_slot.classList.remove('product__slot--fixed');
+			}
+		});
+		}
+	}
 
 
 
@@ -1341,17 +1368,34 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 }
 
 
+$('.main').on('scroll', function (e) {
+	$('.compare__fixed--fixed .compare_scroll').scrollLeft($(this).scrollLeft());
+	$('.main').scrollLeft($(this).scrollLeft());
+});
 
-	// скролл блоков сравнения по свайпу на мобильных
-	$('.compareInner .compare_scroll').on('touchmove', function(e){
-		$('.compareHeader .compare_scroll').scrollLeft($(this).scrollLeft());
-		$('.compareInner .compare_scroll').scrollLeft($(this).scrollLeft());
-	});
+$('.main').on('touchstart touchend touchmove mousewheel touchcancel gesturestart gestureend gesturechange orientationchange', function (e) {
+	$('.main').trigger('scroll'); 
+});
 
-	$('.compareHeader .compare_scroll').on('touchmove', function(e){
-		$('.compareInner .compare_scroll').scrollLeft($(this).scrollLeft());
-	});
-	
+$('body').on('touchmove', '.compare__fixed--fixed .compare_scroll .preview__name, .compare__fixed--fixed .compare_scroll .preview__thumb, .compare__fixed--fixed .compare_scroll .preview__btn, .compare__fixed--fixed .compare_scroll .close_modal_cart', function (e) {
+	$(this).css('pointer-events', 'none'); 
+});
+$('body').on('touchend', '.compare__fixed--fixed .compare_scroll .preview__name, .compare__fixed--fixed .compare_scroll .preview__thumb, .compare__fixed--fixed .compare_scroll .preview__btn, .compare__fixed--fixed .compare_scroll .close_modal_cart', function (e) {
+	$(this).css('pointer-events', 'auto'); 
+});
+
+var row = $('.compareInner .compareInner__col').width() * $('.compareHeader .preview').length;
+var pd = $('.compareInner').width();
+var c = pd * 0.1;
+
+if ($(window).width() < 768) {
+	$('.compareInner .productChars__item, .main .compare__title').css('width', row);
+	$('.compareInner .productChars__title').css('width', $('.compareInner .productChars__title').width() - c);
+	$('.compareInner .compareInner__names .productChars__list').css('width', $('.compareInner .productChars__list').width() - c);
+}
+
+
+
 
 
 }

@@ -52,11 +52,23 @@
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
+  @media (max-width: 768px) {
+    .checkout__wrap {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -webkit-flex-direction: column-reverse;
+          -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse; } }
   .checkout__widget {
-    position: absolute;
-    top: 24px;
-    right: 0;
-    width: 376px; }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40px;
+    width: 376px;
+    float: right; }
     @media (max-width: 992px) {
       .checkout__widget {
         width: 320px;
@@ -65,7 +77,8 @@
       .checkout__widget {
         position: static;
         margin: 42px 0 0 -5%;
-        width: calc(100% + 10%); } }
+        width: calc(100% + 10%);
+        float: none; } }
     .checkout__widget .headerCart__list {
       max-height: 220px; }
     @media (max-width: 768px) {
@@ -96,6 +109,10 @@
       font-weight: 500;
       line-height: 24px;
       color: #7b7b7c; }
+      @media (max-width: 768px) {
+        .checkout__completed span {
+          font-size: 12px;
+          line-height: 20px; } }
       .checkout__completed span:not(:last-child)::after {
         content: '';
         content: ',';
@@ -414,7 +431,8 @@
           content: '';
           opacity: 0; }
         .checkoutCustomer__recipient input:checked ~ .checkoutCashback__edit {
-          display: block; }
+          opacity: 1;
+          max-height: 200px; }
   .checkoutDelivery {
     display: block; }
     .checkoutDelivery__type {
@@ -634,7 +652,8 @@
         right: 4px; }
         @media (max-width: 768px) {
           .checkoutWidgetTools__promo button {
-            font-size: 13px; } }
+            font-size: 13px;
+            top: 9px; } }
     .checkoutWidgetTools__price {
       padding: 0;
       display: -webkit-box;
@@ -726,8 +745,7 @@
       opacity: 1;
       pointer-events: auto;
       width: 336px;
-      margin-top: 16px;
-      display: none; }
+      margin-top: 16px; }
       @media (max-width: 992px) {
         .checkoutCashback__edit {
           width: 100%; } }

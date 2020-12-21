@@ -1,9 +1,14 @@
 @import "../var.sass"
 
 .product
-
 	h1
 		margin-bottom: 12px
+		+xs
+			background: #fff
+			position: sticky
+			top: 0
+			z-index: 2
+			+tran(all,.4s)
 	main
 		padding: 16px 0 40px 0
 		position: relative
@@ -12,9 +17,7 @@
 			+sm
 				margin-bottom: 0
 	&__nav
-		//border-bottom: 1px solid $tc_025
 		width: $product_content_size_full
-		position: relative
 		+flex(0,0,flex-start,center)
 		+after
 			position: absolute
@@ -33,9 +36,11 @@
 			width: 100%
 		+xs
 			padding-left: 5%
+			position: sticky
+			background: #fff
+			z-index: 2
 		.slick-list
 			+xs
-				//overflow: visible
 				margin: 0 -5%
 	&__info
 		padding: 64px 0 48px 0
@@ -44,6 +49,7 @@
 		width: $product_content_size_full
 		animation: fadeIn 2s
 		+flex(0,0,0,flex-start)
+		display: inline-flex
 		+break(1600)
 			width: $product_content_size_medium
 		+md
@@ -66,6 +72,24 @@
 			display: none
 		&--active
 			display: block
+	&__slot
+		position: fixed
+		left: 0
+		z-index: 1
+		bottom: -100%
+		right: 0
+		padding: 8px 5%
+		background: #fff
+		box-shadow: 0px -2px 8px rgba(36, 36, 38, 0.15)
+		+flex(0,0,space-between,center)
+		display: none
+		+xs
+			display: flex
+		&Btn
+			width: 156px
+		&--fixed
+			bottom: 0
+			animation: product_slot_fixed .5s
 	&__btn
 		position: relative
 		border-radius: 0
@@ -225,9 +249,9 @@
 				height: 80px
 
 	&Widget
-		position: absolute
-		top: 0
-		right: 0
+		position: sticky
+		top: 40px
+		//right: 0
 		z-index: 1
 		background: #fff
 		width: 376px
@@ -236,10 +260,12 @@
 		box-shadow: 0px 4px 8px rgba(36, 36, 38, 0.25)
 		border-radius: 4px
 		padding: 32px 0 0 0
+		float: right
 		+text(14,500,24,0)
 		+sm
 			position: static
 			width: 100%
+			float: none
 		+xs
 			padding: 24px 0 0 0
 
@@ -652,4 +678,13 @@
 				overflow: hidden
 		.slick-track
 			margin-left: 0
+
+	&--fixed
+		h1
+			padding: 16px 5%
+			margin: 0 -5%
+			+text(16,700,24,0)
+		.product__nav
+			margin-left: -5%
+			width: 105%
 

@@ -764,6 +764,18 @@ blockquote {
   100% {
     top: 0; } }
 
+@-webkit-keyframes product_slot_fixed {
+  0% {
+    bottom: -100%; }
+  100% {
+    bottom: 0; } }
+
+@keyframes product_slot_fixed {
+  0% {
+    bottom: -100%; }
+  100% {
+    bottom: 0; } }
+
 .added::after {
   content: '';
   width: 16px;
