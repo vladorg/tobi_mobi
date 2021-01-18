@@ -1,0 +1,216 @@
+.icon__cartEmpty::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -297px -5px no-repeat; }
+
+.icon__cartFull::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -339px -5px no-repeat; }
+
+.icon__cashback::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -549px -5px no-repeat; }
+
+.icon__checkOn::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/sprites/all.png") -51px -5px no-repeat; }
+
+.icon__compare::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -381px -5px no-repeat; }
+
+.icon__dislike::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -593px -5px no-repeat; }
+
+.icon__fb::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/sprites/all.png") -85px -5px no-repeat; }
+
+.icon__heart::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -423px -5px no-repeat; }
+
+.icon__ig::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/sprites/all.png") -119px -5px no-repeat; }
+
+.icon__like::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -637px -5px no-repeat; }
+
+.icon__loyalty::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 34px;
+  background: url("../img/sprites/all.png") -681px -5px no-repeat; }
+
+.icon__orders::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -465px -5px no-repeat; }
+
+.icon__radioOn::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/sprites/all.png") -153px -5px no-repeat; }
+
+.icon__right::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 18px;
+  background: url("../img/sprites/all.png") -5px -5px no-repeat; }
+
+.icon__trash::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -507px -5px no-repeat; }
+
+.icon__tel::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/sprites/all.png") -187px -5px no-repeat; }
+
+.icon__vib::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/sprites/all.png") -221px -5px no-repeat; }
+
+.icon__ava::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/all.png") -254px -5px no-repeat; }
+
+.icon__burger::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 14px;
+  background: url(../img/icons/catalog/burger.svg) no-repeat; }
+
+.icon__search::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons/search.svg) no-repeat; }
+
+.icon__close::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/close.svg) no-repeat; }
+
+.icon__star-p::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/star_p.svg) no-repeat; }
+
+.icon__star-e::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/star_e.svg) no-repeat; }
+
+.icon__star::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/icons/star.svg) no-repeat; }
+
+.icon__grid::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/icons/ic_grid.svg) no-repeat; }
+
+.icon__inCart::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons/in-cart.svg) no-repeat; }
+
+.icon__filter::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons/ic_filter.svg) no-repeat; }
+
+.icon__calendar::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url(../img/icons/ic_calendar.svg) no-repeat; }
+
+.icon__arrow::before {
+  content: '';
+  display: block;
+  width: 23px;
+  height: 15px;
+  background: url(../img/icons/ic_arrow.svg) no-repeat; }
+
+.icon__eye::before {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 24px;
+  background: url(../img/icons/ic_eye.svg) no-repeat; }
+
+.icon__eye_open::before {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 24px;
+  background: url(../img/icons/ic_eye_open.svg) no-repeat; }

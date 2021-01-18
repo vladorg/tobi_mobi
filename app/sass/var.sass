@@ -1,0 +1,94 @@
+$ff: 'Montserrat'
+$ff_accent: 'PT Serif'
+$fz: 16px
+$fw: 500
+$prim_color: #FFC830
+$sup_color: #F5F6F7
+$text_color: #242426
+$ov_color: rgba(0, 0, 0, 0.5)
+$ov_color_light: rgba(0, 0, 0, 0.25)
+$tc_06: #7b7b7c
+$tc_025: #c8c8c8
+$container: 1600px
+
+$product_content_size_full: calc(100% - 544px)
+$product_content_size_medium: calc(100% - 415px)
+$product_content_size_medium_checkout: calc(100% - 360px)
+
+$sticker_new: #1B891B
+$sticker_special: #D9214F
+$sticker_credit: #2373E3 // не будет
+$sticker_soon: #FFC830
+$sticker_top: #7341D9
+$sticker_best: #F77225 // не будет
+
+@mixin flex($dir: 0, $wrap: 0, $just: 0, $align: 0)
+  display: flex
+  @if $dir != 0 
+    flex-direction: $dir
+  @if $wrap != 0 
+    flex-wrap: $wrap
+  @if $just != 0 
+    justify-content: $just
+  @if $align != 0 
+    align-items: $align
+
+@mixin text($size: 0, $weight: 0, $line: 0, $color: 0)
+  @if $size != 0 
+    font-size: $size+px
+  @if $weight != 0 
+    font-weight: $weight
+  @if $line != 0 
+    line-height: $line+px
+  @if $color != 0 
+    color: $color
+
+@mixin icon($w,$h,$pos)
+	content: ''
+	display: block
+	width: $w+px
+	height: $h+px
+	background: url('../img/sprites/all.png') $pos -5px no-repeat
+
+@mixin lg
+  @media (min-width: 1200px)
+  	@content
+@mixin md
+  @media (max-width: 1199px)
+  	@content
+@mixin sm
+  @media (max-width: 992px)
+  	@content
+@mixin xs
+  @media (max-width: 768px)
+  	@content
+@mixin xxs
+  @media (max-width: 500px)
+  	@content
+@mixin break($break)
+  @media (max-width: $break+'px')
+  	@content
+
+
+@mixin before
+  &::before
+  	content: ''
+  	@content
+@mixin after
+  &::after
+  	content: ''
+  	@content
+@mixin hover
+  &:hover
+  	@content
+@mixin first
+  &:first-child
+    @content
+@mixin last
+  &:last-child
+    @content
+
+@mixin tran($on, $time)
+	transition: $on $time
+
+

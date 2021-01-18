@@ -1,0 +1,147 @@
+.info .content {
+  -webkit-box-align: unset;
+  -webkit-align-items: unset;
+      -ms-flex-align: unset;
+          align-items: unset; }
+
+.info .main--left {
+  padding-left: 32px; }
+  @media (max-width: 992px) {
+    .info .main--left {
+      padding-left: 0; } }
+
+.infoNav__title {
+  margin: 0 0 16px 0 !important;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; }
+  @media (max-width: 768px) {
+    .infoNav__title {
+      display: none; } }
+  .infoNav__title:not(:first-child) {
+    margin-top: 40px !important; }
+
+.infoNav .accountNav__link {
+  margin: 0 0 8px 0; }
+  @media (max-width: 768px) {
+    .infoNav .accountNav__link {
+      padding: 6px 30px 6px 16px; } }
+  .infoNav .accountNav__link a {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #242426; }
+    @media (max-width: 768px) {
+      .infoNav .accountNav__link a {
+        font-size: 13px;
+        font-weight: 600; } }
+    .infoNav .accountNav__link a::before {
+      content: '';
+      display: none; }
+  .infoNav .accountNav__link--active {
+    background: transparent; }
+    .infoNav .accountNav__link--active a {
+      font-weight: 700; }
+
+.info .dropdown__title::before {
+  content: '';
+  display: none; }
+
+.deliveryItem:not(:last-child) {
+  margin-bottom: 64px; }
+  @media (max-width: 768px) {
+    .deliveryItem:not(:last-child) {
+      margin-bottom: 40px; } }
+
+.programLoyality__imgs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media (max-width: 1400px) {
+    .programLoyality__imgs {
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
+  .programLoyality__imgs img:not(:last-child) {
+    max-width: 75%; }
+  .programLoyality__imgs img:not(:first-child) {
+    margin-left: 133px;
+    max-width: 23%; }
+    @media (max-width: 1400px) {
+      .programLoyality__imgs img:not(:first-child) {
+        margin-left: 10px; } }
+
+.programLoyality__banner {
+  text-align: center; }
+
+.actions__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 28px; }
+  @media (max-width: 1199px) {
+    .actions__items {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .actions__items {
+      grid-template-columns: repeat(1, 1fr); } }
+
+.actions__caption {
+  background: #F5F6F7;
+  padding: 11px 24px 24px 24px; }
+  @media (max-width: 768px) {
+    .actions__caption {
+      padding: 10px; } }
+
+.actions__thumb img {
+  display: block;
+  width: 100%; }
+
+.actions__date {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #7b7b7c; }
+  @media (max-width: 768px) {
+    .actions__date {
+      font-size: 12px; } }
+
+.actions__title {
+  margin-bottom: 40px;
+  height: 72px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px; }
+  @media (max-width: 768px) {
+    .actions__title {
+      height: auto;
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 600; } }
+
+.actions__link {
+  width: 100%;
+  display: block; }
+
+.reviews__sort {
+  width: 240px;
+  max-width: 100% !important;
+  z-index: 0; }
+  @media (max-width: 500px) {
+    .reviews__sort {
+      max-width: 145px !important;
+      margin-right: 10px; } }
