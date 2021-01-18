@@ -1371,6 +1371,8 @@ for(var i=0;i<product_chars_btn.length;i++) { // развернуть списо
 $('.main').on('scroll', function (e) {
 	$('.compare__fixed--fixed .compare_scroll').scrollLeft($(this).scrollLeft());
 	$('.main').scrollLeft($(this).scrollLeft());
+	console.log($(this).scrollLeft());
+	console.log($('.compare__fixed--fixed .compare_scroll').scrollLeft());
 });
 
 $('.main').on('touchstart touchend touchmove mousewheel touchcancel gesturestart gestureend gesturechange orientationchange', function (e) {
