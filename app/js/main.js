@@ -146,6 +146,7 @@ if (open_dropdown) {
 			e.preventDefault();
 			cart_items.classList.remove('headerCart__itemsWrap--open');
 			modal_cart.classList.add('modal--open', 'modalCart--open');
+			header_area.classList.remove('header--active');
 		});
 	}
 
