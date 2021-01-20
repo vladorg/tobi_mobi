@@ -9,8 +9,8 @@
 ---
 <h2>How to use?</h2>
 <ul>
-  <li>Download archive and extract files<li>
-  <li>Extract files
+  <li>Download archive and extract files</li>
+  <li>Extract files</li>
 </ul>
 
 <div class="highlight highlight-text-html-basic"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">input</span>
