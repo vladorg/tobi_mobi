@@ -13,13 +13,14 @@
 <p><code>Gulp</code></p>
 <p><code>Git</code></p>
 
-```
-	<p><strong>Markup:</strong></p>
-		<p>semantic</p>
-		<p>responsive</p>
-		<p>crossbrowser</p>
-		<p>crossplatform</p>
-		<p>high load speed</p>
+<p><strong>Markup:</strong></p>
+
+```	
+semantic
+responsive
+crossbrowser
+crossplatform
+high load speed
 ```
 
 ---
