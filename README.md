@@ -12,16 +12,15 @@
 <ul>
   <li>Download archive and extract files</li>
   <li>Extract files</li>
-  <li>run</li>
-  <li>
-
-  		```javascript
-  		npm i
-  		gulp
-			```  
-					
+  <li>run</li>	
   </li>
 </ul>
+
+```javascript
+npm i
+gulp
+``` 
+
 <p>For any</p>
 <ul>
   <li>Download archive and extract files</li>
