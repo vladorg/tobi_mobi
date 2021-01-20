@@ -14,10 +14,12 @@
   <li>Extract files</li>
   <li>run</li>
   <li>
+
   		```javascript
   		npm i
   		gulp
-			```  		
+			```  
+					
   </li>
 </ul>
 <p>For any</p>
