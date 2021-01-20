@@ -15,13 +15,11 @@
 
 <pre>
 	<p><strong>Markup:</strong></p>
-	<ul>
-		<li>semantic</li>
-		<li>responsive</li>
-		<li>crossbrowser</li>
-		<li>crossplatform</li>
-		<li>high load speed</li>
-	</ul>
+		<p>semantic</p>
+		<p>responsive</p>
+		<p>crossbrowser</p>
+		<p>crossplatform</p>
+		<p>high load speed</p>
 </pre>
 
 ---
