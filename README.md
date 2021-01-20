@@ -1,14 +1,14 @@
 <h1>Hi there!</h1>
-<p>Welcome to Tobi_mobi project!</p>
-<p>This is a online store markup for OpenCart CMS.</p>
+<p>Welcome to <strong>Tobi_mobi</strong> project!</p>
+<p>This is a online store markup for <code>OpenCart CMS</code>.</p>
 <img src="https://github.com/vladorg/tobi_mobi/raw/master/dist/img/chudik2.png" alt="Tobi image">
 ---
-<h2>Demo version</h2>
+<h2>Demo</h2>
 <p>Wanna see live version site?<p>
 <p><a href="https://vladorg.github.io/tobi_mobi/" target="_blank">Go here</a> (not _blank)!<p>
 ---
 <h2>How to use?</h2>
-<p>For devs</p>
+<p><strong>For devs</strong></p>
 <ul>
   <li>Download archive and extract files</li>
   <li>Extract files</li>
@@ -21,7 +21,7 @@ npm i
 gulp
 ``` 
 
-<p>For any</p>
+<p><strong>For any</strong></p>
 <ul>
   <li>Download archive and extract files</li>
   <li>Extract files</li>
