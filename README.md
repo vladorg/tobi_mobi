@@ -10,7 +10,7 @@
 <ul>
   <li>Download archive</li>
   <li>Extract files</li>
-  <li>run</li>	
+  <li>run</li>
   </li>
 </ul>
 
@@ -26,3 +26,7 @@ gulp
   <li>open <code>dist</code> folder</li>
   <li>use any files</li>
 </ul>
+
+---
+
+1
