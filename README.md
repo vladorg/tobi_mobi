@@ -13,12 +13,13 @@
   <li>Extract files</li>
   <li>run</li>
   <li>
-  	<code>
-  		```javascript
-  		npm i
-  		gulp
-		```  		
-  	</code>
+<code>
+
+```javascript
+npm i
+gulp
+```
+</code>
   </li>
 </ul>
 
