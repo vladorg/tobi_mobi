@@ -17,7 +17,7 @@
   		```javascript
   		npm i
   		gulp
-			```  		
+		```  		
   	</code>
   </li>
 </ul>
