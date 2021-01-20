@@ -14,12 +14,10 @@
   <li>Extract files</li>
   <li>run</li>
   <li>
-  	<code>
   		```javascript
   		npm i
   		gulp
 			```  		
-  	</code>
   </li>
 </ul>
 <p>For any</p>
@@ -29,5 +27,4 @@
   <li>open <code>dist</code> folder</li>
   <li>use any files</li>
 </ul>
-```
 
