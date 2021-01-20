@@ -14,7 +14,7 @@
   <li>run</li>
   <li>
   	<code>
-  		```
+  		```javascript
   		npm i
   		gulp
 			```  		
