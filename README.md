@@ -13,7 +13,16 @@
 <p><code>Gulp</code></p>
 <p><code>Git</code></p>
 
-<pre>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, minima?</pre>
+<pre>
+	<p><strong>Markup:</strong></p>
+	<ul>
+		<li>semantic</li>
+		<li>responsive</li>
+		<li>crossbrowser</li>
+		<li>crossplatform</li>
+		<li>high load speed</li>
+	</ul>
+</pre>
 
 ---
 
@@ -32,7 +41,7 @@
   </li>
 </ul>
 
-```javascript
+```
 npm i
 gulp
 ``` 
