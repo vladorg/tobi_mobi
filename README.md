@@ -11,14 +11,13 @@
 <ul>
   <li>Download archive and extract files</li>
   <li>Extract files</li>
-  <li>run
+  <li>run</li
+</ul>
 <code>
-
+  
 ```
 npm i
 gulp
 ```
 </code>
-  </li>
-</ul>
 
