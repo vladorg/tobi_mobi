@@ -10,29 +10,18 @@
 <h2>How to use?</h2>
 <ul>
   <li>Download archive and extract files<li>
-  <li>Extract files</code>   
-  <li>run 
-  	<pre>
-  		<span>// Instantiate a slider</span>
-  		<span>var</span>
-  		<span>mySlider</span>
-  		<span>=</span>
-  		<span>$</span>
-  		<span>(</span>
-  		<span>"input.slider"</span>
-  		<span>)</span>
-  		<span>.</span>
-  		<span>slider</span>
-  		<span>(</span>
-  		<span>)</span>
-  		<span>;</span>
-
-<span class="pl-c">// Call a method on the slider</span>
-<span class="pl-k">var</span> <span class="pl-s1">value</span> <span class="pl-c1">=</span> <span class="pl-s1">mySlider</span><span class="pl-kos">.</span><span class="pl-en">slider</span><span class="pl-kos">(</span><span class="pl-s">'getValue'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-
-<span class="pl-c">// For non-getter methods, you can chain together commands</span>
-	<span class="pl-s1">mySlider</span>
-		<span class="pl-kos">.</span><span class="pl-en">slider</span><span class="pl-kos">(</span><span class="pl-s">'setValue'</span><span class="pl-kos">,</span> <span class="pl-c1">5</span><span class="pl-kos">)</span>
-		<span class="pl-kos">.</span><span class="pl-en">slider</span><span class="pl-kos">(</span><span class="pl-s">'setValue'</span><span class="pl-kos">,</span> <span class="pl-c1">7</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
-  </li>
+  <li>Extract files
 </ul>
+
+<div class="highlight highlight-text-html-basic"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">input</span>
+	<span class="pl-c1">type</span>="<span class="pl-s">text</span>"
+	<span class="pl-c1">name</span>="<span class="pl-s">somename</span>"
+	<span class="pl-c1">data-provide</span>="<span class="pl-s">slider</span>"
+	<span class="pl-c1">data-slider-ticks</span>="<span class="pl-s">[1, 2, 3]</span>"
+	<span class="pl-c1">data-slider-ticks-labels</span>='<span class="pl-s">["short", "medium", "long"]</span>'
+	<span class="pl-c1">data-slider-min</span>="<span class="pl-s">1</span>"
+	<span class="pl-c1">data-slider-max</span>="<span class="pl-s">3</span>"
+	<span class="pl-c1">data-slider-step</span>="<span class="pl-s">1</span>"
+	<span class="pl-c1">data-slider-value</span>="<span class="pl-s">3</span>"
+	<span class="pl-c1">data-slider-tooltip</span>="<span class="pl-s">hide</span>"
+<span class="pl-kos">&gt;</span></pre></div>
