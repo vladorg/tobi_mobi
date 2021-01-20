@@ -31,28 +31,4 @@ high load speed
 
 ---
 
-<h2>How to use?</h2>
-<p><strong>For devs</strong></p>
-<ul>
-  <li>Download archive</li>
-  <li>Extract files</li>
-  <li>run</li>
-  </li>
-</ul>
-
-```
-npm i
-gulp
-``` 
-
-<p><strong>For any</strong></p>
-<ul>
-  <li>Download archive</li>
-  <li>Extract files</li>
-  <li>open <code>dist</code> folder</li>
-  <li>use any files</li>
-</ul>
-
----
-
 <h3>Have fun! :)</h3>
