@@ -8,13 +8,11 @@
 <p><a href="https://vladorg.github.io/tobi_mobi/" target="_blank">Go here</a> (not _blank)!<p>
 ---
 <h2>How to use?</h2>
+
+
+```html
 <ul>
   <li>Download archive and extract files</li>
   <li>Extract files</li>
 </ul>
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
 ```
