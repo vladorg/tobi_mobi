@@ -1,7 +1,19 @@
 <h1>Hi there!</h1>
 <p>Welcome to <strong>Tobi_mobi</strong> project!</p>
-<p>This is a online store markup for <code>OpenCart CMS</code>.</p>
 <img src="https://github.com/vladorg/tobi_mobi/raw/master/dist/img/chudik2.png" alt="Tobi image">
+
+---
+
+<h2>About</h2>
+<p>This is a online store markup for <code>OpenCart CMS</code>.</p>
+<p><strong>Used technologies:</strong></p>
+<p><code>HTML5</code></p>
+<p><code>SASS</code></p>
+<p><code>JavaScript (includes Jquery)</code></p>
+<p><code>Gulp</code></p>
+<p><code>Git</code></p>
+
+<pre>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, minima?</pre>
 
 ---
 
