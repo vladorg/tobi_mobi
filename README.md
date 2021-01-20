@@ -13,8 +13,8 @@
   <li>Extract files</li>
   <li>run</li
 </ul>
+    
 <code>
-  
 ```
 npm i
 gulp
