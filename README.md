@@ -12,8 +12,20 @@
   <li>Download archive and extract files<li>
   <li>Extract files</code>   
   <li>run 
-  	<pre><span class="pl-c">// Instantiate a slider</span>
-<span class="pl-k">var</span> <span class="pl-s1">mySlider</span> <span class="pl-c1">=</span> <span class="pl-en">$</span><span class="pl-kos">(</span><span class="pl-s">"input.slider"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">slider</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  	<pre>
+  		<span>// Instantiate a slider</span>
+  		<span>var</span>
+  		<span>mySlider</span>
+  		<span>=</span>
+  		<span>$</span>
+  		<span>(</span>
+  		<span>"input.slider"</span>
+  		<span>)</span>
+  		<span>.</span>
+  		<span>slider</span>
+  		<span>(</span>
+  		<span>)</span>
+  		<span>;</span>
 
 <span class="pl-c">// Call a method on the slider</span>
 <span class="pl-k">var</span> <span class="pl-s1">value</span> <span class="pl-c1">=</span> <span class="pl-s1">mySlider</span><span class="pl-kos">.</span><span class="pl-en">slider</span><span class="pl-kos">(</span><span class="pl-s">'getValue'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
