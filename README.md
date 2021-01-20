@@ -8,11 +8,17 @@
 <p><a href="https://vladorg.github.io/tobi_mobi/" target="_blank">Go here</a> (not _blank)!<p>
 ---
 <h2>How to use?</h2>
-
-
-```html
 <ul>
   <li>Download archive and extract files</li>
   <li>Extract files</li>
+  <li>run</li>
+  <li>
+  	<code>
+  		```
+  		npm i
+  		gulp
+			```  		
+  	</code>
+  </li>
 </ul>
-```
+
