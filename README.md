@@ -10,10 +10,14 @@
 <h2>How to use?</h2>
 <ul>
   <li>Download archive and extract files<li>
-  <li>run >npm i</li>
+  <li>run 
+   </li>
+    <code>
+      npm i
+    </code>
   <li>run
-    <blockquote>
+    <code>
       gulp
-    </blockquote>
+    </code>
   </li>
 </ul>
