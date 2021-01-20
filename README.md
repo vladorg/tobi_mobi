@@ -11,5 +11,9 @@
 <ul>
   <li>Download archive and extract files<li>
   <li>run >npm i</li>
-  <li>run >gulp</li>
+  <li>run
+    <blockquote>
+      gulp
+    </blockquote>
+  </li>
 </ul>
