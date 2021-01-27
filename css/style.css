@@ -3544,7 +3544,8 @@ blockquote {
       position: absolute;
       opacity: 0;
       pointer-events: none;
-      padding: 0 !important; } }
+      padding: 0 !important;
+      z-index: 4; } }
   .top--show {
     position: static;
     opacity: 1;
@@ -3625,9 +3626,7 @@ blockquote {
         background: url("../img/icons/catalog/burger.svg") no-repeat; }
         @media (max-width: 768px) {
           .topCatalog__btn::before {
-            position: absolute;
-            top: 17px;
-            left: 28px; } }
+            display: none; } }
       .topCatalog__btn::after {
         content: '';
         position: fixed;
@@ -3681,6 +3680,14 @@ blockquote {
       @media (max-width: 768px) {
         .topCatalog__close {
           display: block; } }
+    .topCatalog__openMenu {
+      display: none; }
+      @media (max-width: 768px) {
+        .topCatalog__openMenu {
+          display: block;
+          position: absolute;
+          top: 16px;
+          left: 22px; } }
     .topCatalogChild {
       opacity: 0;
       pointer-events: none;
@@ -5082,7 +5089,8 @@ blockquote {
         color: #242426; }
 
 .modalCart {
-  background: rgba(0, 0, 0, 0.25); }
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 4; }
   @media (max-width: 768px) {
     .modalCart {
       right: -105%;
@@ -5517,15 +5525,14 @@ blockquote {
   padding: 64px 0 32px 0;
   width: 1740px;
   margin: 0 auto;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   @media (max-width: 1750px) {
     .related {
       width: 100%; } }
   @media (max-width: 768px) {
     .related {
       padding: 40px 0; } }
-  .related__title {
-    position: relative; }
   .related__items {
     margin: 0 32px; }
   .related__prods {
@@ -5554,22 +5561,39 @@ blockquote {
       -o-transition: opacity 0.4s;
       transition: opacity 0.4s; }
   .related .slick-prev, .related .slick-next {
-    position: static;
     width: auto;
-    padding: 0 5px; }
+    padding: 0 5px;
+    position: absolute;
+    top: 50%;
+    z-index: 1; }
+    @media (max-width: 992px) {
+      .related .slick-prev, .related .slick-next {
+        position: static; } }
     .related .slick-prev::before, .related .slick-next::before {
       content: '';
-      opacity: 1; }
+      opacity: .5; }
     .related .slick-prev:hover, .related .slick-next:hover {
       -webkit-filter: drop-shadow(0px 0px 0px black);
               filter: drop-shadow(0px 0px 0px black); }
   .related .slick-prev {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg); }
+    -webkit-transform: rotateY(180deg) translateY(-50%);
+            transform: rotateY(180deg) translateY(-50%);
+    left: 0; }
+    @media (max-width: 992px) {
+      .related .slick-prev {
+        -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg); } }
   .related .slick-next {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    -webkit-transform: rotate(0deg) translateY(-50%);
+        -ms-transform: rotate(0deg) translateY(-50%);
+            transform: rotate(0deg) translateY(-50%);
+    right: 0; }
+    @media (max-width: 992px) {
+      .related .slick-next {
+        -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+                transform: rotate(0deg); } }
 
 .specials {
   background: #F5F6F7;
@@ -6846,7 +6870,7 @@ blockquote {
       position: -webkit-sticky;
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 3;
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
       transition: all 0.4s; } }
@@ -6894,14 +6918,13 @@ blockquote {
       width: 100%; } }
   @media (max-width: 768px) {
     .product__nav {
-      padding-left: 5%;
       position: -webkit-sticky;
       position: sticky;
       background: #fff;
       z-index: 2; } }
   @media (max-width: 768px) {
     .product__nav .slick-list {
-      margin: 0 -5%; } }
+      margin: 0 -5% 0 0; } }
 
 .product__info {
   padding: 64px 0 48px 0;
@@ -7936,6 +7959,7 @@ blockquote {
 
 .product--fixed .product__nav {
   margin-left: -5%;
+  padding-left: 5%;
   width: 105%; }
 
 .header--checkout {
