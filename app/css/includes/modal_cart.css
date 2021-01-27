@@ -1,5 +1,6 @@
 .modalCart {
-  background: rgba(0, 0, 0, 0.25); }
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 4; }
   @media (max-width: 768px) {
     .modalCart {
       right: -105%;

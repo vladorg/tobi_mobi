@@ -15,7 +15,7 @@
 	
 	
 </head>
-<body class="column">
+<body class="column scroll--body">
 
 	<header class="header container">
 		<div class="header__tool">
@@ -339,7 +339,7 @@
 				</div>
 
 				<!-- кнопка вызова мобильного меню -->
-				<button id="mobile_menu_open" class="header__mobMenu btn icon__burger"></button>
+				<button class="mobile_menu_open header__mobMenu btn icon__burger"></button>
 
 			</div>
 
@@ -366,6 +366,7 @@
 
 			<div class="topCatalog">
 				<div class="topCatalog__btn topCatalog__title cursor">
+					<button class="btn topCatalog__openMenu mobile_menu_open icon__burger"></button>
 					Каталог товарів
 					<button class="close_catalog topCatalog__close icon__close close btn"></button>
 					<nav class="topCatalogMenu">
@@ -809,7 +810,7 @@
 			<div class="related__prods container products">
 
 				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
+					<div class="preview__sticker preview__sticker--new">Новинка</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image-5.png" alt="">
 					</a>
@@ -839,7 +840,7 @@
 				</div>
 
 				<div class="preview__item preview preview--spec">
-					<div class="preview__sticker">Акція</div>
+					<div class="preview__sticker preview__sticker--spec">Акція</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image-4.png" alt="">
 					</a>
@@ -869,7 +870,7 @@
 				</div>
 
 				<div class="preview__item preview preview--hover preview--new">
-					<div class="preview__sticker">Новинка</div>
+					<div class="preview__sticker preview__sticker--new">Новинка</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image-3.png" alt="">
 					</a>
@@ -899,7 +900,7 @@
 				</div>
 
 				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
+					<div class="preview__sticker preview__sticker--soon">Скоро</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image-2.png" alt="">
 					</a>
@@ -929,7 +930,7 @@
 				</div>
 
 				<div class="preview__item preview preview--top">
-					<div class="preview__sticker">Топ продаж</div>
+					<div class="preview__sticker preview__sticker--top">Топ продаж</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image2-1.png" alt="">
 					</a>
@@ -959,7 +960,7 @@
 				</div>
 
 				<div class="preview__item preview preview--soon">
-					<div class="preview__sticker">Скоро</div>
+					<div class="preview__sticker preview__sticker--soon">Скоро</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image2.png" alt="">
 					</a>
@@ -989,7 +990,7 @@
 				</div>
 
 				<div class="preview__item preview preview--new">
-					<div class="preview__sticker">Новинка</div>
+					<div class="preview__sticker preview__sticker--new">Новинка</div>
 					<a href="#" class="preview__thumb">
 						<img src="img/products/Image2.png" alt="">
 					</a>
@@ -1497,7 +1498,7 @@
 					</li>
 				</ul>
 			</div>
-			<button class="mobMenu__close icon__close close btn" id="mobile_menu_close"></button>
+			<button class="mobMenu__close icon__close close btn mobile_menu_close"></button>
 		</div>
 		<div class="mobMenu__inner scroll">
 			<button class="mobMenu__cat open_catalog btn cursor">Каталог товарів</button>

@@ -416,8 +416,10 @@ blockquote
     	left: 0
   	&::-webkit-scrollbar-thumb
     	background: $prim_color
-@-moz-document url-prefix()
+
+
 // firefox fix
+@-moz-document url-prefix()
 .scroll
   scrollbar-color: $prim_color rgba(0,0,0,0)
   scrollbar-width: thin

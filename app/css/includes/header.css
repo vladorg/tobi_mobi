@@ -817,9 +817,7 @@
         background: url("../img/icons/catalog/burger.svg") no-repeat; }
         @media (max-width: 768px) {
           .topCatalog__btn::before {
-            position: absolute;
-            top: 17px;
-            left: 28px; } }
+            display: none; } }
       .topCatalog__btn::after {
         content: '';
         position: fixed;
@@ -873,6 +871,14 @@
       @media (max-width: 768px) {
         .topCatalog__close {
           display: block; } }
+    .topCatalog__openMenu {
+      display: none; }
+      @media (max-width: 768px) {
+        .topCatalog__openMenu {
+          display: block;
+          position: absolute;
+          top: 16px;
+          left: 22px; } }
     .topCatalogChild {
       opacity: 0;
       pointer-events: none;
