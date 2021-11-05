@@ -4,7 +4,7 @@ This is an internet store for small devices and accessories for it.
 Markup for integration in Opencart CMS.  
 Includes 15 pages
 
-![tobimobi](/vladorg/tobi_mobi/raw/master/app/img/chudik2.png)
+![tobimobi](https://raw.githubusercontent.com/vladorg/tobi_mobi/master/app/img/chudik2.png)
 
 ## Features
 
